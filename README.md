@@ -1,2 +1,2 @@
 # PlayiOS
-iOS 놀이 공간
+iOS 놀이공간
