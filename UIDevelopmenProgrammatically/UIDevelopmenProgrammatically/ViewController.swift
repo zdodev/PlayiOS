@@ -55,13 +55,13 @@ class ViewController: UIViewController {
         view.addSubview(emailLabel)
         
         let updateLabel = UILabel()
-        updateLabel.frame = CGRect(x: 30, y: 150, width: 100, height: 30)
+        updateLabel.frame = CGRect(x: emailLabel.frame.origin.x, y: 150, width: 100, height: 30)
         updateLabel.text = "자동갱신"
         updateLabel.font = .systemFont(ofSize: 14)
         view.addSubview(updateLabel)
         
         let intervalLabel = UILabel()
-        intervalLabel.frame = CGRect(x: 30, y: 200, width: 100, height: 30)
+        intervalLabel.frame = CGRect(x: emailLabel.frame.origin.x, y: 200, width: 100, height: 30)
         intervalLabel.text = "갱신주기"
         intervalLabel.font = .systemFont(ofSize: 14)
         view.addSubview(intervalLabel)
@@ -102,6 +102,9 @@ class ViewController: UIViewController {
         updateSwitch.addTarget(self, action: #selector(presentUpdateValue(_:)), for: .valueChanged)
         intervalStepper.addTarget(self, action: #selector(presentIntervalValue(_:)), for: .valueChanged)
         emailTextField.autocapitalizationType = .none
+        
+        let submitButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(submit(_:)))
+        navigationItem.rightBarButtonItem = submitButton
     }
     
     // Button 터치 이벤트 메서드 정의
@@ -122,6 +125,14 @@ class ViewController: UIViewController {
     
     @objc private func presentIntervalValue(_ sender: UIStepper) {
         intervalValueLabel.text = "\(Int(sender.value))분마다"
+    }
+    
+    @objc private func submit(_ sender: Any) {
+        let rvc = ReadViewContoller()
+        rvc.email = emailTextField.text
+        rvc.updateSwitch = updateSwitch.isOn
+        rvc.intervalValue = intervalStepper.value
+        navigationController?.pushViewController(rvc, animated: true)
     }
 }
 
