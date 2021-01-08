@@ -13,11 +13,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        /*
+         scene: The scene object being connected to your app.
+         session: The session object containing details about the scene's configuration
+         connectionOptions: Additional options for configuring the scene. Use the information in this object to handle actions that caused the creation of the scene, for example, to respond to a quick action selected by the user.
+         */
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let viewController = ViewController()
+        let rootViewController = ViewController()
+        let navigationController = UINavigationController(rootViewController: rootViewController)
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = viewController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
     }

@@ -8,9 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var navigationButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray4
         
         // Button 생성
         let button = UIButton(type: .system)
@@ -29,11 +31,33 @@ class ViewController: UIViewController {
         
         // Button 터치 이벤트 실행 메서드 설정
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        
+        navigationButton = UIButton(type: .system)
+        view.addSubview(navigationButton)
+        navigationButton.setTitle("Go To Nav Controller", for: .normal)
+        navigationButton.backgroundColor = .white
+        navigationButton.setTitleColor(.black, for: .normal)
+        navigationButton.frame = CGRect(x: 100, y: 200, width: 200, height: 52)
+        navigationButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        title = "ee"
     }
     
     // Button 터치 이벤트 메서드 정의
-    @objc func buttonPressed(_ sender: UIButton) {
+    @objc private func buttonPressed(_ sender: UIButton) {
         sender.setTitle("클릭되었습니다.", for: .normal)
+    }
+    
+    @objc private func didTapButton() {
+        let rootVC = SecondViewController()
+        let navVC = UINavigationController(rootViewController: rootVC)
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: true)
     }
 }
 
+class SecondViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .systemRed
+    }
+}
