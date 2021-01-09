@@ -127,13 +127,13 @@ class ViewController: UIViewController {
         intervalValueLabel.text = "\(Int(sender.value))분마다"
     }
     
-    @objc private func submit(_ sender: Any) {
-        let rvc = ReadViewContoller()
-        rvc.email = emailTextField.text
-        rvc.updateSwitch = updateSwitch.isOn
-        rvc.intervalValue = intervalStepper.value
-        navigationController?.pushViewController(rvc, animated: true)
-    }
+//    @objc private func submit(_ sender: Any) {
+//        let rvc = ReadViewContoller()
+//        rvc.email = emailTextField.text
+//        rvc.updateSwitch = updateSwitch.isOn
+//        rvc.intervalValue = intervalStepper.value
+//        navigationController?.pushViewController(rvc, animated: true)
+//    }
 }
 
 class SecondViewController: UIViewController {
