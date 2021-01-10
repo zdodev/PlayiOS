@@ -12,7 +12,6 @@
 		41F1DE7B25A21C4800C2C5A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F1DE7A25A21C4800C2C5A5 /* ViewController.swift */; };
 		41F1DE8025A21C4900C2C5A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41F1DE7F25A21C4900C2C5A5 /* Assets.xcassets */; };
 		41F1DE8325A21C4900C2C5A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F1DE8125A21C4900C2C5A5 /* LaunchScreen.storyboard */; };
-		41FC571725A84FF50079B926 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FC571625A84FF50079B926 /* ReadViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +22,6 @@
 		41F1DE7F25A21C4900C2C5A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41F1DE8225A21C4900C2C5A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41F1DE8425A21C4900C2C5A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41FC571625A84FF50079B926 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +57,6 @@
 				41F1DE7625A21C4800C2C5A5 /* AppDelegate.swift */,
 				41F1DE7825A21C4800C2C5A5 /* SceneDelegate.swift */,
 				41F1DE7A25A21C4800C2C5A5 /* ViewController.swift */,
-				41FC571625A84FF50079B926 /* ReadViewController.swift */,
 				41F1DE7F25A21C4900C2C5A5 /* Assets.xcassets */,
 				41F1DE8125A21C4900C2C5A5 /* LaunchScreen.storyboard */,
 				41F1DE8425A21C4900C2C5A5 /* Info.plist */,
@@ -138,7 +135,6 @@
 			files = (
 				41F1DE7B25A21C4800C2C5A5 /* ViewController.swift in Sources */,
 				41F1DE7725A21C4800C2C5A5 /* AppDelegate.swift in Sources */,
-				41FC571725A84FF50079B926 /* ReadViewController.swift in Sources */,
 				41F1DE7925A21C4800C2C5A5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
