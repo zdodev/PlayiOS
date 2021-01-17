@@ -12,7 +12,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // 1. Entry Point
     static func main() {
-        
+        print("call... main()")
+        // 2. UIApplicationMain(_:_:_:_:)
+        print("call... UIApplicationMain(_:_:_:_:)")
+        UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(AppDelegate.self))
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
