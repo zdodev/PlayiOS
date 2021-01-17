@@ -17,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("call... UIApplicationMain(_:_:_:_:)")
         UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(AppDelegate.self))
     }
+    
+    // 3. application(_:willFinishLaunchingWithOptions:)
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        print("call... application(_:willFinishLaunchingWithOptions:)")
+        return true
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
