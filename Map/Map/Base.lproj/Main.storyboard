@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="M9s-OP-hJb">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="M9s-OP-hJb">
                                 <rect key="frame" x="20" y="44" width="388" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="현재위치"/>
                                     <segment title="폴리텍대학"/>
@@ -28,20 +27,23 @@
                                     <action selector="sgChangeLocation:" destination="BYZ-38-t0r" eventType="valueChanged" id="0C4-0d-lVc"/>
                                 </connections>
                             </segmentedControl>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fqu-FR-m4H">
-                                <rect key="frame" x="20" y="83" width="388" height="719"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fqu-FR-m4H">
+                                <rect key="frame" x="20" y="83" width="388" height="739"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWY-Mi-Vfi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWY-Mi-Vfi">
                                 <rect key="frame" x="20" y="871" width="388" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7y1-GT-DQF"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf9-58-xDq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf9-58-xDq">
                                 <rect key="frame" x="20" y="842" width="388" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ECw-Fv-4fU"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,6 +51,21 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fqu-FR-m4H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4Pz-Sc-vYX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M9s-OP-hJb" secondAttribute="trailing" constant="20" id="FgY-Cx-H6X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fqu-FR-m4H" secondAttribute="trailing" constant="20" id="GfW-cM-HkD"/>
+                            <constraint firstItem="Lf9-58-xDq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="HZr-rS-JEe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aWY-Mi-Vfi" secondAttribute="trailing" constant="20" id="SWE-It-KgB"/>
+                            <constraint firstItem="M9s-OP-hJb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Svc-8C-dv1"/>
+                            <constraint firstItem="Lf9-58-xDq" firstAttribute="top" secondItem="fqu-FR-m4H" secondAttribute="bottom" constant="20" id="Tzc-hM-XnO"/>
+                            <constraint firstItem="aWY-Mi-Vfi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Zy1-JQ-5Mv"/>
+                            <constraint firstItem="fqu-FR-m4H" firstAttribute="top" secondItem="M9s-OP-hJb" secondAttribute="bottom" constant="8" symbolic="YES" id="hgo-uc-9H7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lf9-58-xDq" secondAttribute="trailing" constant="20" id="vfw-eR-EHI"/>
+                            <constraint firstItem="M9s-OP-hJb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="z8k-DM-h4Z"/>
+                            <constraint firstItem="aWY-Mi-Vfi" firstAttribute="top" secondItem="Lf9-58-xDq" secondAttribute="bottom" constant="8" symbolic="YES" id="zEB-9b-6AE"/>
+                            <constraint firstItem="aWY-Mi-Vfi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zIl-eq-ILM"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="lblLocationInfo1" destination="Lf9-58-xDq" id="ork-9d-oNP"/>
