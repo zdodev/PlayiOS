@@ -26,9 +26,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // 위치 데이터를 추적하기 위해 사용자에게 승인을 요청합니다.
         locationManager.requestWhenInUseAuthorization()
         // 위치 업데이트를 시작합니다.
-        locationManager.startUpdatingHeading()
+        locationManager.startUpdatingLocation()
         // 위치 보기 값을 true로 설정합니다.
         myMap.showsUserLocation = true
+//        locationManager.startUpdatingLocation()
     }
     
     func goLocation(latitudeVale: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span: Double) {
@@ -47,7 +48,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let pLocation = locations.last
         // 마지막 위치의 위도와 경도 값을 가지고 앞에서 만든 goLocation 함수를 호출합니다.
         // delta 갑슨 지도의 크기를 정하는데, 값이 작을수록 확대되는 효과가 있습니다. 1의 값보다 지도를 100배로 확대해서 보여 줄 것입니다.
+        print("ee")
         goLocation(latitudeVale: (pLocation?.coordinate.latitude)!, longitudeValue: (pLocation?.coordinate.longitude)!, delta: 0.01)
+        CLGeocoder().reverseGeocodeLocation(pLocation!) { (placemarks, error) in
+            let pm = placemarks!.first
+            let country = pm!.country
+            var address = country!
+            
+            if pm!.locality != nil {
+                address += " "
+                address += pm!.locality!
+            }
+            
+            if pm!.thoroughfare != nil {
+                address += " "
+                address += pm!.thoroughfare!
+            }
+            
+            self.lblLocationInfo1.text = "현재 위치"
+            self.lblLocationInfo2.text = address
+        }
+        
+        locationManager.stopUpdatingLocation()
     }
 
     @IBAction func sgChangeLocation(_ sender: UISegmentedControl) {
