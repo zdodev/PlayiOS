@@ -17,11 +17,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)
+        let a = UITableView()
+        a.
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -52,6 +58,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         print("Selected section \(indexPath.section) and row \(indexPath.row)")
+        print("Selected section \(indexPath.section) and item \(indexPath.item)")
     }
 }
 
