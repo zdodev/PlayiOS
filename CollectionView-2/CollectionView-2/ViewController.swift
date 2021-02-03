@@ -18,7 +18,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.dataSource = self
         view.addSubview(collectionView)
         let a = UITableView()
-        a.
+        
     }
     
     override func viewDidLayoutSubviews() {
