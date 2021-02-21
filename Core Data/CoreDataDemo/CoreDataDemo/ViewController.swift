@@ -81,6 +81,40 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Selected Person
+        let person = self.items![indexPath.row]
+        
+        // Create alert
+        let alert = UIAlertController(title: "Edit Person", message: "Edit name:", preferredStyle: .alert)
+        alert.addTextField()
+        
+        let textfield = alert.textFields![0]
+        textfield.text = person.name
+        
+        // Configure button handler
+        let saveButton = UIAlertAction(title: "Save", style: .default) { action in
+            // Get the textfield for the alert
+            let textfield = alert.textFields![0]
+            
+            // TODO: Edit name property of person object
+            person.name = textfield.text
+            
+            // TODO: Save the data
+            do {
+                try self.context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+            // TODO: Re-fresh the data
+            self.fetchPeople()
+        }
+        
+        alert.addAction(saveButton)
+        present(alert, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completionHandler in
             // TODO: Which person to remove
@@ -88,7 +122,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
             // TODO: Remove the person
             self.context.delete(personToRemove)
-            
+             
             // TODO: Save the data
             do {
                 try self.context.save()
