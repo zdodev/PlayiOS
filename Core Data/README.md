@@ -23,3 +23,18 @@
 
 ## Versiong and Migration
 - 코어 데이터는 앱이 발전함에 따라 데이터 모델을 버전화하고 사용자 데이터를 마이그레이션하는 메커니즘이 포함되어 있습니다.
+
+## 참고 URL
+
+### Apple Core Data
+https://developer.apple.com/documentation/coredata
+
+### Core Data Model 만들기
+https://developer.apple.com/documentation/coredata/creating_a_core_data_model
+
+### Core Data 스택 설정
+
+https://developer.apple.com/documentation/coredata/setting_up_a_core_data_stack
+
+### Core Data Programming Guide
+https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreData/
