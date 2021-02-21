@@ -80,4 +80,26 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = person.name
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completionHandler in
+            // TODO: Which person to remove
+            let personToRemove = self.items![indexPath.row]
+            
+            // TODO: Remove the person
+            self.context.delete(personToRemove)
+            
+            // TODO: Save the data
+            do {
+                try self.context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+            // TODO: Re-fetch the data
+            self.fetchPeople()
+        }
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
 }
