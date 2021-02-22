@@ -49,3 +49,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension NSManagedObjectContext {
+    func saveContext() {
+        guard hasChanges else {
+            return
+        }
+        do {
+            try save()
+        } catch let error as NSError {
+            print("Error: \(error), \(error.userInfo)")
+        }
+    }
+}

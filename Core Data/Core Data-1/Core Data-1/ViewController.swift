@@ -46,11 +46,9 @@ final class ViewController: UITableViewController {
             newBook.subject = textField.text
             
             // 저장
-            do {
-                try self.context.save()
-            } catch {
-                print(error.localizedDescription)
-            }
+            self.context.saveContext()
+            
+            // 패치
             self.fetchItems()
         }
         alert.addAction(summitButton)
@@ -78,12 +76,9 @@ extension ViewController {
             self.context.delete(bookToRemove)
             
             // 저장
-            do {
-                try self.context.save()
-            } catch {
-                print(error.localizedDescription)
-            }
+            self.context.saveContext()
             
+            // 패치
             self.fetchItems()
         }
         
@@ -103,12 +98,10 @@ extension ViewController {
             // 이름 변경
             book.subject = textField.text
             
-            do {
-                try self.context.save()
-            } catch {
-                print(error.localizedDescription)
-            }
+            // 저장
+            self.context.saveContext()
             
+            // 패치
             self.fetchItems()
         }
         alert.addAction(updateButton)
