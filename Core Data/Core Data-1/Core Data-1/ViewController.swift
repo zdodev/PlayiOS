@@ -1,7 +1,8 @@
 import UIKit
+import CoreData
 
 final class ViewController: UITableViewController {
-    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var context: NSManagedObjectContext!
     private let rightBarButtonItem: UIBarButtonItem = {
         let barButtonItem = UIBarButtonItem(systemItem: .add)
         return barButtonItem

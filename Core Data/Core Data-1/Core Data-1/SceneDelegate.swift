@@ -7,6 +7,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowsScene = (scene as? UIWindowScene) else { return }
         
         let viewController = ViewController()
+        viewController.context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: viewController)
         window?.makeKeyAndVisible()
