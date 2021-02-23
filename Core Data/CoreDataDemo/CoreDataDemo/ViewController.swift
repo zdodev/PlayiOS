@@ -21,10 +21,41 @@ class ViewController: UIViewController {
         fetchPeople()
     }
     
+    func relationshipDemo() {
+        // Create a family
+        let family = Family(context: context)
+        family.name = "Abc Family"
+        
+        // Create a person
+        let person = Person(context: context)
+        person.name = "Maggie"
+//        person.family = family
+        
+        // Add person to family
+        family.addToPeople(person)
+        
+        // Save context
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     func fetchPeople() {
         // Fetch the data from Core Data to display in the tableview
         do {
-            items = try context.fetch(Person.fetchRequest())
+            let request = Person.fetchRequest() as NSFetchRequest<Person>
+            
+            // Set the filtering and sorting on the request
+//            let pred = NSPredicate(format: "name CONTAINS %@", "Ted")
+//            request.predicate = pred
+            
+            // Sorting
+//            let sort = NSSortDescriptor(key: "name", ascending: true)
+//            request.sortDescriptors = [sort]
+            
+            items = try context.fetch(request)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
