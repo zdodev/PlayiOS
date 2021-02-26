@@ -29,7 +29,12 @@
 ### Apple Core Data
 https://developer.apple.com/documentation/coredata
 
+### Core Data Programming Guide
+
+https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreData/KeyConcepts.html
+
 ### Core Data Model 만들기
+
 https://developer.apple.com/documentation/coredata/creating_a_core_data_model
 
 ### Core Data 스택 설정
