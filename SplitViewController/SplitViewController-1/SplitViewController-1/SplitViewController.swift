@@ -9,14 +9,8 @@ class SplitViewController: UISplitViewController {
         let secondViewController = UIViewController()
         secondViewController.view.backgroundColor = .systemRed
         
-//        viewControllers = [
-//            firstViewController,
-//            secondViewController
-//        ]
-        
         setViewController(firstViewController, for: .primary)
         setViewController(secondViewController, for: .secondary)
-//        viewco
         
         show(.primary)
     }
