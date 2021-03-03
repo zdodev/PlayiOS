@@ -35,7 +35,7 @@
             </objects>
             <point key="canvasLocation" x="641" y="1374"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Monster List-->
         <scene sceneID="OoV-aj-f1y">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="Vwe-tn-F62" customClass="MasterViewController" customModule="SplitViewController_2" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,7 +67,7 @@
                             <outlet property="delegate" destination="Vwe-tn-F62" id="o9T-Xa-OcJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Cur-d7-AZJ"/>
+                    <navigationItem key="navigationItem" title="Monster List" id="Cur-d7-AZJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="km3-LN-e72" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,7 +76,6 @@
         <!--Navigation Controller-->
         <scene sceneID="mhV-yY-N3g">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oWx-nk-ysB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="HBU-7Y-mEO" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="A5S-Sq-wa1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -86,6 +85,7 @@
                         <segue destination="Vwe-tn-F62" kind="relationship" relationship="rootViewController" id="Ebo-IQ-I9E"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oWx-nk-ysB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="642" y="645"/>
         </scene>
