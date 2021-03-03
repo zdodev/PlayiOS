@@ -1,22 +1,22 @@
-//
-//  SceneDelegate.swift
-//  SplitViewController-2
-//
-//  Created by Zero DotOne on 2021/03/02.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let splitViewController = window?.rootViewController as? UISplitViewController,
+              let leftNavController = splitViewController.viewControllers.first as? UINavigationController,
+              let masterViewController = leftNavController.viewControllers.first as? MasterViewController,
+              let rightNavController = splitViewController.viewControllers.last as? UINavigationController,
+              let detailViewController = rightNavController.viewControllers.last as? DetailViewController
+        else {
+            fatalError()
+        }
+        
+        // masterViewController에 존재하는 모델에 접근
+        let firstMonster = masterViewController.monsters.first
+        // detailViewcontroller에 모델 전달
+        detailViewController.monster = firstMonster
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
