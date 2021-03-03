@@ -11,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         else {
             fatalError()
         }
-        splitViewController.preferredPrimaryColumnWidthFraction = 1 / 5
+        splitViewController.preferredPrimaryColumnWidthFraction = 1 / 3
         splitViewController.preferredDisplayMode = .oneBesideSecondary
         
         // masterViewController에 존재하는 모델에 접근
