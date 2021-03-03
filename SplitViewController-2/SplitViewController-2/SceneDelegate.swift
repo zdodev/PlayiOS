@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let firstMonster = masterViewController.monsters.first
         // detailViewcontroller에 모델 전달
         detailViewController.monster = firstMonster
+        masterViewController.delegate = detailViewController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

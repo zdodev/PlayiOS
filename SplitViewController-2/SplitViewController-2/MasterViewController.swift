@@ -1,5 +1,9 @@
 import UIKit
 
+protocol MonsterSelectionDelegate: class {
+    func monsterSelected(_ newMonster: Monster)
+}
+
 class MasterViewController: UITableViewController {
     let monsters = [
         Monster(name: "Cat-Bot", description: "MEE-OW", iconName: "meetcatbot", weapon: .sword),
@@ -10,9 +14,7 @@ class MasterViewController: UITableViewController {
         Monster(name: "Mini-Tomato-Bot", description: "Extremely Handsome", iconName: "meetminitomatobot", weapon: .ninjaStar)
     ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    weak var delegate: MonsterSelectionDelegate?
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         monsters.count
@@ -23,5 +25,14 @@ class MasterViewController: UITableViewController {
         let monster = monsters[indexPath.row]
         cell.textLabel?.text = monster.name
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedMonster = monsters[indexPath.row]
+        delegate?.monsterSelected(selectedMonster)
+        
+        if let detailViewController = delegate as? DetailViewController {
+            splitViewController?.showDetailViewController(detailViewController, sender: nil)
+        }
     }
 }

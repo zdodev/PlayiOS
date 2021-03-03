@@ -21,3 +21,9 @@ final class DetailViewController: UIViewController {
         weaponImageView.image = monster?.weapon.image
     }
 }
+
+extension DetailViewController: MonsterSelectionDelegate {
+    func monsterSelected(_ newMonster: Monster) {
+        monster = newMonster
+    }
+}
