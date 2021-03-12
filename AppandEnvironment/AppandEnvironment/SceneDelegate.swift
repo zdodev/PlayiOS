@@ -2,7 +2,6 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -10,6 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
         window?.rootViewController = ViewController()
+        print("call... scene(_:willConnectTo:options:)")
     }
     
     // MARK: Scene Lifecycle
@@ -27,13 +27,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         print("call... sceneDidBecomeActive(_:)")
     }
 
-    func sceneDidDisconnect(_ scene: UIScene) {
-    }
-
     func sceneWillResignActive(_ scene: UIScene) {
+        print("call... sceneWillResignActive(_:)")
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
+        print("call... sceneDidEnterBackground(_:)")
+    }
+    
+    func sceneDidDisconnect(_ scene: UIScene) {
+        print("call... sceneDidDisconnect(_:)")
     }
 }
 
