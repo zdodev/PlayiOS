@@ -6,7 +6,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    private func setupUI() {
         view.addSubview(button)
         
         button.setTitle("Button", for: .normal)
