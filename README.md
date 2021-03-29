@@ -1,6 +1,10 @@
 # PlayiOS
 iOS 놀이공간입니다.
 
+### Drag and Drop
+
+-   Drag and drop 사용해보기.
+
 ### Auto Layout
 
 -   코드로 auto layout 구현하기(auto layout programmatically)
