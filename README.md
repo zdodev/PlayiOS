@@ -1,6 +1,10 @@
 # PlayiOS
 iOS 놀이공간입니다.
 
+### Collection View
+
+-   Collection View 사용해보기.
+
 ### Drag and Drop
 
 -   Drag and drop 사용해보기.
