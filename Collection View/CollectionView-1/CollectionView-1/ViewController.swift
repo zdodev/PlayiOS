@@ -7,6 +7,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(MyCollectionViewCell.nib(), forCellWithReuseIdentifier: MyCollectionViewCell.identifier)
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 120, height: 120)
+        collectionView.collectionViewLayout = layout
     }
 }
 
@@ -35,13 +43,16 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Creating Cells
         // 식별자로 찾은 재사용 가능한 셀을 대기열 큐에서 가져옵니다.
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-//        return cell
-        UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
+        cell.configure(with: UIImage(named: "bird")!)
+        print("cellForItemAt: \(indexPath)")
+        return cell
     }
 }
 
 // 플로우 레이아웃을 조정하여 그리드 기반의 레이아웃을 구현하기 위한 프로토콜
 extension ViewController: UICollectionViewDelegateFlowLayout {
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: 120, height: 120)
+    }
 }
