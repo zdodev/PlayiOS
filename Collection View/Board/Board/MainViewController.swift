@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
         let safeArea = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
             todoCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            todoCollectionView.widthAnchor.constraint(equalToConstant: view.frame.width / 3),
+            todoCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33),
             todoCollectionView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             todoCollectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
         ])
