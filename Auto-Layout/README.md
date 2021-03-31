@@ -29,7 +29,13 @@ myTableView.rowHeight = UITableView.automaticDimension
 myTableView.estimatedRowHeight = 120
 ```
 
+### 뷰 3등분하기
 
+3개의 뷰 생성를 생성하여 상위 뷰(view)의 width를 삼등분하여 각 뷰의 x에 대입한 후 높이는 상위 뷰의 높이를 그대로 대입했다. 너비도 마찬가지로 상위 뷰의 너비를 삼등분하여 각 뷰의 너비에 대입했다.
+
+
+
+<img width="301" alt="1" src="https://user-images.githubusercontent.com/67548251/113147139-6e066180-926b-11eb-842b-386028eabe53.png">
 
 다음 주제는 auto layout을 설정하는 클래스 살펴보기.
 

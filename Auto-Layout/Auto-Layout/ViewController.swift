@@ -4,8 +4,15 @@ class ViewController: UIViewController {
     let button = UIButton()
     let label = UILabel()
     
+    let firstView = UIView()
+    let secondView = UIView()
+    let thirdView = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        setupUI()
+        setupThreeUIView()
     }
     
     private func setupUI() {
@@ -41,6 +48,20 @@ class ViewController: UIViewController {
         // label 오른쪽과 view의 오른쪽의 차이를 -30만큼 두고 활성화
         // 기준이 label 이므로 30만큼 차이를 주면 view의 오른쪽에서 오른쪽 방향으로 30만큼 더 커진 label이 설정되므로 음수로 설정
         label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+    }
+    
+    private func setupThreeUIView() {
+        firstView.frame = CGRect(x: 0, y: 0, width: view.frame.width / 3, height: view.frame.height)
+        firstView.backgroundColor = .cyan
+        view.addSubview(firstView)
+        
+        secondView.frame = CGRect(x: view.frame.width / 3, y: 0, width: view.frame.width / 3, height: view.frame.height)
+        secondView.backgroundColor = .systemGreen
+        view.addSubview(secondView)
+        
+        thirdView.frame = CGRect(x: view.frame.width / 3 * 2, y: 0, width: view.frame.width / 3, height: view.frame.height)
+        thirdView.backgroundColor = .systemBlue
+        view.addSubview(thirdView)
     }
 }
 
