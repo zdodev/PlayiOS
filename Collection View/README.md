@@ -45,6 +45,16 @@ You also use the collection view object to manage the selected items, although f
 
 gesture recognizer 또는 터치 이벤트에 의해 구동되는 대화형 전환을 만들려면 `startInteractiveTransition(to:completion:)` 메서드를 사용하여 레이아웃 객체를 변경해야 합니다. 이 메서드는 gesture recognizer 또는 터치 이벤트 코드와 함께 작동하여 전환 진행률을 추적하는 중간 레이아웃 객체를 설치합니다. 이벤트 처리 코드에서 전환이 완료되었다고 판단하면 `finishInteractiveTransition()` 또는 `cancelInteractiveTransition()` 메서드를 호출하여 중간 레이아웃 객체를 제거하고 원하는 대상 레이아웃 객체를 설치합니다.
 
+## Issues
+
+---
+
+Collection view를 `UICollectionView()` 메서드로 초기화하면 에러가 발생합니다.
+
+>   UICollectionView must be initialized with a non-nil layout parameter
+
+`layout` 파라미터가 없어서 발생한 에러로 `collectionViewLayout` 파라미터를 전달하여 생성하면 에러를 방지할 수 있습니다.
+
 ### 참고 URL
 
 ---
