@@ -45,6 +45,19 @@ You also use the collection view object to manage the selected items, although f
 
 gesture recognizer 또는 터치 이벤트에 의해 구동되는 대화형 전환을 만들려면 `startInteractiveTransition(to:completion:)` 메서드를 사용하여 레이아웃 객체를 변경해야 합니다. 이 메서드는 gesture recognizer 또는 터치 이벤트 코드와 함께 작동하여 전환 진행률을 추적하는 중간 레이아웃 객체를 설치합니다. 이벤트 처리 코드에서 전환이 완료되었다고 판단하면 `finishInteractiveTransition()` 또는 `cancelInteractiveTransition()` 메서드를 호출하여 중간 레이아웃 객체를 제거하고 원하는 대상 레이아웃 객체를 설치합니다.
 
+## List Layout 구성하기
+
+```swift
+// Creating a List Layout
+// 리스트 레이아웃을 만들기 위한 구성입니다.
+let config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+// Creating a List Layout
+// 지정된 구성의 리스트 섹션만 포함하는 컴포지션 레이아웃을 만듭니다.
+return UICollectionViewCompositionalLayout.list(using: config)
+```
+
+
+
 ## Issues
 
 ---
