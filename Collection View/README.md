@@ -39,13 +39,17 @@ You also use the collection view object to manage the selected items, although f
 
 ## Layouts
 
+---
+
 레이아웃 객체는 컬렉션 뷰에서 내용의 시각적 배열을 정의합니다. `UICollectionViewLayout` 클래스의 하위 클래스인 레이아웃 객체는 모든 셀과 컬렉션 뷰 내부의 supplementary 뷰의 구성과 위치를 정의합니다. 레이아웃 객체는 위치를 정의하지만, 해당 뷰에 실제로 해당 정보를 적용하지는 않습니다. 컬렉션 뷰는 셀 및 supplementary 뷰를 생성할 때 컬렉션 뷰와 데이터 소스 객체간의 정보가 포함되기 해당 뷰에 레이아웃 정보를 적용합니다. 레이아웃 객체는 항목 데이터 대신 시각적 정보를 제공한다는 점을 제외하면 다른 데이터 소스와 같습니다.
 
 일반적으로 컬렉션 뷰를 만들 때 레이아웃 객체를 지정하지만, 컬렉션 뷰의 레이아웃을 동적으로 변경할 수도 있습니다. 이 레이아웃 객체는 `collectionViewLayout` 프로퍼티에 저장됩니다. 이 프로퍼티를 변경하면 변경사항에 대한 애니메이션 효과 없이 레이아웃이 즉시 업데이트됩니다. 변경사항에 애니메이션 효과를 적용하려면 대신에 `setCollectionViewLayout(_:animated:completion:)` 메서드를 호출해야 합니다.
 
 gesture recognizer 또는 터치 이벤트에 의해 구동되는 대화형 전환을 만들려면 `startInteractiveTransition(to:completion:)` 메서드를 사용하여 레이아웃 객체를 변경해야 합니다. 이 메서드는 gesture recognizer 또는 터치 이벤트 코드와 함께 작동하여 전환 진행률을 추적하는 중간 레이아웃 객체를 설치합니다. 이벤트 처리 코드에서 전환이 완료되었다고 판단하면 `finishInteractiveTransition()` 또는 `cancelInteractiveTransition()` 메서드를 호출하여 중간 레이아웃 객체를 제거하고 원하는 대상 레이아웃 객체를 설치합니다.
 
-## List Layout 구성하기
+## 리스트 레이아웃 구성하기
+
+---
 
 ```swift
 // Creating a List Layout
@@ -56,7 +60,16 @@ let config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
 return UICollectionViewCompositionalLayout.list(using: config)
 ```
 
+## 리스트 레이아웃 구성을 위한 `UICollectionLayoutListConfiguration`
 
+리스트 레이아웃 생성을 위한 구성을 담고 있는 타입입니다.
+
+다음과 같은 구성을 할 수 있습니다.
+
+-   레이아웃 외관에 대한 구성
+-   외관에 대한 구성
+-   헤더와 푸터에 대한 구성
+-   스와이프 액션에 대한 구성
 
 ## Issues
 
