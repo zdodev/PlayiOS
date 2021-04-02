@@ -71,6 +71,20 @@ return UICollectionViewCompositionalLayout.list(using: config)
 -   헤더와 푸터에 대한 구성
 -   스와이프 액션에 대한 구성
 
+## Collection View List Layout 구성요소
+
+-   UICollectionView
+-   UICollectionViewDiffableDataSource
+-   NSDiffableDataSourceSnapshot
+-   UICollectionLayoutListConfiguration
+-   UICollectionViewCompositionalLayout
+-   NSDiffableDataSourceSnapshot
+-   UICollectionViewListCell
+-   UICellConfigurationState
+-   UIContentConfiguration
+-   UICellConfiguration
+-   UICellConfigurationState
+
 ## Issues
 
 ---
