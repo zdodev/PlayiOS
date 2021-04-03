@@ -85,6 +85,29 @@ return UICollectionViewCompositionalLayout.list(using: config)
 -   UICellConfiguration
 -   UICellConfigurationState
 
+## Content View
+
+------
+
+A content view is a UIView subclass that conforms to the UIContentView protocol. It defines the layout and appearance of the custom cell. It is also in charge of displaying the correct data and appearance based on the provided content configuration.
+
+## Content Configuration
+
+------
+
+A content configuration will be the content view's view model and it is conforms to the UIContentConfiguration protocol. On the of that, it is also in charge of generating a content view instance for the custom cell. Thus, you can treat it as a bridge that links up both content view and custom cell.
+
+## Custom Cell
+
+------
+
+A custom cell of a UICollectionView list is a subclass of UICollectionViewListCell. It has only 1 task - generate a properly configured content configuration object based on the state (selected, highlighted, disabled, etc.) of the cell and then assign the configuration to itself.
+
+## 레이아웃 제약조건 위치?
+
+-   Custom cell?
+-   Content view?
+
 ## Issues
 
 ---
