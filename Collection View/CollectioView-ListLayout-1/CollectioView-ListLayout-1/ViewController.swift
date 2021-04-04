@@ -28,10 +28,19 @@ class ViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
+        // UICollectionView.CellRegistration 생성
+        // 셀은 UICollectionViewListCell
+        // Configuration은 defaultContentConfiguration
+        // 모델은 User
+        // CellRegistration에서는
         let registration = UICollectionView.CellRegistration<UICollectionViewListCell, User> {
             cell, indexPath, user in
             var content = cell.defaultContentConfiguration()
             content.text = user.name
+            content.secondaryText = "까꿍"
+            content.image = UIImage(named: "bird")
+            content.imageProperties.maximumSize = CGSize(width: 30, height: 50)
+            cell.accessories = [.disclosureIndicator()]
             cell.contentConfiguration = content
         }
         
