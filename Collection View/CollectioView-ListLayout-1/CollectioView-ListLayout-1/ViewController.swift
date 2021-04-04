@@ -33,8 +33,9 @@ class ViewController: UIViewController {
         // Configuration은 defaultContentConfiguration
         // 모델은 User
         // CellRegistration에서는
-        let registration = UICollectionView.CellRegistration<UICollectionViewListCell, User> {
+        let registration = UICollectionView.CellRegistration<MyCell, User> {
             cell, indexPath, user in
+            // 디폴트 configuration
             var content = cell.defaultContentConfiguration()
             content.text = user.name
             content.secondaryText = "까꿍"
@@ -73,5 +74,21 @@ class ViewController: UIViewController {
 extension ViewController {
     enum Section {
         case main
+    }
+}
+
+class MyCell: UICollectionViewListCell {
+    var named: String? = nil
+    
+    func update(_ name: String) {
+        named = name
+    }
+    
+    override func updateConfiguration(using state: UICellConfigurationState) {
+        super.updateConfiguration(using: state)
+        
+        var newContentConfiguration = defaultContentConfiguration()
+        newContentConfiguration.text = "짜잔"
+        contentConfiguration = newContentConfiguration
     }
 }
