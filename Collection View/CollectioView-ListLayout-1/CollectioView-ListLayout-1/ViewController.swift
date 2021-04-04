@@ -1,14 +1,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let mainView = MainView()
-    var dataSource: UICollectionViewDiffableDataSource<Section, User>?
-    
-    override func loadView() {
-        super.loadView()
-        
-        view = mainView
-    }
+    var collectionView: UICollectionView!
+    var dataSource: UICollectionViewDiffableDataSource<Section, User>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +11,23 @@ class ViewController: UIViewController {
         getUsers()
     }
     
+    func createLayout() -> UICollectionViewLayout {
+        let configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        return UICollectionViewCompositionalLayout.list(using: configuration)
+    }
+    
     func setupCollectionView() {
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        view.addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
         let registration = UICollectionView.CellRegistration<UICollectionViewListCell, User> {
             cell, indexPath, user in
             var content = cell.defaultContentConfiguration()
@@ -25,7 +35,7 @@ class ViewController: UIViewController {
             cell.contentConfiguration = content
         }
         
-        dataSource = UICollectionViewDiffableDataSource<Section, User>(collectionView: mainView.collectionView) {
+        dataSource = UICollectionViewDiffableDataSource<Section, User>(collectionView: collectionView) {
             collectionView, indexPath, user in
             collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: user)
         }

@@ -1,7 +1,6 @@
 import UIKit
 
 class MainViewController: UIViewController {
-//    private let todoCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private var todoCollectionView: UICollectionView! = nil
     
     enum Section {
@@ -11,7 +10,6 @@ class MainViewController: UIViewController {
     
     private struct Item: Hashable {
         let title: String?
-        private let identifier = UUID()
     }
     
     // Providing the Collection View Data
@@ -34,17 +32,20 @@ class MainViewController: UIViewController {
     
     // 레이아웃 생성
     private func createLayout() -> UICollectionViewLayout {
-        return UICollectionViewCompositionalLayout { section, layoutEnvironment in
-            // Creating a List Layout
-            // 리스트 레이아웃을 만들기 위한 구성입니다.
-            var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-            // 사용할 헤더 타입에 대한 정보입니다.
-            config.headerMode = .firstItemInSection
-            // Creating a List Layout
-            // 지정된 구성의 리스트 섹션만 포함하는 컴포지션 레이아웃을 만듭니다.
-            //        return UICollectionViewCompositionalLayout.list(using: config)
-            return NSCollectionLayoutSection.list(using: config, layoutEnvironment: layoutEnvironment)
-        }
+        let config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        return UICollectionViewCompositionalLayout.list(using: config)
+//        return UICollectionViewCompositionalLayout { section, layoutEnvironment in
+//            // Creating a List Layout
+//            // 리스트 레이아웃을 만들기 위한 구성입니다.
+//            var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+//            // 사용할 헤더 타입에 대한 정보입니다.
+//            config.headerMode = .firstItemInSection
+//            // Creating a List Layout
+//            // 지정된 구성의 리스트 섹션만 포함하는 컴포지션 레이아웃을 만듭니다.
+////                    return UICollectionViewCompositionalLayout.list(using: config)
+////            return NSCollectionLayoutSection.list(using: config, layoutEnvironment: layoutEnvironment)
+//            
+//        }
     }
     
     private func configureTodoCollectionView() {
