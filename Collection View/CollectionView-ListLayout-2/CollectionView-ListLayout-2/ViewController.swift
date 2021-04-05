@@ -2,12 +2,9 @@ import UIKit
 
 class ViewController: UIViewController {
     private let item = [
-        Item(name: "list", address: "cell"),
-        Item(name: "cell", address: "list"),
-        Item(name: "joe", address: "mmo"),
-        Item(name: "tea", address: "hong"),
-        Item(name: "coffee", address: "americano"),
-        Item(name: "zdo", address: "dev"),
+        Item(name: "list", address: "cell", date: "2020-01-01"),
+        Item(name: "cell", address: "list", date: "2020-01-01"),
+        Item(name: "joe", address: "mmo", date: "2020-01-01"),
     ]
     
     private var collectionView: UICollectionView!
@@ -56,6 +53,7 @@ private enum Section {
 private struct Item: Hashable {
     let name: String
     let address: String
+    let date: String
 }
 
 private class MyCell: UICollectionViewListCell {
@@ -73,6 +71,7 @@ private class MyCell: UICollectionViewListCell {
     }
     
     private lazy var listContentView = UIListContentView(configuration: defaultListContentConfiguration())
+    private lazy var date = UILabel(frame: .zero)
     
     override func updateConfiguration(using state: UICellConfigurationState) {
         setupViewsIfNeeded()
@@ -81,17 +80,24 @@ private class MyCell: UICollectionViewListCell {
         content.text = item?.name
         content.secondaryText = item?.address
         listContentView.configuration = content
+        date.text = item?.date
     }
     
     private func setupViewsIfNeeded() {
         contentView.addSubview(listContentView)
+        contentView.addSubview(date)
         
         listContentView.translatesAutoresizingMaskIntoConstraints = false
+        date.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             listContentView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            listContentView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             listContentView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            listContentView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            listContentView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            
+            date.topAnchor.constraint(equalTo: listContentView.bottomAnchor),
+            date.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            date.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            date.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
 }
