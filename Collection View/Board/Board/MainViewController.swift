@@ -8,11 +8,11 @@ final class MainViewController: UIViewController {
     private var todoCollectionView: UICollectionView! = nil
     
     private let item = [
-        Item(title: "나는 최고다."),
-        Item(title: "너는 최고다."),
-        Item(title: "우리는 최고다."),
-        Item(title: "zdo"),
-        Item(title: "😎"),
+        Item(title: "나는 최고다.", description: "정말 최고다.", date: "2021-01-01"),
+        Item(title: "너는 최고다.", description: "너무 최고다.", date: "2021-01-01"),
+        Item(title: "우리는 최고다.", description: "진짜 최고다.", date: "2021-01-01"),
+        Item(title: "zdo", description: "3%", date: "2021-01-01"),
+        Item(title: "😎", description: "전설의 시작", date: "2021-01-01"),
     ]
     
     // Providing the Collection View Data
@@ -77,32 +77,54 @@ final class MainViewController: UIViewController {
 }
 
 private struct Item: Hashable {
-    let title: String?
+    let title: String
+    let description: String
+    let date: String
 }
 
 private class MemoCell: UICollectionViewListCell {
     private var item: Item!
-    private var title = UILabel()
+    private let titleLabel = UILabel()
+    private let descriptionLabel = UILabel()
+    private let dateLabel = UILabel()
     
     func updateWithItem(_ newItem: Item) {
         item = newItem
     }
     
     override func updateConfiguration(using state: UICellConfigurationState) {
+        setupConstraints()
         setupUI()
-        title.text = item.title
+        titleLabel.text = item.title
+        descriptionLabel.text = item.description
+        dateLabel.text = item.date
+    }
+    
+    private func setupConstraints() {
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(descriptionLabel)
+        contentView.addSubview(dateLabel)
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+            
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+            
+            dateLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8),
+            dateLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor),
+            dateLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            dateLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
+        ])
     }
     
     private func setupUI() {
-        contentView.addSubview(title)
-        
-        title.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: contentView.topAnchor),
-            title.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-        ])
     }
 }
