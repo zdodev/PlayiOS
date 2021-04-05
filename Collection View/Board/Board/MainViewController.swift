@@ -6,6 +6,7 @@ final class MainViewController: UIViewController {
     }
     
     private var todoCollectionView: UICollectionView! = nil
+    private var doingCollectionView: UICollectionView! = nil
     
     private let item = [
         Item(title: "나는 최고다.", description: "정말 최고다.", date: "2021-01-01"),
@@ -18,13 +19,14 @@ final class MainViewController: UIViewController {
     // Providing the Collection View Data
     // 데이터를 관리하고 컬렉션 뷰에 셀을 제공하는데 사용합니다.
     private var dataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
+    private var doingDataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
         configureNavigationBar()
-        configureTodoCollectionView()
+        configureCollectionView()
         configureDataSourece()
     }
     
@@ -39,17 +41,27 @@ final class MainViewController: UIViewController {
         return UICollectionViewCompositionalLayout.list(using: config)
     }
     
-    private func configureTodoCollectionView() {
+    private func configureCollectionView() {
         todoCollectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         view.addSubview(todoCollectionView)
         
         todoCollectionView.translatesAutoresizingMaskIntoConstraints = false
         let safeArea = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
+            todoCollectionView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            todoCollectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
             todoCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             todoCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33),
-            todoCollectionView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            todoCollectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
+        ])
+        
+        doingCollectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        view.addSubview(doingCollectionView)
+        doingCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            doingCollectionView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            doingCollectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+            doingCollectionView.leadingAnchor.constraint(equalTo: todoCollectionView.trailingAnchor),
+            doingCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33),
         ])
     }
     
@@ -67,12 +79,17 @@ final class MainViewController: UIViewController {
             collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
         }
         
+        doingDataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: doingCollectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
+            collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+        })
+        
         // Data
         // 특정 시점의 뷰에서 데이터 상태를 나타냅니다.
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections([.main])
         snapshot.appendItems(item, toSection: .main)
         dataSource.apply(snapshot)
+        doingDataSource.apply(snapshot)
     }
 }
 
