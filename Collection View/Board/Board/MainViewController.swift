@@ -19,7 +19,7 @@ final class MainViewController: UIViewController {
     
     // Providing the Collection View Data
     // 데이터를 관리하고 컬렉션 뷰에 셀을 제공하는데 사용합니다.
-    private var dataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
+    private var todoDataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
     private var doingDataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
     private var doneDataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
     
@@ -86,7 +86,7 @@ final class MainViewController: UIViewController {
         
         // Providing the Collection View Data
         // 데이터를 관리하고 컬렉션 뷰에 셀을 제공하는데 사용합니다.
-        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: todoCollectionView) {
+        todoDataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: todoCollectionView) {
             (collectionView, indexPath, item) -> UICollectionViewCell? in
             collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
         }
@@ -104,7 +104,7 @@ final class MainViewController: UIViewController {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections([.main])
         snapshot.appendItems(item, toSection: .main)
-        dataSource.apply(snapshot)
+        todoDataSource.apply(snapshot)
         doingDataSource.apply(snapshot)
         doneDataSource.apply(snapshot)
     }
