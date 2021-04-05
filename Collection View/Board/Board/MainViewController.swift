@@ -126,5 +126,9 @@ private class MemoCell: UICollectionViewListCell {
     }
     
     private func setupUI() {
+        titleLabel.font = .boldSystemFont(ofSize: 20)
+        
+        descriptionLabel.textColor = .systemGray
+        descriptionLabel.numberOfLines = 3
     }
 }
