@@ -35,14 +35,6 @@ class ViewController: UIViewController {
         // CellRegistration에서는
         let registration = UICollectionView.CellRegistration<MyCell, User> {
             cell, indexPath, user in
-            // 디폴트 configuration
-//            var content = cell.defaultContentConfiguration()
-//            content.text = user.name
-//            content.secondaryText = "까꿍"
-//            content.image = UIImage(named: "bird")
-//            content.imageProperties.maximumSize = CGSize(width: 30, height: 50)
-//            cell.accessories = [.disclosureIndicator()]
-//            cell.contentConfiguration = content
             cell.update(user.name)
         }
         
@@ -80,6 +72,7 @@ extension ViewController {
 
 class MyCell: UICollectionViewListCell {
     var named: String? = nil
+    var newContentConfiguration = MyContentConfiguration()
     
     func update(_ name: String) {
         named = name
@@ -88,9 +81,8 @@ class MyCell: UICollectionViewListCell {
     override func updateConfiguration(using state: UICellConfigurationState) {
         super.updateConfiguration(using: state)
 
-//        var newContentConfiguration = defaultContentConfiguration()
-        var newContentConfiguration = MyContentConfiguration()
-        newContentConfiguration.name = "짜잔"
+//        var newContentConfiguration = MyContentConfiguration()
+        newContentConfiguration.name = named
         contentConfiguration = newContentConfiguration
     }
 }
@@ -108,14 +100,16 @@ struct MyContentConfiguration: UIContentConfiguration {
 }
 
 class MyContentView: UIView, UIContentView {
-    var viewview: UIView!
+    var label: UILabel!
     var currentConfiguration: UIContentConfiguration!
     
     var configuration: UIContentConfiguration {
         get {
-            currentConfiguration
+            print("get--\(currentConfiguration)")
+            return currentConfiguration
         }
         set {
+            print("set***\(newValue)")
             currentConfiguration = newValue
             setupView()
         }
@@ -124,8 +118,9 @@ class MyContentView: UIView, UIContentView {
     init(configuration: MyContentConfiguration) {
         super.init(frame: .zero)
         currentConfiguration = configuration
-        viewview = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        viewview.backgroundColor = .darkGray
+        label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
+        label.backgroundColor = .darkGray
+        label.text = configuration.name
         setupView()
     }
     
@@ -134,6 +129,6 @@ class MyContentView: UIView, UIContentView {
     }
     
     private func setupView() {
-        addSubview(viewview)
+        addSubview(label)
     }
 }
