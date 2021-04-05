@@ -7,6 +7,7 @@ final class MainViewController: UIViewController {
     
     private var todoCollectionView: UICollectionView! = nil
     private var doingCollectionView: UICollectionView! = nil
+    private var doneCollectionView: UICollectionView! = nil
     
     private let item = [
         Item(title: "나는 최고다.", description: "정말 최고다.", date: "2021-01-01"),
@@ -20,6 +21,7 @@ final class MainViewController: UIViewController {
     // 데이터를 관리하고 컬렉션 뷰에 셀을 제공하는데 사용합니다.
     private var dataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
     private var doingDataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
+    private var doneDataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +65,16 @@ final class MainViewController: UIViewController {
             doingCollectionView.leadingAnchor.constraint(equalTo: todoCollectionView.trailingAnchor),
             doingCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33),
         ])
+        
+        doneCollectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        view.addSubview(doneCollectionView)
+        doneCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            doneCollectionView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            doneCollectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+            doneCollectionView.leadingAnchor.constraint(equalTo: doingCollectionView.trailingAnchor),
+            doneCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
     }
     
     private func configureDataSourece() {
@@ -83,6 +95,10 @@ final class MainViewController: UIViewController {
             collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
         })
         
+        doneDataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: doneCollectionView, cellProvider: { (collectioView, indexPath, item) -> UICollectionViewCell? in
+            collectioView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+        })
+        
         // Data
         // 특정 시점의 뷰에서 데이터 상태를 나타냅니다.
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
@@ -90,6 +106,7 @@ final class MainViewController: UIViewController {
         snapshot.appendItems(item, toSection: .main)
         dataSource.apply(snapshot)
         doingDataSource.apply(snapshot)
+        doneDataSource.apply(snapshot)
     }
 }
 
