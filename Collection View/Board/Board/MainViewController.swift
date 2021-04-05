@@ -17,6 +17,10 @@ final class MainViewController: UIViewController {
         Item(title: "😎", description: "전설의 시작", date: "2021-01-01"),
     ]
     
+    private let headerItem = [
+        HeaderItem(title: "todo")
+    ]
+    
     // Providing the Collection View Data
     // 데이터를 관리하고 컬렉션 뷰에 셀을 제공하는데 사용합니다.
     private var todoDataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
@@ -39,7 +43,8 @@ final class MainViewController: UIViewController {
     
     // 레이아웃 생성
     private func createLayout() -> UICollectionViewLayout {
-        let config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+//        config.headerMode = .firstItemInSection
         return UICollectionViewCompositionalLayout.list(using: config)
     }
     
@@ -84,6 +89,10 @@ final class MainViewController: UIViewController {
             cell.updateWithItem(item)
         }
         
+        let headerCellRegistration = UICollectionView.CellRegistration<MemoTitleCell, HeaderItem> { (cell, indexPath, item) in
+            cell.updateWithItem(item)
+        }
+        
         // Providing the Collection View Data
         // 데이터를 관리하고 컬렉션 뷰에 셀을 제공하는데 사용합니다.
         todoDataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: todoCollectionView) {
@@ -103,6 +112,11 @@ final class MainViewController: UIViewController {
         // 특정 시점의 뷰에서 데이터 상태를 나타냅니다.
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections([.main])
+        
+        var headerSnapshot = NSDiffableDataSourceSectionSnapshot<HeaderItem>()
+        headerSnapshot.append(headerItem)
+//        todoDataSource.apply
+        
         snapshot.appendItems(item, toSection: .main)
         todoDataSource.apply(snapshot)
         doingDataSource.apply(snapshot)
@@ -114,6 +128,10 @@ private struct Item: Hashable {
     let title: String
     let description: String
     let date: String
+}
+
+private struct HeaderItem: Hashable {
+    let title: String
 }
 
 private class MemoCell: UICollectionViewListCell {
@@ -129,9 +147,6 @@ private class MemoCell: UICollectionViewListCell {
     override func updateConfiguration(using state: UICellConfigurationState) {
         setupConstraints()
         setupUI()
-        titleLabel.text = item.title
-        descriptionLabel.text = item.description
-        dateLabel.text = item.date
     }
     
     private func setupConstraints() {
@@ -160,9 +175,42 @@ private class MemoCell: UICollectionViewListCell {
     }
     
     private func setupUI() {
+        titleLabel.text = item.title
         titleLabel.font = .boldSystemFont(ofSize: 20)
         
+        descriptionLabel.text = item.description
         descriptionLabel.textColor = .systemGray
         descriptionLabel.numberOfLines = 3
+        
+        dateLabel.text = item.date
+    }
+}
+
+private class MemoTitleCell: UICollectionViewListCell {
+    private var headerItem: HeaderItem!
+    private let titleLabel = UILabel()
+    
+    func updateWithItem(_ newItem: HeaderItem) {
+        headerItem = newItem
+    }
+    
+    override func updateConfiguration(using state: UICellConfigurationState) {
+        setupConstraints()
+        setupUI()
+    }
+    
+    private func setupConstraints() {
+        contentView.addSubview(titleLabel)
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
+        ])
+    }
+    
+    private func setupUI() {
+        titleLabel.text = headerItem.title
     }
 }
