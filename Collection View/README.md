@@ -103,10 +103,11 @@ A content configuration will be the content view's view model and it is conforms
 
 A custom cell of a UICollectionView list is a subclass of UICollectionViewListCell. It has only 1 task - generate a properly configured content configuration object based on the state (selected, highlighted, disabled, etc.) of the cell and then assign the configuration to itself.
 
-## 레이아웃 제약조건 위치?
+## Custom Cell은 contentView를 가지고 있다.
 
--   Custom cell?
--   Content view?
+---
+
+contentView에 구성할 컴포넌트를 추가하고 constraint를 주자. 그러면 레이아웃이 잡힐지니.
 
 ## Issues
 
