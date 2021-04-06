@@ -37,15 +37,57 @@ Besides embedding a `UICollectionView` in your user interface, you use the metho
 
 You also use the collection view object to manage the selected items, although for this behavior the collection view works with its associated [`delegate`](https://developer.apple.com/documentation/uikit/uicollectionview/1618033-delegate) object.
 
+## UICollectionView 에서 다루는 기능
+
+-   Collection View 생성
+-   Collection View 데이터 제공
+    -   UICollectionViewDiffableDataSource 방식
+    -   UICollectionViewDataSource 방식
+-   Collection View 셀 및 데이터 프리패치
+-   Collection View 사용자 상호작용
+-   셀 생성
+    -   UICollectionView.CellRegistration 방식
+    -   register() 방식
+-   헤더와 푸터 생성
+    -   UICollectionVIew.SupplementaryRegistration 방식
+    -   register() 방식
+-   백그라운드 뷰 설정
+-   레이아웃 변경
+-   Collection View 상태 확인
+-   항목 삽입, 이동, 삭제
+-   섹션 삽입, 이동, 삭제
+-   인터랙티브 항목 재정렬
+-   드래그 인터랙션 관리
+-   드랍 인터랙션 관리
+-   셀 선택 관리
+-   Collection View edit mode 설정
+-   레이아웃 정보 확인
+-   항목 스크롤
+-   Animating Multiple Changes to the Collection View
+-   콘텐츠 리로딩
+-   Collection View 요소 식별
+-   마지막 포커스 셀 기억
+
 ## Layouts
 
 ---
 
-레이아웃 객체는 컬렉션 뷰에서 내용의 시각적 배열을 정의합니다. `UICollectionViewLayout` 클래스의 하위 클래스인 레이아웃 객체는 모든 셀과 컬렉션 뷰 내부의 supplementary 뷰의 구성과 위치를 정의합니다. 레이아웃 객체는 위치를 정의하지만, 해당 뷰에 실제로 해당 정보를 적용하지는 않습니다. 컬렉션 뷰는 셀 및 supplementary 뷰를 생성할 때 컬렉션 뷰와 데이터 소스 객체간의 정보가 포함되기 해당 뷰에 레이아웃 정보를 적용합니다. 레이아웃 객체는 항목 데이터 대신 시각적 정보를 제공한다는 점을 제외하면 다른 데이터 소스와 같습니다.
+레이아웃 객체는 컬렉션 뷰에서 내용의 시각적 배열을 정의합니다. `UICollectionViewLayout` 클래스의 하위 클래스인 레이아웃 객체는 모든 셀과 컬렉션 뷰 내부의 supplementary 뷰의 구성과 위치를 정의합니다. 레이아웃 객체는 위치를 정의하지만, 해당 뷰에 실제로 해당 정보를 적용하지는 않습니다. 컬렉션 뷰는 셀 및 supplementary 뷰를 생성할 때 컬렉션 뷰와 데이터 소스 객체간의 정보가 포함되므로 해당 뷰에 레이아웃 정보를 적용합니다. 레이아웃 객체는 항목 데이터 대신 시각적 정보를 제공한다는 점을 제외하면 다른 데이터 소스와 같습니다.
 
 일반적으로 컬렉션 뷰를 만들 때 레이아웃 객체를 지정하지만, 컬렉션 뷰의 레이아웃을 동적으로 변경할 수도 있습니다. 이 레이아웃 객체는 `collectionViewLayout` 프로퍼티에 저장됩니다. 이 프로퍼티를 변경하면 변경사항에 대한 애니메이션 효과 없이 레이아웃이 즉시 업데이트됩니다. 변경사항에 애니메이션 효과를 적용하려면 대신에 `setCollectionViewLayout(_:animated:completion:)` 메서드를 호출해야 합니다.
 
 gesture recognizer 또는 터치 이벤트에 의해 구동되는 대화형 전환을 만들려면 `startInteractiveTransition(to:completion:)` 메서드를 사용하여 레이아웃 객체를 변경해야 합니다. 이 메서드는 gesture recognizer 또는 터치 이벤트 코드와 함께 작동하여 전환 진행률을 추적하는 중간 레이아웃 객체를 설치합니다. 이벤트 처리 코드에서 전환이 완료되었다고 판단하면 `finishInteractiveTransition()` 또는 `cancelInteractiveTransition()` 메서드를 호출하여 중간 레이아웃 객체를 제거하고 원하는 대상 레이아웃 객체를 설치합니다.
+
+## Cells and Supplementary Views
+
+---
+
+컬렉션 뷰의 데이터 소스 객체는 항목에 대한 콘텐츠와 해당 콘텐츠를 표시하는 데 사용하는 뷰를 제공합니다. 컬렉션 뷰가 콘텐츠를 처음 불러올 때 데이터 소스에 표시되는 각 항목에 대한 뷰를 제공하도록 요청합니다. 컬렉션 뷰는 데이터 소스가 재사용을 위해 표시한 뷰 객체의 큐 또는 리스트를 유지합니다. 명시적으로 새 뷰를 만드는 대신 항상 대기열 큐에 저장된 뷰를 사용합니다.
+
+대기열 큐에 있는 뷰를 사용하는 방법은 두 가지가 있습니다. 뷰를 요청하는 유형에 따라 다릅니다.
+
+-   `dequeueReusableCell(withReuseIdentifier:for:)` 메서드를 사용하여 컬렉션 뷰의 항목에 대한 셀을 가져올 수 있습니다.
+-   `dequeueReusableSupplementaryView(ofKind:withReuseIdentifier:for:)` 메서드를 사용하여 레이아웃 객체에서 요청한 보충 뷰를 가져올 수 있습니다.
 
 ## 리스트 레이아웃 구성하기
 
