@@ -65,7 +65,7 @@ final class MainViewController: UIViewController {
             todoCollectionView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             todoCollectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
             todoCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            todoCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33),
+            todoCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1 / 3),
         ])
         
         doingCollectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
@@ -75,7 +75,7 @@ final class MainViewController: UIViewController {
             doingCollectionView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             doingCollectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
             doingCollectionView.leadingAnchor.constraint(equalTo: todoCollectionView.trailingAnchor),
-            doingCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33),
+            doingCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1 / 3),
         ])
         
         doneCollectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
@@ -91,25 +91,25 @@ final class MainViewController: UIViewController {
     
     private func configureDataSourece() {
         // Creating Cells
-        // 컬렉션 뷰에 셀 등록
         let cellRegistration = UICollectionView.CellRegistration<MemoCell, Item> { (cell, indexPath, item) in
             cell.updateWithItem(item)
         }
         
+        // Creating Headers and Footers
+        // A registration for collection view's supplementary views.
         let headerCellRegistration = UICollectionView.SupplementaryRegistration<MemoHeaderCell>(elementKind: "Header") { (supplementaryView, string, indexPath) in
-//            supplementaryView.titleLabel.text = "ff"
-//            supplementaryView.backgroundColor = .red
-//            supplementaryView
+            supplementaryView.updateWithHeaderItem("TODO")
+//            supplementaryView.updateWithHeaderItem(<#T##newHeaderItem: HeaderItem##HeaderItem#>)
         }
         
         // Providing the Collection View Data
         // 데이터를 관리하고 컬렉션 뷰에 셀을 제공하는데 사용합니다.
         todoDataSource = UICollectionViewDiffableDataSource<HeaderItem, Item>(collectionView: todoCollectionView) {
             (collectionView, indexPath, item) -> UICollectionViewCell? in
-            collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+            return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
         }
         
-        todoDataSource.supplementaryViewProvider = { [unowned self] supplementaryView, elementKind, indexPath -> UICollectionReusableView? in 
+        todoDataSource.supplementaryViewProvider = { (supplementaryView, elementKind, indexPath) in
             self.todoCollectionView.dequeueConfiguredReusableSupplementary(using: headerCellRegistration, for: indexPath)
         }
     
@@ -210,44 +210,35 @@ private class MemoCell: UICollectionViewListCell {
     }
 }
 
-private class MemoHeaderCell: UICollectionReusableView {
-    let titleLabel = UILabel()
-    let viewview = UIView()
+private class MemoHeaderCell: UICollectionViewListCell {
+    private var titleString: String!
+    private let titleLabel = UILabel()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    func updateWithHeaderItem(_ newString: String) {
+        titleString = newString
+    }
+    
+    override func updateConfiguration(using state: UICellConfigurationState) {
+        super.updateConfiguration(using: state)
         
-        viewview.backgroundColor = .red
+        setupConstraints()
+        setupUI()
+    }
+    
+    private func setupConstraints() {
+        contentView.addSubview(titleLabel)
         
-        addSubview(viewview)
-        viewview.translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        titleLabel.text = "살려줘"
-        titleLabel.backgroundColor = .brown
-        
-        let layout = viewview.heightAnchor.constraint(equalToConstant: 100)
-        layout.priority = UILayoutPriority(999)
-        
         NSLayoutConstraint.activate([
-            viewview.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
-            viewview.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
-            viewview.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
-            
-            layout,
-//            viewview.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
-//            viewview.heightAnchor.constraint(equalToConstant: 100),
-            
-            titleLabel.topAnchor.constraint(equalTo: viewview.bottomAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor)
+            titleLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
         ])
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    private func setupUI() {
+        titleLabel.text = titleString
     }
 }
