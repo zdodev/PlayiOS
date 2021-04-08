@@ -30,9 +30,8 @@ final class MainViewController: UIViewController {
     // Providing the Collection View Data
     // 데이터를 관리하고 컬렉션 뷰에 셀을 제공하는데 사용합니다.
     private var todoDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
-//    private var todoDataSource = UICollectionViewDiffableDataSource<HeaderItem, Item>()
-//    private var doingDataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
-//    private var doneDataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
+    private var doingDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
+    private var doneDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,14 +98,16 @@ final class MainViewController: UIViewController {
         // A registration for collection view's supplementary views.
         let headerCellRegistration = UICollectionView.SupplementaryRegistration<MemoHeaderCell>(elementKind: "Header") { (supplementaryView, string, indexPath) in
             supplementaryView.updateWithHeaderItem("TODO", 5)
-//            supplementaryView.updateWithHeaderItem(<#T##newHeaderItem: HeaderItem##HeaderItem#>)
         }
+        
+        // if else, switch 같이 분기를 태우는게 좋을까?
+        // 타입을 늘리는게 좋을까?
         
         // Providing the Collection View Data
         // 데이터를 관리하고 컬렉션 뷰에 셀을 제공하는데 사용합니다.
         todoDataSource = UICollectionViewDiffableDataSource<HeaderItem, Item>(collectionView: todoCollectionView) {
             (collectionView, indexPath, item) -> UICollectionViewCell? in
-            return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+            collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
         }
         
         todoDataSource.supplementaryViewProvider = { (supplementaryView, elementKind, indexPath) in
@@ -114,28 +115,24 @@ final class MainViewController: UIViewController {
         }
     
         
-//        doingDataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: doingCollectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
-//            collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
-//        })
-//        
-//        doneDataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: doneCollectionView, cellProvider: { (collectioView, indexPath, item) -> UICollectionViewCell? in
-//            collectioView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
-//        })
+        doingDataSource = UICollectionViewDiffableDataSource<HeaderItem, Item>(collectionView: doingCollectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
+            collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+        })
+        
+        doingDataSource.supplementaryViewProvider = { (supplementaryView, elementKind, indexPath) in
+            self.todoCollectionView.dequeueConfiguredReusableSupplementary(using: headerCellRegistration, for: indexPath)
+        }
+        
+        doneDataSource = UICollectionViewDiffableDataSource<HeaderItem, Item>(collectionView: doneCollectionView, cellProvider: { (collectioView, indexPath, item) -> UICollectionViewCell? in
+            collectioView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+        })
+        
+        doneDataSource.supplementaryViewProvider = { (supplementaryView, elementKind, indexPath) in
+            self.todoCollectionView.dequeueConfiguredReusableSupplementary(using: headerCellRegistration, for: indexPath)
+        }
         
         // Data
         // 특정 시점의 뷰에서 데이터 상태를 나타냅니다.
-//        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
-//        snapshot.appendSections([.main])
-//
-//        var headerSnapshot = NSDiffableDataSourceSectionSnapshot<HeaderItem>()
-//        headerSnapshot.append(headerItem)
-//        //        todoDataSource.apply
-//
-//        snapshot.appendItems(item, toSection: .main)
-//        todoDataSource.apply(snapshot)
-//        doingDataSource.apply(snapshot)
-//        doneDataSource.apply(snapshot)
-        
         var snapshot = NSDiffableDataSourceSnapshot<HeaderItem, Item>()
         snapshot.appendSections(headerItem)
         
@@ -144,6 +141,8 @@ final class MainViewController: UIViewController {
         }
         
         todoDataSource.apply(snapshot)
+        doingDataSource.apply(snapshot)
+        doneDataSource.apply(snapshot)
     }
 }
 
