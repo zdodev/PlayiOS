@@ -98,7 +98,7 @@ final class MainViewController: UIViewController {
         // Creating Headers and Footers
         // A registration for collection view's supplementary views.
         let headerCellRegistration = UICollectionView.SupplementaryRegistration<MemoHeaderCell>(elementKind: "Header") { (supplementaryView, string, indexPath) in
-            supplementaryView.updateWithHeaderItem("TODO")
+            supplementaryView.updateWithHeaderItem("TODO", 5)
 //            supplementaryView.updateWithHeaderItem(<#T##newHeaderItem: HeaderItem##HeaderItem#>)
         }
         
@@ -211,11 +211,14 @@ private class MemoCell: UICollectionViewListCell {
 }
 
 private class MemoHeaderCell: UICollectionViewListCell {
-    private var titleString: String!
+    private var title: String!
+    private var memoCount: Int!
+    private var currentMemoCountLabel = UILabel()
     private let titleLabel = UILabel()
     
-    func updateWithHeaderItem(_ newString: String) {
-        titleString = newString
+    func updateWithHeaderItem(_ title: String, _ memoCount: Int) {
+        self.title = title
+        self.memoCount = memoCount
     }
     
     override func updateConfiguration(using state: UICellConfigurationState) {
@@ -227,18 +230,33 @@ private class MemoHeaderCell: UICollectionViewListCell {
     
     private func setupConstraints() {
         contentView.addSubview(titleLabel)
+        contentView.addSubview(currentMemoCountLabel)
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        currentMemoCountLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
             titleLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+            
+            currentMemoCountLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
+            currentMemoCountLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor),
+            currentMemoCountLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 8),
+            currentMemoCountLabel.widthAnchor.constraint(equalTo: contentView.layoutMarginsGuide.heightAnchor),
         ])
     }
     
     private func setupUI() {
-        titleLabel.text = titleString
+        titleLabel.text = title
+        titleLabel.font = .boldSystemFont(ofSize: 30)
+        
+        currentMemoCountLabel.text = String(memoCount)
+        currentMemoCountLabel.font = .systemFont(ofSize: 25)
+        currentMemoCountLabel.backgroundColor = .systemGray
+        currentMemoCountLabel.textAlignment = .center
+        currentMemoCountLabel.textColor = .systemBackground
+        currentMemoCountLabel.layer.cornerRadius = contentView.bounds.size.height / 3
+        currentMemoCountLabel.layer.masksToBounds = true
     }
 }
