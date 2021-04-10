@@ -47,9 +47,8 @@ final class MainViewController: UIViewController {
     }
     
     @objc private func showMemoInsertView() {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = .systemRed
-        present(viewController, animated: true)
+        let memoInsertViewController = MemoInsertViewController()
+        present(memoInsertViewController, animated: true)
     }
 }
 
