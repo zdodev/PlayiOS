@@ -44,7 +44,17 @@ final class MainViewController: UIViewController {
     
     private func configureNavigationBar() {
         navigationItem.title = "Project Manager"
-        navigationItem.setRightBarButton(UIBarButtonItem(systemItem: .add), animated: true)
+        
+        let barButtonItem = UIBarButtonItem(systemItem: .add)
+        barButtonItem.target = self
+        barButtonItem.action = #selector(showMemoInsertView)
+        navigationItem.setRightBarButton(barButtonItem, animated: true)
+    }
+    
+    @objc private func showMemoInsertView() {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .systemRed
+        present(viewController, animated: true)
     }
     
     // 레이아웃 생성
