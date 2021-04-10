@@ -146,17 +146,6 @@ final class MainViewController: UIViewController {
     }
 }
 
-private struct Item: Hashable {
-    let title: String
-    let description: String
-    let date: String
-}
-
-private struct HeaderItem: Hashable {
-    let title: String
-    let items: [Item]
-}
-
 private class MemoCell: UICollectionViewListCell {
     private var item: Item!
     private let titleLabel = UILabel()
