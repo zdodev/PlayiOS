@@ -2,14 +2,15 @@ import UIKit
 
 // 메인 뷰 컨트롤러
 final class MainViewController: UIViewController {
-    // 컬렉션 뷰 섹션
-    private enum Section {
-        case main
-    }
+    private var todoCollectionView: UICollectionView!
+    private var doingCollectionView: UICollectionView!
+    private var doneCollectionView: UICollectionView!
     
-    private var todoCollectionView: UICollectionView! = nil
-    private var doingCollectionView: UICollectionView! = nil
-    private var doneCollectionView: UICollectionView! = nil
+    // Providing the Collection View Data
+    // 데이터를 관리하고 컬렉션 뷰에 셀을 제공하는데 사용합니다.
+    private var todoDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
+    private var doingDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
+    private var doneDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
     
     private let item = [
         Item(title: "나는 최고다.", description: "정말 최고다.", date: "2021-01-01"),
@@ -27,19 +28,13 @@ final class MainViewController: UIViewController {
         ])
     ]
     
-    // Providing the Collection View Data
-    // 데이터를 관리하고 컬렉션 뷰에 셀을 제공하는데 사용합니다.
-    private var todoDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
-    private var doingDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
-    private var doneDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
         configureNavigationBar()
         configureCollectionView()
-        configureDataSourece()
+        configureDataSource()
     }
     
     private func configureNavigationBar() {
@@ -56,7 +51,10 @@ final class MainViewController: UIViewController {
         viewController.view.backgroundColor = .systemRed
         present(viewController, animated: true)
     }
-    
+}
+
+// Collecion View 생성
+extension MainViewController {
     // 레이아웃 생성
     private func createLayout() -> UICollectionViewLayout {
         var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
@@ -64,6 +62,7 @@ final class MainViewController: UIViewController {
         return UICollectionViewCompositionalLayout.list(using: config)
     }
     
+    // 컬렉션 뷰 생성
     private func configureCollectionView() {
         todoCollectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         view.addSubview(todoCollectionView)
@@ -97,8 +96,11 @@ final class MainViewController: UIViewController {
             doneCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
-    
-    private func configureDataSourece() {
+}
+
+// Data
+extension MainViewController {
+    private func configureDataSource() {
         // Creating Cells
         let cellRegistration = UICollectionView.CellRegistration<MemoCell, Item> { (cell, indexPath, item) in
             cell.updateWithItem(item)
@@ -123,7 +125,7 @@ final class MainViewController: UIViewController {
         todoDataSource.supplementaryViewProvider = { (supplementaryView, elementKind, indexPath) in
             self.todoCollectionView.dequeueConfiguredReusableSupplementary(using: headerCellRegistration, for: indexPath)
         }
-    
+        
         
         doingDataSource = UICollectionViewDiffableDataSource<HeaderItem, Item>(collectionView: doingCollectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
             collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
@@ -154,4 +156,5 @@ final class MainViewController: UIViewController {
         doingDataSource.apply(snapshot)
         doneDataSource.apply(snapshot)
     }
+    
 }
