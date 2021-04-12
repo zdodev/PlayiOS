@@ -12,22 +12,6 @@ final class MainViewController: UIViewController {
     private var doingDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
     private var doneDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
     
-    private let item = [
-        Item(title: "나는 최고다.", description: "정말 최고다.", date: "2021-01-01"),
-        Item(title: "너는 최고다.", description: "너무 최고다.", date: "2021-01-01"),
-        Item(title: "우리는 최고다.", description: "진짜 최고다.", date: "2021-01-01"),
-        Item(title: "zdo", description: "3%", date: "2021-01-01"),
-        Item(title: "😎", description: "전설의 시작", date: "2021-01-01"),
-    ]
-    
-    private let headerItem = [
-        HeaderItem(title: "todo", items: [
-            Item(title: "나는 최고다.", description: "정말 최고다.", date: "2021-01-01"),
-            Item(title: "너는 최고다.", description: "너무 최고다.", date: "2021-01-01"),
-            Item(title: "우리는 최고다.", description: "진짜 최고다.", date: "2021-01-01"),
-        ])
-    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +32,8 @@ final class MainViewController: UIViewController {
     
     @objc private func showMemoInsertView() {
         let memoInsertViewController = MemoInsertViewController()
-        present(memoInsertViewController, animated: true)
+        let navigationController = UINavigationController(rootViewController: memoInsertViewController)
+        present(navigationController, animated: true)
     }
 }
 
@@ -155,5 +140,4 @@ extension MainViewController {
         doingDataSource.apply(snapshot)
         doneDataSource.apply(snapshot)
     }
-    
 }
