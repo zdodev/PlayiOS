@@ -12,6 +12,16 @@ final class MainViewController: UIViewController {
     private var doingDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
     private var doneDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
     
+    private var todoSnapshot = NSDiffableDataSourceSnapshot<HeaderItem, Item>()
+    
+    private var todoHeaderItem = [
+        HeaderItem(title: "todo", items: [
+            Item(title: "나는 최고다.", description: "정말 최고다.", date: "2021-01-01"),
+            Item(title: "너는 최고다.", description: "너무 최고다.", date: "2021-01-01"),
+            Item(title: "우리는 최고다.", description: "진짜 최고다.", date: "2021-01-01"),
+        ])
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +42,7 @@ final class MainViewController: UIViewController {
     
     @objc private func showMemoInsertView() {
         let memoInsertViewController = MemoInsertViewController()
+        memoInsertViewController.delegate = self
         let navigationController = UINavigationController(rootViewController: memoInsertViewController)
         present(navigationController, animated: true)
     }
@@ -92,7 +103,7 @@ extension MainViewController {
         
         // Creating Headers and Footers
         // A registration for collection view's supplementary views.
-        let todoHeaderCellRegistration = UICollectionView.SupplementaryRegistration<MemoHeaderCell>(elementKind: "TODO") { (supplementaryView, string, indexPath) in
+        let todoHeaderCellRegistration = UICollectionView.SupplementaryRegistration<MemoHeaderCell>(elementKind: "TODO") { [unowned self] (supplementaryView, string, indexPath) in
             supplementaryView.updateWithHeaderItem("TODO", todoHeaderItem.first?.items.count ?? 0)
         }
         
@@ -134,7 +145,6 @@ extension MainViewController {
         
         // Data
         // 특정 시점의 뷰에서 데이터 상태를 나타냅니다.
-        var todoSnapshot = NSDiffableDataSourceSnapshot<HeaderItem, Item>()
         todoSnapshot.appendSections(todoHeaderItem)
         for headerItem in todoHeaderItem {
             todoSnapshot.appendItems(headerItem.items, toSection: headerItem)
@@ -154,5 +164,13 @@ extension MainViewController {
             doneSnapshot.appendItems(headerItem.items, toSection: headerItem)
         }
         doneDataSource.apply(doneSnapshot)
+    }
+}
+
+extension MainViewController: MemoItemDelegate {
+    func addMemo(_ item: Item) {
+        todoHeaderItem[0].items.append(item)
+        todoSnapshot.appendItems([item])
+        todoDataSource.apply(todoSnapshot)
     }
 }

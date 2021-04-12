@@ -1,17 +1,17 @@
 struct HeaderItem: Hashable {
-    let title: String
-    let items: [Item]
+    var title: String
+    var items: [Item]
 }
 
-let todoHeaderItem = [
-    HeaderItem(title: "todo", items: [
-        Item(title: "나는 최고다.", description: "정말 최고다.", date: "2021-01-01"),
-        Item(title: "너는 최고다.", description: "너무 최고다.", date: "2021-01-01"),
-        Item(title: "우리는 최고다.", description: "진짜 최고다.", date: "2021-01-01"),
-    ])
-]
+//var todoHeaderItem = [
+//    HeaderItem(title: "todo", items: [
+//        Item(title: "나는 최고다.", description: "정말 최고다.", date: "2021-01-01"),
+//        Item(title: "너는 최고다.", description: "너무 최고다.", date: "2021-01-01"),
+//        Item(title: "우리는 최고다.", description: "진짜 최고다.", date: "2021-01-01"),
+//    ])
+//]
 
-let doingHeaderItem = [
+var doingHeaderItem = [
     HeaderItem(title: "doing", items: [
         Item(title: "나는 최고다.", description: "정말 최고다.", date: "2021-01-01"),
         Item(title: "너는 최고다.", description: "너무 최고다.", date: "2021-01-01"),
@@ -20,7 +20,7 @@ let doingHeaderItem = [
     ])
 ]
 
-let doneHeaderItem = [
+var doneHeaderItem = [
     HeaderItem(title: "done", items: [
         Item(title: "나는 최고다.", description: "정말 최고다.", date: "2021-01-01"),
         Item(title: "너는 최고다.", description: "너무 최고다.", date: "2021-01-01"),

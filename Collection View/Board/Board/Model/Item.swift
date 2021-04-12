@@ -1,5 +1,5 @@
 struct Item: Hashable {
-    let title: String
+    var title: String
     let description: String
     let date: String
 }

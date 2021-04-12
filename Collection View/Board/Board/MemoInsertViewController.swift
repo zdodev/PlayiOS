@@ -1,10 +1,14 @@
 import UIKit
 
+protocol MemoItemDelegate: AnyObject {
+    func addMemo(_ item: Item)
+}
+
 class MemoInsertViewController: UIViewController {
-    let leftBarButtonItem = UIBarButtonItem(systemItem: .cancel)
     let titleTextField = UITextField()
     let datePicker = UIDatePicker()
     let textView = UITextView()
+    weak var delegate: MemoItemDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,13 +23,26 @@ class MemoInsertViewController: UIViewController {
         
         let rightBarButtonItem = UIBarButtonItem(systemItem: .done)
         navigationItem.rightBarButtonItem = rightBarButtonItem
+        rightBarButtonItem.target = self
+        rightBarButtonItem.action = #selector(saveMemo)
         
+        let leftBarButtonItem = UIBarButtonItem(systemItem: .cancel)
         leftBarButtonItem.target = self
         leftBarButtonItem.action = #selector(dismissCurrentView)
         navigationItem.leftBarButtonItem = leftBarButtonItem
     }
     
     @objc private func dismissCurrentView() {
+        dismiss(animated: true)
+    }
+    
+    @objc private func saveMemo() {
+        let title = titleTextField.text ?? "메롱"
+        let date = datePicker.date.description
+        let description = textView.text ?? "뭘봐"
+        
+        let newItem = Item(title: title, description: description, date: date)
+        delegate?.addMemo(newItem)
         dismiss(animated: true)
     }
     
