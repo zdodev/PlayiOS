@@ -175,4 +175,4 @@ Collection view를 `UICollectionView()` 메서드로 초기화하면 에러가 �
 >
 >[Apple Supporting Drag and Drop in Collection Views](https://developer.apple.com/documentation/uikit/views_and_controls/collection_views/supporting_drag_and_drop_in_collection_views)
 >
->
+>[The Modern Ways to Reload Your Table and Collection View Cells](https://swiftsenpai.com/development/modern-ways-reload-cells/)
