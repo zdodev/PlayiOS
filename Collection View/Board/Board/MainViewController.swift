@@ -92,12 +92,17 @@ extension MainViewController {
         
         // Creating Headers and Footers
         // A registration for collection view's supplementary views.
-        let headerCellRegistration = UICollectionView.SupplementaryRegistration<MemoHeaderCell>(elementKind: "Header") { (supplementaryView, string, indexPath) in
-            supplementaryView.updateWithHeaderItem("TODO", 5)
+        let todoHeaderCellRegistration = UICollectionView.SupplementaryRegistration<MemoHeaderCell>(elementKind: "TODO") { (supplementaryView, string, indexPath) in
+            supplementaryView.updateWithHeaderItem("TODO", todoHeaderItem.first?.items.count ?? 0)
         }
         
-        // if else, switch 같이 분기를 태우는게 좋을까?
-        // 타입을 늘리는게 좋을까?
+        let doingHeaderCellRegistration = UICollectionView.SupplementaryRegistration<MemoHeaderCell>(elementKind: "DOING") { (supplementaryView, string, indexPath) in
+            supplementaryView.updateWithHeaderItem("DOING", doingHeaderItem.first?.items.count ?? 0)
+        }
+        
+        let doneHeaderCellRegistration = UICollectionView.SupplementaryRegistration<MemoHeaderCell>(elementKind: "DONE") { (supplementaryView, string, indexPath) in
+            supplementaryView.updateWithHeaderItem("DONE", doneHeaderItem.first?.items.count ?? 0)
+        }
         
         // Providing the Collection View Data
         // 데이터를 관리하고 컬렉션 뷰에 셀을 제공하는데 사용합니다.
@@ -107,7 +112,7 @@ extension MainViewController {
         }
         
         todoDataSource.supplementaryViewProvider = { (supplementaryView, elementKind, indexPath) in
-            self.todoCollectionView.dequeueConfiguredReusableSupplementary(using: headerCellRegistration, for: indexPath)
+            self.todoCollectionView.dequeueConfiguredReusableSupplementary(using: todoHeaderCellRegistration, for: indexPath)
         }
         
         
@@ -116,7 +121,7 @@ extension MainViewController {
         })
         
         doingDataSource.supplementaryViewProvider = { (supplementaryView, elementKind, indexPath) in
-            self.todoCollectionView.dequeueConfiguredReusableSupplementary(using: headerCellRegistration, for: indexPath)
+            self.todoCollectionView.dequeueConfiguredReusableSupplementary(using: doingHeaderCellRegistration, for: indexPath)
         }
         
         doneDataSource = UICollectionViewDiffableDataSource<HeaderItem, Item>(collectionView: doneCollectionView, cellProvider: { (collectioView, indexPath, item) -> UICollectionViewCell? in
@@ -124,20 +129,30 @@ extension MainViewController {
         })
         
         doneDataSource.supplementaryViewProvider = { (supplementaryView, elementKind, indexPath) in
-            self.todoCollectionView.dequeueConfiguredReusableSupplementary(using: headerCellRegistration, for: indexPath)
+            self.todoCollectionView.dequeueConfiguredReusableSupplementary(using: doneHeaderCellRegistration, for: indexPath)
         }
         
         // Data
         // 특정 시점의 뷰에서 데이터 상태를 나타냅니다.
-        var snapshot = NSDiffableDataSourceSnapshot<HeaderItem, Item>()
-        snapshot.appendSections(headerItem)
-        
-        for headerItem in headerItem {
-            snapshot.appendItems(headerItem.items, toSection: headerItem)
+        var todoSnapshot = NSDiffableDataSourceSnapshot<HeaderItem, Item>()
+        todoSnapshot.appendSections(todoHeaderItem)
+        for headerItem in todoHeaderItem {
+            todoSnapshot.appendItems(headerItem.items, toSection: headerItem)
         }
+        todoDataSource.apply(todoSnapshot)
         
-        todoDataSource.apply(snapshot)
-        doingDataSource.apply(snapshot)
-        doneDataSource.apply(snapshot)
+        var doingSnapshot = NSDiffableDataSourceSnapshot<HeaderItem, Item>()
+        doingSnapshot.appendSections(doingHeaderItem)
+        for headerItem in doingHeaderItem {
+            doingSnapshot.appendItems(headerItem.items, toSection: headerItem)
+        }
+        doingDataSource.apply(doingSnapshot)
+        
+        var doneSnapshot = NSDiffableDataSourceSnapshot<HeaderItem, Item>()
+        doneSnapshot.appendSections(doneHeaderItem)
+        for headerItem in doneHeaderItem {
+            doneSnapshot.appendItems(headerItem.items, toSection: headerItem)
+        }
+        doneDataSource.apply(doneSnapshot)
     }
 }
