@@ -1,6 +1,7 @@
 import UIKit
 
 class MemoInsertViewController: UIViewController {
+    let leftBarButtonItem = UIBarButtonItem(systemItem: .cancel)
     let titleTextField = UITextField()
     let datePicker = UIDatePicker()
     let textView = UITextView()
@@ -19,8 +20,13 @@ class MemoInsertViewController: UIViewController {
         let rightBarButtonItem = UIBarButtonItem(systemItem: .done)
         navigationItem.rightBarButtonItem = rightBarButtonItem
         
-        let leftBarButtonItem = UIBarButtonItem(systemItem: .cancel)
+        leftBarButtonItem.target = self
+        leftBarButtonItem.action = #selector(dismissCurrentView)
         navigationItem.leftBarButtonItem = leftBarButtonItem
+    }
+    
+    @objc private func dismissCurrentView() {
+        dismiss(animated: true)
     }
     
     private func configureUI() {
