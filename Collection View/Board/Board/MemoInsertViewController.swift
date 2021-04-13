@@ -37,9 +37,9 @@ class MemoInsertViewController: UIViewController {
     }
     
     @objc private func saveMemo() {
-        let title = titleTextField.text ?? "메롱"
+        let title = titleTextField.text ?? ""
         let date = datePicker.date.description
-        let description = textView.text ?? "뭘봐"
+        let description = textView.text ?? ""
         
         let newItem = Item(title: title, description: description, date: date)
         delegate?.addMemo(newItem)

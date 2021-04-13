@@ -169,8 +169,14 @@ extension MainViewController {
 
 extension MainViewController: MemoItemDelegate {
     func addMemo(_ item: Item) {
+        todoSnapshot.deleteSections(todoHeaderItem)
+        
         todoHeaderItem[0].items.append(item)
-        todoSnapshot.appendItems([item])
+        
+        todoSnapshot.appendSections(todoHeaderItem)
+        for headerItem in todoHeaderItem {
+            todoSnapshot.appendItems(headerItem.items, toSection: headerItem)
+        }
         todoDataSource.apply(todoSnapshot)
     }
 }

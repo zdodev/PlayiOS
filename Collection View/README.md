@@ -151,6 +151,12 @@ A custom cell of a UICollectionView list is a subclass of UICollectionViewListCe
 
 contentView에 구성할 컴포넌트를 추가하고 constraint를 주자. 그러면 레이아웃이 잡힐지니.
 
+## 섹션 헤더 뷰는 어떻게 업데이트 할 것인가?
+
+---
+
+Reloading Data topic에 있는 reloadItem(), reloadSections()를 해도 안된다. `NSDiffableDataSourceSnapshot` 에서는 참조 타입과 값 타입의 업데이트 방법이 다른 듯 하다. 현재 섹션 헤더 뷰는 값 타입을 사용하고 있으므로 섹션 헤더를 지우고, 값을 업데이트하고 다시 콜렉션 뷰에 데이터를 적용하는 방식으로 업데이트를 하였다.
+
 ## Issues
 
 ---
