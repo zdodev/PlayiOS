@@ -29,6 +29,25 @@ final class MainViewController: UIViewController {
         configureNavigationBar()
         configureCollectionView()
         configureDataSource()
+        
+        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture))
+        todoCollectionView.addGestureRecognizer(gesture)
+    }
+    
+    @objc private func handleLongPressGesture(_ gesture: UILongPressGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            guard let targetIndexPath = todoCollectionView.indexPathForItem(at: gesture.location(in: todoCollectionView)) else {
+                return
+            }
+            todoCollectionView.beginInteractiveMovementForItem(at: targetIndexPath)
+        case .changed:
+            todoCollectionView.updateInteractiveMovementTargetPosition(gesture.location(in: todoCollectionView))
+        case .ended:
+            todoCollectionView.endInteractiveMovement()
+        default:
+            todoCollectionView.cancelInteractiveMovement()
+        }
     }
     
     private func configureNavigationBar() {
@@ -126,6 +145,9 @@ extension MainViewController {
             self.todoCollectionView.dequeueConfiguredReusableSupplementary(using: todoHeaderCellRegistration, for: indexPath)
         }
         
+        todoDataSource.reorderingHandlers.canReorderItem = { item in
+            true
+        }
         
         doingDataSource = UICollectionViewDiffableDataSource<HeaderItem, Item>(collectionView: doingCollectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
             collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
