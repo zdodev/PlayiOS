@@ -245,15 +245,3 @@ extension MainViewController: MemoItemDelegate {
         todoDataSource.apply(todoSnapshot)
     }
 }
-
-//extension MainViewController: UICollectionViewDragDelegate {
-//    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-//        [UIDragItem]
-//    }
-//}
-//
-//extension MainViewController: UICollectionViewDropDelegate {
-//    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-//        <#code#>
-//    }
-//}
