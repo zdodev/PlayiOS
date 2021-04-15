@@ -30,11 +30,17 @@ final class MainViewController: UIViewController {
         configureCollectionView()
         configureDataSource()
         
-        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture))
-        todoCollectionView.addGestureRecognizer(gesture)
+        let todoGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleTodoCollectionViewLongPressGesture))
+        todoCollectionView.addGestureRecognizer(todoGesture)
+        
+        let doingGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleDoingCollectionViewLongPressGesture))
+        doingCollectionView.addGestureRecognizer(doingGesture)
+        
+        let doneGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleDoneCollectionViewLongPressGesture))
+        doneCollectionView.addGestureRecognizer(doneGesture)
     }
     
-    @objc private func handleLongPressGesture(_ gesture: UILongPressGestureRecognizer) {
+    @objc private func handleTodoCollectionViewLongPressGesture(_ gesture: UILongPressGestureRecognizer) {
         switch gesture.state {
         case .began:
             guard let targetIndexPath = todoCollectionView.indexPathForItem(at: gesture.location(in: todoCollectionView)) else {
@@ -47,6 +53,38 @@ final class MainViewController: UIViewController {
             todoCollectionView.endInteractiveMovement()
         default:
             todoCollectionView.cancelInteractiveMovement()
+        }
+    }
+    
+    @objc private func handleDoingCollectionViewLongPressGesture(_ gesture: UILongPressGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            guard let targetIndexPath = doingCollectionView.indexPathForItem(at: gesture.location(in: doingCollectionView)) else {
+                return
+            }
+            doingCollectionView.beginInteractiveMovementForItem(at: targetIndexPath)
+        case .changed:
+            doingCollectionView.updateInteractiveMovementTargetPosition(gesture.location(in: doingCollectionView))
+        case .ended:
+            doingCollectionView.endInteractiveMovement()
+        default:
+            doingCollectionView.cancelInteractiveMovement()
+        }
+    }
+    
+    @objc private func handleDoneCollectionViewLongPressGesture(_ gesture: UILongPressGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            guard let targetIndexPath = doneCollectionView.indexPathForItem(at: gesture.location(in: doneCollectionView)) else {
+                return
+            }
+            doneCollectionView.beginInteractiveMovementForItem(at: targetIndexPath)
+        case .changed:
+            doneCollectionView.updateInteractiveMovementTargetPosition(gesture.location(in: doneCollectionView))
+        case .ended:
+            doneCollectionView.endInteractiveMovement()
+        default:
+            doneCollectionView.cancelInteractiveMovement()
         }
     }
     
@@ -144,7 +182,6 @@ extension MainViewController {
         todoDataSource.supplementaryViewProvider = { (supplementaryView, elementKind, indexPath) in
             self.todoCollectionView.dequeueConfiguredReusableSupplementary(using: todoHeaderCellRegistration, for: indexPath)
         }
-        
         todoDataSource.reorderingHandlers.canReorderItem = { item in
             true
         }
@@ -156,6 +193,9 @@ extension MainViewController {
         doingDataSource.supplementaryViewProvider = { (supplementaryView, elementKind, indexPath) in
             self.todoCollectionView.dequeueConfiguredReusableSupplementary(using: doingHeaderCellRegistration, for: indexPath)
         }
+        doingDataSource.reorderingHandlers.canReorderItem = { item in
+            true
+        }
         
         doneDataSource = UICollectionViewDiffableDataSource<HeaderItem, Item>(collectionView: doneCollectionView, cellProvider: { (collectioView, indexPath, item) -> UICollectionViewCell? in
             collectioView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
@@ -163,6 +203,9 @@ extension MainViewController {
         
         doneDataSource.supplementaryViewProvider = { (supplementaryView, elementKind, indexPath) in
             self.todoCollectionView.dequeueConfiguredReusableSupplementary(using: doneHeaderCellRegistration, for: indexPath)
+        }
+        doneDataSource.reorderingHandlers.canReorderItem = { item in
+            true
         }
         
         // Data
@@ -202,3 +245,15 @@ extension MainViewController: MemoItemDelegate {
         todoDataSource.apply(todoSnapshot)
     }
 }
+
+//extension MainViewController: UICollectionViewDragDelegate {
+//    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+//        [UIDragItem]
+//    }
+//}
+//
+//extension MainViewController: UICollectionViewDropDelegate {
+//    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
+//        <#code#>
+//    }
+//}
