@@ -8,9 +8,9 @@ class ViewController: UIViewController {
     private let dataSource = DataSource()
     // 데이터 정의
     private let data = [
-        Item(text: "MVC일까요?"),
-        Item(text: "MVP일까요?"),
-        Item(text: "MVVM일까요?"),
+        Item(text: "😎 😎 😎"),
+        Item(text: " ⭐️ ⭐️ ⭐️ "),
+        Item(text: "🤔 🤔 🤔"),
     ]
     
     override func viewDidLoad() {
