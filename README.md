@@ -1,7 +1,9 @@
 # PlayiOS
 iOS 놀이공간입니다.
 
-### Core Animation
+### ArchitecturePattern
+
+-   iOS 아키텍처 패턴에 대하여.
 
 ### Collection View
 
