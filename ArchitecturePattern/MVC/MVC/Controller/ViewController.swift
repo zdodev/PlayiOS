@@ -35,7 +35,6 @@ class ViewController: UIViewController {
         
         // 테이블 뷰 설정
         view.addSubview(tableView)
-        tableView.register(MyTableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = dataSource
     }
     
