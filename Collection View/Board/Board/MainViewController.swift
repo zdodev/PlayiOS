@@ -6,8 +6,6 @@ final class MainViewController: UIViewController {
     private var doingCollectionView: UICollectionView!
     private var doneCollectionView: UICollectionView!
     
-    // Providing the Collection View Data
-    // 데이터를 관리하고 컬렉션 뷰에 셀을 제공하는데 사용합니다.
     private var todoDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
     private var doingDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
     private var doneDataSource: UICollectionViewDiffableDataSource<HeaderItem, Item>!
@@ -153,13 +151,10 @@ extension MainViewController {
 // Data
 extension MainViewController {
     private func configureDataSource() {
-        // Creating Cells
         let cellRegistration = UICollectionView.CellRegistration<MemoCell, Item> { (cell, indexPath, item) in
             cell.updateWithItem(item)
         }
         
-        // Creating Headers and Footers
-        // A registration for collection view's supplementary views.
         let todoHeaderCellRegistration = UICollectionView.SupplementaryRegistration<MemoHeaderCell>(elementKind: "TODO") { [unowned self] (supplementaryView, string, indexPath) in
             supplementaryView.updateWithHeaderItem("TODO", todoHeaderItem.first?.items.count ?? 0)
         }
@@ -172,8 +167,6 @@ extension MainViewController {
             supplementaryView.updateWithHeaderItem("DONE", doneHeaderItem.first?.items.count ?? 0)
         }
         
-        // Providing the Collection View Data
-        // 데이터를 관리하고 컬렉션 뷰에 셀을 제공하는데 사용합니다.
         todoDataSource = UICollectionViewDiffableDataSource<HeaderItem, Item>(collectionView: todoCollectionView) {
             (collectionView, indexPath, item) -> UICollectionViewCell? in
             collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
@@ -208,8 +201,6 @@ extension MainViewController {
             true
         }
         
-        // Data
-        // 특정 시점의 뷰에서 데이터 상태를 나타냅니다.
         todoSnapshot.appendSections(todoHeaderItem)
         for headerItem in todoHeaderItem {
             todoSnapshot.appendItems(headerItem.items, toSection: headerItem)
