@@ -7,7 +7,8 @@ iOS 놀이공간입니다.
 
 ### ArchitecturePattern
 
--   iOS 아키텍처 패턴에 대하여.
+-   iOS 아키텍처 패턴에 대해 정리해보았습니다.
+-   MVC 패턴 개념 정리
 
 ### Collection View
 
