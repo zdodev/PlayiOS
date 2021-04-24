@@ -4,6 +4,7 @@ iOS 놀이공간입니다.
 ### SocketNetworking
 
 - 소켓을 사용한 네트워크 통신을 구현합니다.
+- 로컬 서버를 이용합니다.
 
 ### Pass Data
 

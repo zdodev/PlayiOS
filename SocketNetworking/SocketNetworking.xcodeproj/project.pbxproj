@@ -13,6 +13,7 @@
 		41F5B32226344E84006DB4C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F5B32026344E84006DB4C3 /* Main.storyboard */; };
 		41F5B32426344E85006DB4C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41F5B32326344E85006DB4C3 /* Assets.xcassets */; };
 		41F5B32726344E85006DB4C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F5B32526344E85006DB4C3 /* LaunchScreen.storyboard */; };
+		41F5B33426345291006DB4C3 /* ChatNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5B33326345291006DB4C3 /* ChatNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		41F5B32326344E85006DB4C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41F5B32626344E85006DB4C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41F5B32826344E85006DB4C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41F5B33326345291006DB4C3 /* ChatNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				41F5B31A26344E84006DB4C3 /* AppDelegate.swift */,
 				41F5B31C26344E84006DB4C3 /* SceneDelegate.swift */,
 				41F5B31E26344E84006DB4C3 /* ViewController.swift */,
+				41F5B33326345291006DB4C3 /* ChatNetwork.swift */,
 				41F5B32026344E84006DB4C3 /* Main.storyboard */,
 				41F5B32326344E85006DB4C3 /* Assets.xcassets */,
 				41F5B32526344E85006DB4C3 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			files = (
 				41F5B31F26344E84006DB4C3 /* ViewController.swift in Sources */,
 				41F5B31B26344E84006DB4C3 /* AppDelegate.swift in Sources */,
+				41F5B33426345291006DB4C3 /* ChatNetwork.swift in Sources */,
 				41F5B31D26344E84006DB4C3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

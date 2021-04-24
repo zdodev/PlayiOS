@@ -1,19 +1,12 @@
-//
-//  ViewController.swift
-//  SocketNetworking
-//
-//  Created by Zero DotOne on 2021/04/24.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+    private let chatNetwork = ChatNetwork()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        chatNetwork.setupNetwork()
+        chatNetwork.connectChat()
     }
-
-
 }
 
