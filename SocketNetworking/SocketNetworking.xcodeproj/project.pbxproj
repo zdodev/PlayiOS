@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41CCAC9D2639B0AA001D2804 /* StreamSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCAC9C2639B0AA001D2804 /* StreamSession.swift */; };
 		41F5B31B26344E84006DB4C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5B31A26344E84006DB4C3 /* AppDelegate.swift */; };
 		41F5B31D26344E84006DB4C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5B31C26344E84006DB4C3 /* SceneDelegate.swift */; };
 		41F5B31F26344E84006DB4C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5B31E26344E84006DB4C3 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41CCAC9C2639B0AA001D2804 /* StreamSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamSession.swift; sourceTree = "<group>"; };
 		41F5B31726344E84006DB4C3 /* SocketNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocketNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F5B31A26344E84006DB4C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41F5B31C26344E84006DB4C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41CCAC9B2639B031001D2804 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				41F5B31A26344E84006DB4C3 /* AppDelegate.swift */,
+				41F5B31C26344E84006DB4C3 /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		41F5B30E26344E84006DB4C3 = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +69,10 @@
 		41F5B31926344E84006DB4C3 /* SocketNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				41F5B31A26344E84006DB4C3 /* AppDelegate.swift */,
-				41F5B31C26344E84006DB4C3 /* SceneDelegate.swift */,
+				41CCAC9B2639B031001D2804 /* Support */,
 				41F5B31E26344E84006DB4C3 /* ViewController.swift */,
 				41F5B33326345291006DB4C3 /* ChatNetwork.swift */,
+				41CCAC9C2639B0AA001D2804 /* StreamSession.swift */,
 				41F5B32026344E84006DB4C3 /* Main.storyboard */,
 				41F5B32326344E85006DB4C3 /* Assets.xcassets */,
 				41F5B32526344E85006DB4C3 /* LaunchScreen.storyboard */,
@@ -141,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41F5B31F26344E84006DB4C3 /* ViewController.swift in Sources */,
+				41CCAC9D2639B0AA001D2804 /* StreamSession.swift in Sources */,
 				41F5B31B26344E84006DB4C3 /* AppDelegate.swift in Sources */,
 				41F5B33426345291006DB4C3 /* ChatNetwork.swift in Sources */,
 				41F5B31D26344E84006DB4C3 /* SceneDelegate.swift in Sources */,
