@@ -5,7 +5,6 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chatNetwork.setupNetwork()
         chatNetwork.connectChat()
     }
 }

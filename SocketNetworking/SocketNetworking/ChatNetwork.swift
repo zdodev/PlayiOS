@@ -6,21 +6,23 @@ protocol StreamConnection {
     func outputStreamConnection() -> OutputStream
 }
 
-final class ChatNetwork: NSObject {
+final class ChatNetwork {
     // A stream that provides read-only stream functionality.
     private var inputStream: InputStream!
     // A stream that provides write-only stream functionality.
     private var outputStream: OutputStream!
     private let username = "3pro"
     private let maxMessageLength = 300
+    private let streamDelegate = StreamEventHandler()
     
-    func setupNetwork() {
+    init() {
         let streamConnection: StreamConnection = HostStreamConnection(address: "localhost", port: 80)
         
         inputStream = streamConnection.inputStreamConnection()
         outputStream = streamConnection.outputStreamConnection()
         
-        inputStream.delegate = self
+        streamDelegate.delegate = self
+        inputStream.delegate = streamDelegate
         
         // Opens the receiving stream.
         inputStream.open()
@@ -49,20 +51,8 @@ final class ChatNetwork: NSObject {
     }
 }
 
-// An interface that delegates of a stream instance use to handle events on the stream.
-extension ChatNetwork: StreamDelegate {
-    // The delegate receives this message when a given event has occurred on a given stream.
-    func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
-        switch eventCode {
-        // The stream has bytes to be read.
-        case .hasBytesAvailable:
-            readMessage(stream: aStream as! InputStream)
-        default:
-            print("다른 스트림 이벤트 발생")
-        }
-    }
-    
-    private func readMessage(stream: InputStream) {
+extension ChatNetwork: MessageEventDelegate {
+    func readMessage(stream: InputStream) {
         // UnsafeMutablePointer<UInt8>
         let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: maxMessageLength)
         
@@ -74,7 +64,7 @@ extension ChatNetwork: StreamDelegate {
         guard let messages = String(bytesNoCopy: buffer, length: readBytes, encoding: .utf8, freeWhenDone: true) else {
             return
         }
-        
+
         print(messages)
     }
 }
