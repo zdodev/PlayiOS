@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41CCAC9D2639B0AA001D2804 /* StreamSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCAC9C2639B0AA001D2804 /* StreamSession.swift */; };
+		41CCAC9D2639B0AA001D2804 /* HostStreamConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCAC9C2639B0AA001D2804 /* HostStreamConnection.swift */; };
 		41CCAC9F2639BB4A001D2804 /* StreamEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCAC9E2639BB4A001D2804 /* StreamEventHandler.swift */; };
 		41CCACA12639C2C1001D2804 /* ChatConnectionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCACA02639C2C1001D2804 /* ChatConnectionMessage.swift */; };
 		41CCACA32639C5F5001D2804 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCACA22639C5F5001D2804 /* NetworkError.swift */; };
@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		41CCAC9C2639B0AA001D2804 /* StreamSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamSession.swift; sourceTree = "<group>"; };
+		41CCAC9C2639B0AA001D2804 /* HostStreamConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostStreamConnection.swift; sourceTree = "<group>"; };
 		41CCAC9E2639BB4A001D2804 /* StreamEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamEventHandler.swift; sourceTree = "<group>"; };
 		41CCACA02639C2C1001D2804 /* ChatConnectionMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatConnectionMessage.swift; sourceTree = "<group>"; };
 		41CCACA22639C5F5001D2804 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 				41CCACA22639C5F5001D2804 /* NetworkError.swift */,
 				41CCACA02639C2C1001D2804 /* ChatConnectionMessage.swift */,
 				41CCAC9E2639BB4A001D2804 /* StreamEventHandler.swift */,
-				41CCAC9C2639B0AA001D2804 /* StreamSession.swift */,
+				41CCAC9C2639B0AA001D2804 /* HostStreamConnection.swift */,
 				41F5B32026344E84006DB4C3 /* Main.storyboard */,
 				41F5B32326344E85006DB4C3 /* Assets.xcassets */,
 				41F5B32526344E85006DB4C3 /* LaunchScreen.storyboard */,
@@ -162,7 +162,7 @@
 			files = (
 				41F5B31F26344E84006DB4C3 /* ViewController.swift in Sources */,
 				41CCACA32639C5F5001D2804 /* NetworkError.swift in Sources */,
-				41CCAC9D2639B0AA001D2804 /* StreamSession.swift in Sources */,
+				41CCAC9D2639B0AA001D2804 /* HostStreamConnection.swift in Sources */,
 				41F5B31B26344E84006DB4C3 /* AppDelegate.swift in Sources */,
 				41F5B33426345291006DB4C3 /* ChatNetwork.swift in Sources */,
 				41F5B31D26344E84006DB4C3 /* SceneDelegate.swift in Sources */,
