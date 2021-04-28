@@ -9,6 +9,8 @@ final class ChatNetwork: NSObject {
     private let maxMessageLength = 300
     
     func setupNetwork() {
+        let serverAddress = "localhost" as CFString
+        let serverPort: UInt32 = 7748
         // A type for propagating an unmanaged object reference.
         // A reference to a readable stream object.
         var readStream: Unmanaged<CFReadStream>?
@@ -16,7 +18,7 @@ final class ChatNetwork: NSObject {
         var writeStream: Unmanaged<CFWriteStream>?
         
         // Creates readable and writable streams connected to a TCP/IP port of a particular host.
-        CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, "localhost" as CFString, 80, &readStream, &writeStream)
+        CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, serverAddress, serverPort, &readStream, &writeStream)
         
         // Gets the value of this unmanaged reference as a managed reference and consumes an unbalanced retain of it.
         inputStream = readStream?.takeRetainedValue()
@@ -53,6 +55,20 @@ final class ChatNetwork: NSObject {
             }
         }
     }
+}
+
+// An interface that delegates of a stream instance use to handle events on the stream.
+extension ChatNetwork: StreamDelegate {
+    // The delegate receives this message when a given event has occurred on a given stream.
+    func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
+        switch eventCode {
+        // The stream has bytes to be read.
+        case .hasBytesAvailable:
+            readMessage(stream: aStream as! InputStream)
+        default:
+            print("다른 스트림 이벤트 발생")
+        }
+    }
     
     private func readMessage(stream: InputStream) {
         // UnsafeMutablePointer<UInt8>
@@ -68,19 +84,5 @@ final class ChatNetwork: NSObject {
         }
         
         print(messages)
-    }
-}
-
-// An interface that delegates of a stream instance use to handle events on the stream.
-extension ChatNetwork: StreamDelegate {
-    // The delegate receives this message when a given event has occurred on a given stream.
-    func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
-        switch eventCode {
-        // The stream has bytes to be read.
-        case .hasBytesAvailable:
-            readMessage(stream: aStream as! InputStream)
-        default:
-            print("다른 스트림 이벤트 발생")
-        }
     }
 }
