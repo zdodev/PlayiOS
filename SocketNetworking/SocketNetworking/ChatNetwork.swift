@@ -1,5 +1,11 @@
 import Foundation
 
+protocol StreamConnection {
+    init(address: String, port: UInt32)
+    func inputStreamConnection() -> InputStream
+    func outputStreamConnection() -> OutputStream
+}
+
 final class ChatNetwork: NSObject {
     // A stream that provides read-only stream functionality.
     private var inputStream: InputStream!
@@ -9,24 +15,10 @@ final class ChatNetwork: NSObject {
     private let maxMessageLength = 300
     
     func setupNetwork() {
-        let serverAddress = "localhost" as CFString
-        let serverPort: UInt32 = 7748
-        // A type for propagating an unmanaged object reference.
-        // A reference to a readable stream object.
-        var readStream: Unmanaged<CFReadStream>?
-        // A reference to a writable stream object.
-        var writeStream: Unmanaged<CFWriteStream>?
+        let streamConnection: StreamConnection = HostStreamConnection(address: "localhost", port: 80)
         
-        // Creates readable and writable streams connected to a TCP/IP port of a particular host.
-        CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, serverAddress, serverPort, &readStream, &writeStream)
-        
-        // Gets the value of this unmanaged reference as a managed reference and consumes an unbalanced retain of it.
-        inputStream = readStream?.takeRetainedValue()
-        outputStream = writeStream?.takeRetainedValue()
-        
-        // Schedules the receiver on a given run loop in a given mode.
-        inputStream.schedule(in: .current, forMode: .common)
-        outputStream.schedule(in: .current, forMode: .common)
+        inputStream = streamConnection.inputStreamConnection()
+        outputStream = streamConnection.outputStreamConnection()
         
         inputStream.delegate = self
         

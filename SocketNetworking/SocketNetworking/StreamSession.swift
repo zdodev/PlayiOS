@@ -1,9 +1,9 @@
 import Foundation
 
-struct StreamConnection {
+struct HostStreamConnection: StreamConnection {
     private let serverAddress: CFString
     private let serverPort: UInt32
-    private var inputStream: InputStream!
+    private let inputStream: InputStream!
     private let outputStream: OutputStream!
     
     init(address: String, port: UInt32) {
