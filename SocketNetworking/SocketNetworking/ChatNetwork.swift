@@ -11,11 +11,13 @@ final class ChatNetwork {
     private var inputStream: InputStream!
     // A stream that provides write-only stream functionality.
     private var outputStream: OutputStream!
-    private let username = "3pro"
+    private var username = ""
     private let maxMessageLength = 300
     private let streamDelegate = StreamEventHandler()
     
-    init() {
+    init(username: String) {
+        self.username = username
+        
         let streamConnection: StreamConnection = HostStreamConnection(address: "localhost", port: 80)
         
         inputStream = streamConnection.inputStreamConnection()
@@ -29,9 +31,10 @@ final class ChatNetwork {
         outputStream.open()
     }
     
-    func connectChat() {
+    func connectChat(completionHandler: (Result<Int, NetworkError>) -> Void) {
         // 연결 메시지 생성
-        let joinMessage = "iam:\(username)".data(using: .utf8)!
+        let chatConnectionMessage = ChatConnectionMessage()
+        let joinMessage = chatConnectionMessage.createJoinMessageFormat(username: username)
     
         joinMessage.withUnsafeBytes { (unsafeRawBufferPointer) in
             // UnsafeRawBufferPointer -> UnsafeRawPointer -> UnsafePointer<T>
@@ -44,8 +47,10 @@ final class ChatNetwork {
             let result = outputStream.write(message, maxLength: joinMessage.count)
             if result > 0 {
                 print("연결 메시지 전송 성공")
+                completionHandler(.success(result))
             } else {
                 print("연결 메시지 전송 실패")
+                completionHandler(.failure(.connectionFail))
             }
         }
     }
