@@ -1,6 +1,10 @@
 # PlayiOS
 iOS 놀이공간입니다.
 
+### Table View를 활용한 화면 구현
+
+- 테이블 뷰, 커스텀 셀, 데이터 소스를 활용
+
 ### SocketNetworking
 
 - 소켓을 사용한 네트워크 통신을 구현합니다.
