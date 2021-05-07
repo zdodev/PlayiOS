@@ -1,4 +1,8 @@
-# App and Environment
+## SceneBasedLifeCycle
+
+Scene 기반 앱의 라이프사이클을 추적해보았습니다.
+
+## App and Environment
 
 - 앱의 라이프 사이클 이벤트와 UI scene을 관리하고 앱이 실행되는 환경과 특성에 대한 정보를 얻을 수 있습니다.
 
