@@ -1,6 +1,10 @@
 # PlayiOS
 iOS 놀이공간입니다.
 
+### Core Location을 활요한 위치 구하기
+
+- Core Location을 활용하여 위치 정보 구하기
+
 ### Table View를 활용한 화면 구현
 
 - 테이블 뷰, 커스텀 셀, 데이터 소스를 활용
