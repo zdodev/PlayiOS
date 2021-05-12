@@ -1,6 +1,11 @@
 # PlayiOS
 iOS 놀이공간입니다.
 
+### iOS 라이프사이클
+
+- 앱 라이프사이클
+- 뷰 컨트롤러 라이프사이클
+
 ### Core Location을 활요한 위치 구하기
 
 - Core Location을 활용하여 위치 정보 구하기
