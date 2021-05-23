@@ -1,4 +1,0 @@
-## ArchitecturePattern
-
-- MVC
-- MVVM
