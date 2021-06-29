@@ -39,6 +39,7 @@ iOS 놀이공간입니다.
 ### Collection View
 
 -   Collection View 사용해보기.
+-   Carousel Effect!!!
 
 ### Drag and Drop
 
