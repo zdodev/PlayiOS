@@ -53,3 +53,5 @@ myTableView.estimatedRowHeight = 120
 ---
 
 >   [Apple Auto Layout Guide](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/index.html#//apple_ref/doc/uid/TP40010853-CH7-SW1)
+>
+>   [제 2장 Multiplier를 이용한 크기 조절](https://medium.com/@lingostar/제-2장-multiplier를-이용한-크기-조절-d66d3a61c93c)
