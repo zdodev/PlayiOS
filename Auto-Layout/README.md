@@ -1,5 +1,9 @@
 # Auto Layout
 
+### UI를 스토리보드가 아닌 코드로 UI를 작성하고 오토레이아웃을 설정하면 생기는 장점은?
+
+스토리보드의 경우 협업 시 코드 충돌이 빈번하게 발생하고, 충돌을 해결하기 쉽지 않기 때문에 뷰의 위치와 크기를 명시적으로 작성한 코드를 통해 작성하는 경우가 많습니다.
+
 ### auto layout의 핵심 요소
 
 Auto layout은 뷰 요소의 위치 좌표(x, y)와 크기(width, height)가 정해져야 auto layout을 지정할 수 있습니다.
@@ -9,9 +13,14 @@ Auto layout은 뷰 요소의 위치 좌표(x, y)와 크기(width, height)가 정
 - width(horizontal)
 - height(vertical)
 
-### UI를 스토리보드가 아닌 코드로 UI를 작성하고 auto layout을 설정하는 이유는?
+### 오토레이아웃 위치 및 크기 설정 요소
 
-스토리보드의 경우 협업 시 코드 충돌이 빈번하게 발생하고, 충돌을 해결하기 쉽지 않기 때문에 뷰의 위치와 크기를 명시적으로 작성한 코드를 통해 작성하는 경우가 많습니다.
+- constant: 절대값을 나타냅니다. 위치 및 거리를 상수 값으로 표현합니다.
+- multiplier: 배수를 나타냅니다. 위치 및 거리를 상대적으로 표현합니다.
+- 수평(horizontal)의 상대적인 위치는 뷰의 요소(leading, center, trailing)를 슈퍼 뷰의 trailing에 multiplier를 설정하여 위치시킬 수 있습니다.
+- 수직(vertical)의 상대적인 위치는 뷰의 요소(leading, center, trailing)를 슈퍼 뷰의 bottom에 multiplier를 설정하여 위치시킬 수 있습니다.
+- 너비의 상대적인 크기는 뷰의 width를 슈퍼 뷰의 width의 multiplier를 설정하여 위치시킬 수 있습니다.
+- 높이의 상대적인 크기는 뷰의 height를 슈퍼 뷰의 height의 multiplier를 설정하여 위치시킬 수 있습니다.
 
 ### Self sizing
 

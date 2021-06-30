@@ -48,6 +48,7 @@ iOS 놀이공간입니다.
 ### Auto Layout
 
 -   코드로 auto layout 구현하기(auto layout programmatically)
+-   다양한 뷰 레이아웃
 
 ### User Notifications
 
