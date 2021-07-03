@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4108F7A92690AC2B000CB714 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108F7A82690AC2B000CB714 /* CircleImage.swift */; };
+		4108F7AB2690ADA5000CB714 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108F7AA2690ADA5000CB714 /* MapView.swift */; };
 		41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */; };
 		41EE2FF226909C7E00B5FDA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FF126909C7E00B5FDA9 /* ContentView.swift */; };
 		41EE2FF426909C7E00B5FDA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		4108F7A82690AC2B000CB714 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		4108F7AA2690ADA5000CB714 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		41EE2FEC26909C7E00B5FDA9 /* PlaySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySwiftUIApp.swift; sourceTree = "<group>"; };
 		41EE2FF126909C7E00B5FDA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */,
 				41EE2FF126909C7E00B5FDA9 /* ContentView.swift */,
 				4108F7A82690AC2B000CB714 /* CircleImage.swift */,
+				4108F7AA2690ADA5000CB714 /* MapView.swift */,
 				41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */,
 				41EE2FF826909C7E00B5FDA9 /* Info.plist */,
 				41EE2FF526909C7E00B5FDA9 /* Preview Content */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41EE2FF226909C7E00B5FDA9 /* ContentView.swift in Sources */,
+				4108F7AB2690ADA5000CB714 /* MapView.swift in Sources */,
 				41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */,
 				4108F7A92690AC2B000CB714 /* CircleImage.swift in Sources */,
 			);
