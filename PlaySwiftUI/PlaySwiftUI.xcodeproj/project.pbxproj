@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41E057A5269B3B9500D9C604 /* MyVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E057A4269B3B9500D9C604 /* MyVStack.swift */; };
 		41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */; };
 		41EE2FF226909C7E00B5FDA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FF126909C7E00B5FDA9 /* ContentView.swift */; };
 		41EE2FF426909C7E00B5FDA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41E057A4269B3B9500D9C604 /* MyVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVStack.swift; sourceTree = "<group>"; };
 		41EE2FEC26909C7E00B5FDA9 /* PlaySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySwiftUIApp.swift; sourceTree = "<group>"; };
 		41EE2FF126909C7E00B5FDA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +39,7 @@
 			isa = PBXGroup;
 			children = (
 				41EE2FF126909C7E00B5FDA9 /* ContentView.swift */,
+				41E057A4269B3B9500D9C604 /* MyVStack.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			files = (
 				41EE2FF226909C7E00B5FDA9 /* ContentView.swift in Sources */,
 				41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */,
+				41E057A5269B3B9500D9C604 /* MyVStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
