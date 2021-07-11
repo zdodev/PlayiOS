@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MyVStack: View {
     var body: some View {
-        HStack {
+        VStack {
             Text("1!")
                 .fontWeight(.bold)
                 .font(.system(size: 80))
