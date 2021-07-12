@@ -24,7 +24,7 @@ struct ContentView: View {
                 }
                 
                 // 내비게이션 버튼
-                NavigationLink(destination: MyVStack()) {
+                NavigationLink(destination: MyTextView()) {
                     Text("내비게이션 버튼")
                         .fontWeight(.heavy)
                         .font(.system(size: 40))
