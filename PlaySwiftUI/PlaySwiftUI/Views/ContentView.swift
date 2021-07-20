@@ -2,29 +2,47 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(alignment: .trailing, spacing: 50) {
-//            Rectangle()
-//                .frame(height: 0)
-            Text("글자")
-                .font(.system(size: 30))
-                .fontWeight(.heavy)
-            
-            Rectangle()
-                .frame(width: 100, height: 100)
-                .foregroundColor(.red)
-            
-            Rectangle()
-                .frame(width: 100, height: 100)
-                .foregroundColor(.orange)
-            
-            Spacer()
-            
-            Rectangle()
-                .frame(width: 100, height: 100)
-                .foregroundColor(.blue)
+        ZStack(alignment: .bottomTrailing) {
+            VStack(alignment: .leading, spacing: 0) {
+                HStack {
+                    Image(systemName: "line.horizontal.3")
+                        .font(.largeTitle)
+                    Spacer()
+                    Image(systemName: "person.crop.circle.fill")
+                        .font(.largeTitle)
+                }
+                .padding(20)
+                Text("zdo 할일목록")
+                    .font(.system(size: 40))
+                    .fontWeight(.black)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 20)
+                ScrollView {
+                    VStack {
+                        MyProjectCard()
+                        MyBasicCard()
+                        MyBasicCard()
+                        MyBasicCard()
+                        MyBasicCard()
+                        MyBasicCard()
+                        MyBasicCard()
+                        MyBasicCard()
+                        MyBasicCard()
+                    }
+                    .padding()
+                }
+            }
+            Circle()
+                .foregroundColor(.yellow)
+                .frame(width: 60, height: 60)
+                .overlay(
+                    Image(systemName: "plus")
+                        .font(.system(size: 30))
+                        .foregroundColor(.white)
+                )
+                .padding(10)
+                .shadow(radius: 20)
         }
-        .frame(width: 300)
-        .background(Color.green)
     }
 }
 
