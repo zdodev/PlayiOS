@@ -21,13 +21,9 @@ struct ContentView: View {
                     VStack {
                         MyProjectCard()
                         MyBasicCard()
-                        MyBasicCard()
-                        MyBasicCard()
-                        MyBasicCard()
-                        MyBasicCard()
-                        MyBasicCard()
-                        MyBasicCard()
-                        MyBasicCard()
+                        MyCard(icon: "tray.fill", title: "정리하기", start: "10시", end: "11시", backgroundColor: .blue)
+                        MyCard(icon: "tray.fill", title: "정리하기", start: "10시", end: "11시", backgroundColor: .secondary)
+                        MyCard(icon: "tray.fill", title: "정리하기", start: "10시", end: "11시", backgroundColor: .black)
                     }
                     .padding()
                 }
