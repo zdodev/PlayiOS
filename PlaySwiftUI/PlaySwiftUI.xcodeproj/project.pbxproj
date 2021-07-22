@@ -10,6 +10,7 @@
 		4105F35326A7110900A807CE /* MyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4105F35226A7110900A807CE /* MyCard.swift */; };
 		4197294026A5AB0E001FB825 /* MyProjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197293F26A5AB0E001FB825 /* MyProjectCard.swift */; };
 		4197294226A5B2C7001FB825 /* MyBasicCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197294126A5B2C7001FB825 /* MyBasicCard.swift */; };
+		41D9646626A9C116000FB3B9 /* MyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D9646526A9C116000FB3B9 /* MyList.swift */; };
 		41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */; };
 		41EE2FF226909C7E00B5FDA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FF126909C7E00B5FDA9 /* ContentView.swift */; };
 		41EE2FF426909C7E00B5FDA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		4105F35226A7110900A807CE /* MyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCard.swift; sourceTree = "<group>"; };
 		4197293F26A5AB0E001FB825 /* MyProjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectCard.swift; sourceTree = "<group>"; };
 		4197294126A5B2C7001FB825 /* MyBasicCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBasicCard.swift; sourceTree = "<group>"; };
+		41D9646526A9C116000FB3B9 /* MyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyList.swift; sourceTree = "<group>"; };
 		41EE2FEC26909C7E00B5FDA9 /* PlaySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySwiftUIApp.swift; sourceTree = "<group>"; };
 		41EE2FF126909C7E00B5FDA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				41EE2FF126909C7E00B5FDA9 /* ContentView.swift */,
+				41D9646526A9C116000FB3B9 /* MyList.swift */,
 				4197293F26A5AB0E001FB825 /* MyProjectCard.swift */,
 				4197294126A5B2C7001FB825 /* MyBasicCard.swift */,
 				4105F35226A7110900A807CE /* MyCard.swift */,
@@ -160,6 +163,7 @@
 				4197294226A5B2C7001FB825 /* MyBasicCard.swift in Sources */,
 				41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */,
 				4105F35326A7110900A807CE /* MyCard.swift in Sources */,
+				41D9646626A9C116000FB3B9 /* MyList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
