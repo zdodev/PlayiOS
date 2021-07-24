@@ -16,8 +16,13 @@ struct ContentView: View {
                                     .foregroundColor(.black)
                             })
                         Spacer()
-                        Image(systemName: "person.crop.circle.fill")
-                            .font(.largeTitle)
+                        NavigationLink(
+                            destination: MyProfileView(isNavigationBarHidden: $isNavigationBarHidden),
+                            label: {
+                                Image(systemName: "person.crop.circle.fill")
+                                    .font(.largeTitle)
+                                    .foregroundColor(.black)
+                            })
                     }
                     .padding(20)
                     Text("zdo 할일목록")
