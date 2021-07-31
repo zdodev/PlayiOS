@@ -11,15 +11,23 @@
 		413554CD26AC24300058A13D /* MyNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413554CC26AC24300058A13D /* MyNavigationView.swift */; };
 		413554CF26AC290A0058A13D /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413554CE26AC290A0058A13D /* MyProfileView.swift */; };
 		413554D126AC29590058A13D /* MyCircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413554D026AC29590058A13D /* MyCircleImageView.swift */; };
+		418E36E326B55B7700EC4E76 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E36E226B55B7700EC4E76 /* DiceView.swift */; };
+		418E36E526B55D2100EC4E76 /* MyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E36E426B55D2100EC4E76 /* MyButtonStyle.swift */; };
+		418E36E726B55F6C00EC4E76 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E36E626B55F6C00EC4E76 /* AppState.swift */; };
+		418E36E926B55FB400EC4E76 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E36E826B55FB400EC4E76 /* AppAction.swift */; };
+		418E36EB26B5600B00EC4E76 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E36EA26B5600B00EC4E76 /* Reducer.swift */; };
+		418E36ED26B567D900EC4E76 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E36EC26B567D900EC4E76 /* AppStore.swift */; };
 		418F290826AEE879009FDB21 /* MyGeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418F290726AEE879009FDB21 /* MyGeometryReader.swift */; };
 		4197294026A5AB0E001FB825 /* MyProjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197293F26A5AB0E001FB825 /* MyProjectCard.swift */; };
 		4197294226A5B2C7001FB825 /* MyBasicCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197294126A5B2C7001FB825 /* MyBasicCard.swift */; };
+		419F6DA726B02D9A00ADA29B /* MyTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F6DA626B02D9A00ADA29B /* MyTapView.swift */; };
 		41D9646626A9C116000FB3B9 /* MyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D9646526A9C116000FB3B9 /* MyList.swift */; };
 		41DF17A026AEEF3F00CA0935 /* MyGeometryReaderVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF179F26AEEF3F00CA0935 /* MyGeometryReaderVStack.swift */; };
 		41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */; };
 		41EE2FF226909C7E00B5FDA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FF126909C7E00B5FDA9 /* ContentView.swift */; };
 		41EE2FF426909C7E00B5FDA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */; };
 		41EE2FF726909C7E00B5FDA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2FF626909C7E00B5FDA9 /* Preview Assets.xcassets */; };
+		41FFCF0A26B18EED00DEDD34 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FFCF0926B18EED00DEDD34 /* MyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +35,16 @@
 		413554CC26AC24300058A13D /* MyNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationView.swift; sourceTree = "<group>"; };
 		413554CE26AC290A0058A13D /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		413554D026AC29590058A13D /* MyCircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCircleImageView.swift; sourceTree = "<group>"; };
+		418E36E226B55B7700EC4E76 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
+		418E36E426B55D2100EC4E76 /* MyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonStyle.swift; sourceTree = "<group>"; };
+		418E36E626B55F6C00EC4E76 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		418E36E826B55FB400EC4E76 /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		418E36EA26B5600B00EC4E76 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		418E36EC26B567D900EC4E76 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		418F290726AEE879009FDB21 /* MyGeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGeometryReader.swift; sourceTree = "<group>"; };
 		4197293F26A5AB0E001FB825 /* MyProjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectCard.swift; sourceTree = "<group>"; };
 		4197294126A5B2C7001FB825 /* MyBasicCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBasicCard.swift; sourceTree = "<group>"; };
+		419F6DA626B02D9A00ADA29B /* MyTapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTapView.swift; sourceTree = "<group>"; };
 		41D9646526A9C116000FB3B9 /* MyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyList.swift; sourceTree = "<group>"; };
 		41DF179F26AEEF3F00CA0935 /* MyGeometryReaderVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGeometryReaderVStack.swift; sourceTree = "<group>"; };
 		41EE2FEC26909C7E00B5FDA9 /* PlaySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +53,7 @@
 		41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41EE2FF626909C7E00B5FDA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		41EE2FF826909C7E00B5FDA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41FFCF0926B18EED00DEDD34 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +80,14 @@
 				413554D026AC29590058A13D /* MyCircleImageView.swift */,
 				418F290726AEE879009FDB21 /* MyGeometryReader.swift */,
 				41DF179F26AEEF3F00CA0935 /* MyGeometryReaderVStack.swift */,
+				419F6DA626B02D9A00ADA29B /* MyTapView.swift */,
+				41FFCF0926B18EED00DEDD34 /* MyView.swift */,
+				418E36E226B55B7700EC4E76 /* DiceView.swift */,
+				418E36E426B55D2100EC4E76 /* MyButtonStyle.swift */,
+				418E36E626B55F6C00EC4E76 /* AppState.swift */,
+				418E36E826B55FB400EC4E76 /* AppAction.swift */,
+				418E36EA26B5600B00EC4E76 /* Reducer.swift */,
+				418E36EC26B567D900EC4E76 /* AppStore.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,14 +197,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41FFCF0A26B18EED00DEDD34 /* MyView.swift in Sources */,
+				419F6DA726B02D9A00ADA29B /* MyTapView.swift in Sources */,
 				413554D126AC29590058A13D /* MyCircleImageView.swift in Sources */,
 				41DF17A026AEEF3F00CA0935 /* MyGeometryReaderVStack.swift in Sources */,
 				413554CF26AC290A0058A13D /* MyProfileView.swift in Sources */,
+				418E36E326B55B7700EC4E76 /* DiceView.swift in Sources */,
 				4197294026A5AB0E001FB825 /* MyProjectCard.swift in Sources */,
+				418E36ED26B567D900EC4E76 /* AppStore.swift in Sources */,
 				41EE2FF226909C7E00B5FDA9 /* ContentView.swift in Sources */,
 				418F290826AEE879009FDB21 /* MyGeometryReader.swift in Sources */,
 				4197294226A5B2C7001FB825 /* MyBasicCard.swift in Sources */,
+				418E36E526B55D2100EC4E76 /* MyButtonStyle.swift in Sources */,
+				418E36E726B55F6C00EC4E76 /* AppState.swift in Sources */,
 				41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */,
+				418E36E926B55FB400EC4E76 /* AppAction.swift in Sources */,
+				418E36EB26B5600B00EC4E76 /* Reducer.swift in Sources */,
 				4105F35326A7110900A807CE /* MyCard.swift in Sources */,
 				41D9646626A9C116000FB3B9 /* MyList.swift in Sources */,
 				413554CD26AC24300058A13D /* MyNavigationView.swift in Sources */,

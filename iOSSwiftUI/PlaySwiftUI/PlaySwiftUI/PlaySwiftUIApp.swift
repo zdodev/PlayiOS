@@ -8,6 +8,7 @@ struct PlaySwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//            DiceView()
         }
     }
 }
