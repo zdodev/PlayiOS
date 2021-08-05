@@ -1,11 +1,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    let store = AppStore(state: AppState(currentDice: "⚀"), reducer: appReducer)
-    
     var body: some View {
-        DiceView()
-            .environmentObject(store)
+        VStack {
+            Text("Financial Results")
+                .font(.title)
+            HStack {
+                Text("Q1 Sales")
+                    .font(.headline)
+                VStack {
+                    Text("January")
+                    Text("February")
+                    Text("March")
+                }
+                VStack {
+                    Text("$1000")
+                    Text("$200")
+                    Text("$3000")
+                }
+            }
+        }
     }
 }
 
