@@ -2,23 +2,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Text("Financial Results")
-                .font(.title)
-            HStack {
-                Text("Q1 Sales")
-                    .font(.headline)
-                VStack {
-                    Text("January")
-                    Text("February")
-                    Text("March")
-                }
-                VStack {
-                    Text("$1000")
-                    Text("$200")
-                    Text("$3000")
-                }
+        VStack() {
+            Group {
+                Text("Sample Text")
+                Text("Sample Text")
+                Text("Sample Text")
+                Text("Sample Text")
+                Text("Sample Text")
+                Text("Sample Text")
             }
+            
+            Group {
+                Text("Sample Text")
+                Text("Sample Text")
+                Text("Sample Text")
+                Text("Sample Text")
+                Text("Sample Text")
+                Text("Sample Text")
+            }
+            .background(Color.yellow)
         }
     }
 }
