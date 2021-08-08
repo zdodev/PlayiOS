@@ -2,25 +2,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack() {
-            Group {
-                Text("Sample Text")
-                Text("Sample Text")
-                Text("Sample Text")
-                Text("Sample Text")
-                Text("Sample Text")
-                Text("Sample Text")
+        GeometryReader { geometry in
+            VStack {
+                Text("Hello World, how are you?")
+                    .font(.largeTitle)
+                    .frame(width: geometry.size.width / 2,
+                           height: geometry.size.height / 4 * 3)
+                Text("Goodbye World")
+                    .font(.largeTitle)
+                    .frame(width: geometry.size.width / 3,
+                           height: geometry.size.height / 4)
             }
-            
-            Group {
-                Text("Sample Text")
-                Text("Sample Text")
-                Text("Sample Text")
-                Text("Sample Text")
-                Text("Sample Text")
-                Text("Sample Text")
-            }
-            .background(Color.yellow)
         }
     }
 }
