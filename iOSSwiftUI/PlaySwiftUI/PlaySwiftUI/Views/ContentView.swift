@@ -1,24 +1,37 @@
 import SwiftUI
+import Combine
 
 struct ContentView: View {
+    @ObservedObject private var timerData = TimerData()
+    
     var body: some View {
-        GeometryReader { geometry in
+        NavigationView {
             VStack {
-                Text("Hello World, how are you?")
+                Text("Timer count = \(timerData.timeCount)")
                     .font(.largeTitle)
-                    .frame(width: geometry.size.width / 2,
-                           height: geometry.size.height / 4 * 3)
-                Text("Goodbye World")
-                    .font(.largeTitle)
-                    .frame(width: geometry.size.width / 3,
-                           height: geometry.size.height / 4)
+                    .fontWeight(.bold)
+                    .padding()
+                Button(action: resetCount) {
+                    Text("Reset Counter")
+                }
+                NavigationLink(
+                    destination: SecondView(timerData: timerData)) {
+                    Text("Navigate")
+                }
+                .padding()
             }
         }
+    }
+    
+    func resetCount() {
+        timerData.resetCount()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+        }
     }
 }
