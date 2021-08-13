@@ -11,7 +11,6 @@ final class TimerData: ObservableObject {
     
     @objc func timerDidFire() {
         timeCount += 1
-        print(timeCount)
     }
     
     func resetCount() {
