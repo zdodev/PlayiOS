@@ -39,3 +39,7 @@ print(path)
 > [📖 Apple File System](https://developer.apple.com/documentation/foundation/file_system)
 >
 > [📖 Apple About Apple File System](https://developer.apple.com/documentation/foundation/file_system/about_apple_file_system)
+>
+> [📖 Apple File System Error Codes](https://developer.apple.com/documentation/foundation/file_system/file_system_error_codes)
+>
+> [📖 Developer Forums Apple Error](https://developer.apple.com/forums/thread/102116)
