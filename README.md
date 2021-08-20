@@ -1,11 +1,15 @@
 # PlayiOS
 iOS 놀이공간입니다.
 
-## 파일 시스템
+## App Link
+
+-   외부에서 링크를 통해 앱을 실행합니다.
+
+## File System
 
 - iOS 파일 시스템에 대한 기록입니다.
 
-### 스택 뷰
+## 스택 뷰
 
 - 스택 뷰 생성 및 설정
 
@@ -57,11 +61,6 @@ iOS 놀이공간입니다.
 ### Delegate Pattern
 
 - Protocol, Delegate, Implement 구현
-
-### App and Environment
-
-- 앱 라이프 사이클
-- UI Scene 및 앱이 실행되는 환경과 특성
 
 ### UISplitViewController
 
