@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		415576EE26C2C54100929696 /* TimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415576ED26C2C54100929696 /* TimerData.swift */; };
-		415576F026C2C7FC00929696 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415576EF26C2C7FC00929696 /* SecondView.swift */; };
 		41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */; };
 		41EE2FF226909C7E00B5FDA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FF126909C7E00B5FDA9 /* ContentView.swift */; };
 		41EE2FF426909C7E00B5FDA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */; };
@@ -16,8 +14,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		415576ED26C2C54100929696 /* TimerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerData.swift; sourceTree = "<group>"; };
-		415576EF26C2C7FC00929696 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		41EE2FEC26909C7E00B5FDA9 /* PlaySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySwiftUIApp.swift; sourceTree = "<group>"; };
 		41EE2FF126909C7E00B5FDA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,8 +37,6 @@
 			isa = PBXGroup;
 			children = (
 				41EE2FF126909C7E00B5FDA9 /* ContentView.swift */,
-				415576ED26C2C54100929696 /* TimerData.swift */,
-				415576EF26C2C7FC00929696 /* SecondView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,8 +148,6 @@
 			files = (
 				41EE2FF226909C7E00B5FDA9 /* ContentView.swift in Sources */,
 				41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */,
-				415576F026C2C7FC00929696 /* SecondView.swift in Sources */,
-				415576EE26C2C54100929696 /* TimerData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
