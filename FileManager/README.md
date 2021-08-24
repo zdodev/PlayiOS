@@ -26,6 +26,12 @@ print(path)
 
 ❗️FileManager 에는 macOS에서만 사용할 수 있는 메서드가 있으니 Availability를 잘 보고 사용해야 합니다.
 
+파일 생성
+
+파일 삭제
+
+디렉터리 조회
+
 ### 참고 링크
 
 ---
@@ -33,3 +39,7 @@ print(path)
 > [📖 Apple File System](https://developer.apple.com/documentation/foundation/file_system)
 >
 > [📖 Apple About Apple File System](https://developer.apple.com/documentation/foundation/file_system/about_apple_file_system)
+>
+> [📖 Apple File System Error Codes](https://developer.apple.com/documentation/foundation/file_system/file_system_error_codes)
+>
+> [📖 Developer Forums Apple Error](https://developer.apple.com/forums/thread/102116)
