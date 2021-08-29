@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4168F93726AD5CB70002D960 /* SwiftUI_iTunesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F93626AD5CB70002D960 /* SwiftUI_iTunesApp.swift */; };
-		4168F93926AD5CB70002D960 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F93826AD5CB70002D960 /* ContentView.swift */; };
-		4168F93B26AD5CB90002D960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4168F93A26AD5CB90002D960 /* Assets.xcassets */; };
-		4168F93E26AD5CB90002D960 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4168F93D26AD5CB90002D960 /* Preview Assets.xcassets */; };
+		41BF0A3926DBB5C100D79F33 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BF0A3826DBB5C100D79F33 /* CircleImage.swift */; };
+		41BF0A3D26DBC32600D79F33 /* MyVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BF0A3C26DBC32600D79F33 /* MyVStack.swift */; };
+		41BF0A3F26DBC4A300D79F33 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BF0A3E26DBC4A300D79F33 /* MapView.swift */; };
+		41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */; };
+		41EE2FF226909C7E00B5FDA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FF126909C7E00B5FDA9 /* ContentView.swift */; };
+		41EE2FF426909C7E00B5FDA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */; };
+		41EE2FF726909C7E00B5FDA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2FF626909C7E00B5FDA9 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4168F93326AD5CB70002D960 /* SwiftUI-iTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-iTunes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4168F93626AD5CB70002D960 /* SwiftUI_iTunesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_iTunesApp.swift; sourceTree = "<group>"; };
-		4168F93826AD5CB70002D960 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		4168F93A26AD5CB90002D960 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4168F93D26AD5CB90002D960 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4168F93F26AD5CB90002D960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41BF0A3826DBB5C100D79F33 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		41BF0A3C26DBC32600D79F33 /* MyVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVStack.swift; sourceTree = "<group>"; };
+		41BF0A3E26DBC4A300D79F33 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		41EE2FEC26909C7E00B5FDA9 /* PlaySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySwiftUIApp.swift; sourceTree = "<group>"; };
+		41EE2FF126909C7E00B5FDA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		41EE2FF626909C7E00B5FDA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		41EE2FF826909C7E00B5FDA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4168F93026AD5CB70002D960 /* Frameworks */ = {
+		41EE2FE926909C7E00B5FDA9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,38 +39,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4168F92A26AD5CB70002D960 = {
+		41AE05232694B0100007A055 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4168F93526AD5CB70002D960 /* SwiftUI-iTunes */,
-				4168F93426AD5CB70002D960 /* Products */,
+				41BF0A3C26DBC32600D79F33 /* MyVStack.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		41E15AA126DBD0AE00E142F6 /* Creating and Combining Views */ = {
+			isa = PBXGroup;
+			children = (
+				41EE2FF126909C7E00B5FDA9 /* ContentView.swift */,
+				41BF0A3826DBB5C100D79F33 /* CircleImage.swift */,
+				41BF0A3E26DBC4A300D79F33 /* MapView.swift */,
+			);
+			path = "Creating and Combining Views";
+			sourceTree = "<group>";
+		};
+		41EE2FE326909C7E00B5FDA9 = {
+			isa = PBXGroup;
+			children = (
+				41EE2FEE26909C7E00B5FDA9 /* PlaySwiftUI */,
+				41EE2FED26909C7E00B5FDA9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		4168F93426AD5CB70002D960 /* Products */ = {
+		41EE2FED26909C7E00B5FDA9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4168F93326AD5CB70002D960 /* SwiftUI-iTunes.app */,
+				41EE2FEC26909C7E00B5FDA9 /* PlaySwiftUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4168F93526AD5CB70002D960 /* SwiftUI-iTunes */ = {
+		41EE2FEE26909C7E00B5FDA9 /* PlaySwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				4168F93626AD5CB70002D960 /* SwiftUI_iTunesApp.swift */,
-				4168F93826AD5CB70002D960 /* ContentView.swift */,
-				4168F93A26AD5CB90002D960 /* Assets.xcassets */,
-				4168F93F26AD5CB90002D960 /* Info.plist */,
-				4168F93C26AD5CB90002D960 /* Preview Content */,
+				41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */,
+				41AE05232694B0100007A055 /* Views */,
+				41E15AA126DBD0AE00E142F6 /* Creating and Combining Views */,
+				41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */,
+				41EE2FF826909C7E00B5FDA9 /* Info.plist */,
+				41EE2FF526909C7E00B5FDA9 /* Preview Content */,
 			);
-			path = "SwiftUI-iTunes";
+			path = PlaySwiftUI;
 			sourceTree = "<group>";
 		};
-		4168F93C26AD5CB90002D960 /* Preview Content */ = {
+		41EE2FF526909C7E00B5FDA9 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				4168F93D26AD5CB90002D960 /* Preview Assets.xcassets */,
+				41EE2FF626909C7E00B5FDA9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -72,38 +97,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4168F93226AD5CB70002D960 /* SwiftUI-iTunes */ = {
+		41EE2FEB26909C7E00B5FDA9 /* PlaySwiftUI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4168F94226AD5CB90002D960 /* Build configuration list for PBXNativeTarget "SwiftUI-iTunes" */;
+			buildConfigurationList = 41EE2FFB26909C7E00B5FDA9 /* Build configuration list for PBXNativeTarget "PlaySwiftUI" */;
 			buildPhases = (
-				4168F92F26AD5CB70002D960 /* Sources */,
-				4168F93026AD5CB70002D960 /* Frameworks */,
-				4168F93126AD5CB70002D960 /* Resources */,
+				41EE2FE826909C7E00B5FDA9 /* Sources */,
+				41EE2FE926909C7E00B5FDA9 /* Frameworks */,
+				41EE2FEA26909C7E00B5FDA9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "SwiftUI-iTunes";
-			productName = "SwiftUI-iTunes";
-			productReference = 4168F93326AD5CB70002D960 /* SwiftUI-iTunes.app */;
+			name = PlaySwiftUI;
+			productName = PlaySwiftUI;
+			productReference = 41EE2FEC26909C7E00B5FDA9 /* PlaySwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4168F92B26AD5CB70002D960 /* Project object */ = {
+		41EE2FE426909C7E00B5FDA9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					4168F93226AD5CB70002D960 = {
+					41EE2FEB26909C7E00B5FDA9 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
 				};
 			};
-			buildConfigurationList = 4168F92E26AD5CB70002D960 /* Build configuration list for PBXProject "SwiftUI-iTunes" */;
+			buildConfigurationList = 41EE2FE726909C7E00B5FDA9 /* Build configuration list for PBXProject "PlaySwiftUI" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,42 +136,45 @@
 				en,
 				Base,
 			);
-			mainGroup = 4168F92A26AD5CB70002D960;
-			productRefGroup = 4168F93426AD5CB70002D960 /* Products */;
+			mainGroup = 41EE2FE326909C7E00B5FDA9;
+			productRefGroup = 41EE2FED26909C7E00B5FDA9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4168F93226AD5CB70002D960 /* SwiftUI-iTunes */,
+				41EE2FEB26909C7E00B5FDA9 /* PlaySwiftUI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4168F93126AD5CB70002D960 /* Resources */ = {
+		41EE2FEA26909C7E00B5FDA9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4168F93E26AD5CB90002D960 /* Preview Assets.xcassets in Resources */,
-				4168F93B26AD5CB90002D960 /* Assets.xcassets in Resources */,
+				41EE2FF726909C7E00B5FDA9 /* Preview Assets.xcassets in Resources */,
+				41EE2FF426909C7E00B5FDA9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4168F92F26AD5CB70002D960 /* Sources */ = {
+		41EE2FE826909C7E00B5FDA9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4168F93926AD5CB70002D960 /* ContentView.swift in Sources */,
-				4168F93726AD5CB70002D960 /* SwiftUI_iTunesApp.swift in Sources */,
+				41EE2FF226909C7E00B5FDA9 /* ContentView.swift in Sources */,
+				41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */,
+				41BF0A3F26DBC4A300D79F33 /* MapView.swift in Sources */,
+				41BF0A3926DBB5C100D79F33 /* CircleImage.swift in Sources */,
+				41BF0A3D26DBC32600D79F33 /* MyVStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		4168F94026AD5CB90002D960 /* Debug */ = {
+		41EE2FF926909C7E00B5FDA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -207,7 +235,7 @@
 			};
 			name = Debug;
 		};
-		4168F94126AD5CB90002D960 /* Release */ = {
+		41EE2FFA26909C7E00B5FDA9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -262,42 +290,44 @@
 			};
 			name = Release;
 		};
-		4168F94326AD5CB90002D960 /* Debug */ = {
+		41EE2FFC26909C7E00B5FDA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-iTunes/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PlaySwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = XZH8K7PDP5;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "SwiftUI-iTunes/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_FILE = PlaySwiftUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "zdodev.SwiftUI-iTunes";
+				PRODUCT_BUNDLE_IDENTIFIER = zdodev.PlaySwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		4168F94426AD5CB90002D960 /* Release */ = {
+		41EE2FFD26909C7E00B5FDA9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-iTunes/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PlaySwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = XZH8K7PDP5;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "SwiftUI-iTunes/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_FILE = PlaySwiftUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "zdodev.SwiftUI-iTunes";
+				PRODUCT_BUNDLE_IDENTIFIER = zdodev.PlaySwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,25 +337,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4168F92E26AD5CB70002D960 /* Build configuration list for PBXProject "SwiftUI-iTunes" */ = {
+		41EE2FE726909C7E00B5FDA9 /* Build configuration list for PBXProject "PlaySwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4168F94026AD5CB90002D960 /* Debug */,
-				4168F94126AD5CB90002D960 /* Release */,
+				41EE2FF926909C7E00B5FDA9 /* Debug */,
+				41EE2FFA26909C7E00B5FDA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4168F94226AD5CB90002D960 /* Build configuration list for PBXNativeTarget "SwiftUI-iTunes" */ = {
+		41EE2FFB26909C7E00B5FDA9 /* Build configuration list for PBXNativeTarget "PlaySwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4168F94326AD5CB90002D960 /* Debug */,
-				4168F94426AD5CB90002D960 /* Release */,
+				41EE2FFC26909C7E00B5FDA9 /* Debug */,
+				41EE2FFD26909C7E00B5FDA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4168F92B26AD5CB70002D960 /* Project object */;
+	rootObject = 41EE2FE426909C7E00B5FDA9 /* Project object */;
 }
