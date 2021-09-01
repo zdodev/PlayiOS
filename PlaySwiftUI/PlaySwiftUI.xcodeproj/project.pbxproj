@@ -17,6 +17,8 @@
 		41EE2FF226909C7E00B5FDA9 /* CreatingAndCombiningViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FF126909C7E00B5FDA9 /* CreatingAndCombiningViews.swift */; };
 		41EE2FF426909C7E00B5FDA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */; };
 		41EE2FF726909C7E00B5FDA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2FF626909C7E00B5FDA9 /* Preview Assets.xcassets */; };
+		84B8698A26DF40D000E6A8B5 /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8698926DF40D000E6A8B5 /* LandmarkRow.swift */; };
+		84B8698C26DF4BDB00E6A8B5 /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8698B26DF4BDB00E6A8B5 /* LandmarkList.swift */; };
 		84CD49B926DE118A0054BB2E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 84CD49B826DE118A0054BB2E /* README.md */; };
 		84D03D3226DC629400C277C6 /* MyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D03D3126DC629400C277C6 /* MyText.swift */; };
 		84D03D3426DC680B00C277C6 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D03D3326DC680B00C277C6 /* MyTextField.swift */; };
@@ -38,6 +40,8 @@
 		41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41EE2FF626909C7E00B5FDA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		41EE2FF826909C7E00B5FDA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B8698926DF40D000E6A8B5 /* LandmarkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = "<group>"; };
+		84B8698B26DF4BDB00E6A8B5 /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
 		84CD49B826DE118A0054BB2E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		84D03D3126DC629400C277C6 /* MyText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyText.swift; sourceTree = "<group>"; };
 		84D03D3326DC680B00C277C6 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 		4101710426DE5B3200FF3E92 /* Building Lists and Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				84B8698926DF40D000E6A8B5 /* LandmarkRow.swift */,
+				84B8698B26DF4BDB00E6A8B5 /* LandmarkList.swift */,
 				4101710526DE78DF00FF3E92 /* Landmark.swift */,
 				4101710926DE7B7900FF3E92 /* ModelData.swift */,
 			);
@@ -218,7 +224,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D03D3926DC875100C277C6 /* MyView.swift in Sources */,
+				84B8698A26DF40D000E6A8B5 /* LandmarkRow.swift in Sources */,
 				84D03D3226DC629400C277C6 /* MyText.swift in Sources */,
+				84B8698C26DF4BDB00E6A8B5 /* LandmarkList.swift in Sources */,
 				84D03D3426DC680B00C277C6 /* MyTextField.swift in Sources */,
 				41EE2FF226909C7E00B5FDA9 /* CreatingAndCombiningViews.swift in Sources */,
 				4101710A26DE7B7900FF3E92 /* ModelData.swift in Sources */,
