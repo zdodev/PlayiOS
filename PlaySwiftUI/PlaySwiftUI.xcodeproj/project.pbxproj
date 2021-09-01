@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4101710326DE5B2100FF3E92 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4101710226DE5B2100FF3E92 /* landmarkData.json */; };
+		4101710626DE78DF00FF3E92 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101710526DE78DF00FF3E92 /* Landmark.swift */; };
+		4101710A26DE7B7900FF3E92 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101710926DE7B7900FF3E92 /* ModelData.swift */; };
 		41BF0A3926DBB5C100D79F33 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BF0A3826DBB5C100D79F33 /* CircleImage.swift */; };
 		41BF0A3D26DBC32600D79F33 /* MyVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BF0A3C26DBC32600D79F33 /* MyVStack.swift */; };
 		41BF0A3F26DBC4A300D79F33 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BF0A3E26DBC4A300D79F33 /* MapView.swift */; };
 		41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */; };
-		41EE2FF226909C7E00B5FDA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FF126909C7E00B5FDA9 /* ContentView.swift */; };
+		41EE2FF226909C7E00B5FDA9 /* CreatingAndCombiningViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FF126909C7E00B5FDA9 /* CreatingAndCombiningViews.swift */; };
 		41EE2FF426909C7E00B5FDA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */; };
 		41EE2FF726909C7E00B5FDA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2FF626909C7E00B5FDA9 /* Preview Assets.xcassets */; };
 		84CD49B926DE118A0054BB2E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 84CD49B826DE118A0054BB2E /* README.md */; };
@@ -19,16 +22,19 @@
 		84D03D3426DC680B00C277C6 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D03D3326DC680B00C277C6 /* MyTextField.swift */; };
 		84D03D3926DC875100C277C6 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D03D3826DC875100C277C6 /* MyView.swift */; };
 		84D03D3C26DCC02500C277C6 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D03D3B26DCC02500C277C6 /* ViewState.swift */; };
-		84D03D3E26DCC17B00C277C6 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D03D3D26DCC17B00C277C6 /* ModelData.swift */; };
+		84D03D3E26DCC17B00C277C6 /* MyModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D03D3D26DCC17B00C277C6 /* MyModelData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4101710226DE5B2100FF3E92 /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
+		4101710526DE78DF00FF3E92 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		4101710926DE7B7900FF3E92 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		41BF0A3826DBB5C100D79F33 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		41BF0A3C26DBC32600D79F33 /* MyVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVStack.swift; sourceTree = "<group>"; };
 		41BF0A3E26DBC4A300D79F33 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		41EE2FEC26909C7E00B5FDA9 /* PlaySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySwiftUIApp.swift; sourceTree = "<group>"; };
-		41EE2FF126909C7E00B5FDA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		41EE2FF126909C7E00B5FDA9 /* CreatingAndCombiningViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingAndCombiningViews.swift; sourceTree = "<group>"; };
 		41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41EE2FF626909C7E00B5FDA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		41EE2FF826909C7E00B5FDA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,7 +43,7 @@
 		84D03D3326DC680B00C277C6 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		84D03D3826DC875100C277C6 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		84D03D3B26DCC02500C277C6 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
-		84D03D3D26DCC17B00C277C6 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		84D03D3D26DCC17B00C277C6 /* MyModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4101710126DE5B0C00FF3E92 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4101710226DE5B2100FF3E92 /* landmarkData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4101710426DE5B3200FF3E92 /* Building Lists and Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				4101710526DE78DF00FF3E92 /* Landmark.swift */,
+				4101710926DE7B7900FF3E92 /* ModelData.swift */,
+			);
+			name = "Building Lists and Navigation";
+			path = "Creating and Combining Views/Building Lists and Navigation";
+			sourceTree = "<group>";
+		};
 		41AE05232694B0100007A055 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,7 +88,7 @@
 		41E15AA126DBD0AE00E142F6 /* Creating and Combining Views */ = {
 			isa = PBXGroup;
 			children = (
-				41EE2FF126909C7E00B5FDA9 /* ContentView.swift */,
+				41EE2FF126909C7E00B5FDA9 /* CreatingAndCombiningViews.swift */,
 				41BF0A3826DBB5C100D79F33 /* CircleImage.swift */,
 				41BF0A3E26DBC4A300D79F33 /* MapView.swift */,
 			);
@@ -94,9 +118,11 @@
 				41EE2FEF26909C7E00B5FDA9 /* PlaySwiftUIApp.swift */,
 				84D03D3826DC875100C277C6 /* MyView.swift */,
 				41AE05232694B0100007A055 /* Views */,
-				41E15AA126DBD0AE00E142F6 /* Creating and Combining Views */,
 				84D03D3A26DCC00F00C277C6 /* State and Data Flow */,
+				41E15AA126DBD0AE00E142F6 /* Creating and Combining Views */,
+				4101710426DE5B3200FF3E92 /* Building Lists and Navigation */,
 				41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */,
+				4101710126DE5B0C00FF3E92 /* Resources */,
 				41EE2FF826909C7E00B5FDA9 /* Info.plist */,
 				41EE2FF526909C7E00B5FDA9 /* Preview Content */,
 			);
@@ -115,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				84D03D3B26DCC02500C277C6 /* ViewState.swift */,
-				84D03D3D26DCC17B00C277C6 /* ModelData.swift */,
+				84D03D3D26DCC17B00C277C6 /* MyModelData.swift */,
 			);
 			path = "State and Data Flow";
 			sourceTree = "<group>";
@@ -178,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84CD49B926DE118A0054BB2E /* README.md in Resources */,
+				4101710326DE5B2100FF3E92 /* landmarkData.json in Resources */,
 				41EE2FF726909C7E00B5FDA9 /* Preview Assets.xcassets in Resources */,
 				41EE2FF426909C7E00B5FDA9 /* Assets.xcassets in Resources */,
 			);
@@ -193,11 +220,13 @@
 				84D03D3926DC875100C277C6 /* MyView.swift in Sources */,
 				84D03D3226DC629400C277C6 /* MyText.swift in Sources */,
 				84D03D3426DC680B00C277C6 /* MyTextField.swift in Sources */,
-				41EE2FF226909C7E00B5FDA9 /* ContentView.swift in Sources */,
+				41EE2FF226909C7E00B5FDA9 /* CreatingAndCombiningViews.swift in Sources */,
+				4101710A26DE7B7900FF3E92 /* ModelData.swift in Sources */,
+				4101710626DE78DF00FF3E92 /* Landmark.swift in Sources */,
 				41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */,
 				84D03D3C26DCC02500C277C6 /* ViewState.swift in Sources */,
 				41BF0A3F26DBC4A300D79F33 /* MapView.swift in Sources */,
-				84D03D3E26DCC17B00C277C6 /* ModelData.swift in Sources */,
+				84D03D3E26DCC17B00C277C6 /* MyModelData.swift in Sources */,
 				41BF0A3926DBB5C100D79F33 /* CircleImage.swift in Sources */,
 				41BF0A3D26DBC32600D79F33 /* MyVStack.swift in Sources */,
 			);

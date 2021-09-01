@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 
-struct ModelData: View {
+struct MyModelData: View {
     @StateObject var book = Book()
     @State private var isOn = true
     
@@ -32,6 +32,6 @@ struct BookView: View {
 
 struct ModelData_Previews: PreviewProvider {
     static var previews: some View {
-        ModelData()
+        MyModelData()
     }
 }
