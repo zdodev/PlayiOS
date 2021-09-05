@@ -1,17 +1,18 @@
 import SwiftUI
+import MapKit
 
 struct CreatingAndCombiningViews: View {
     // Computed property, 하나의 View 만을 반환한다.
     var body: some View {
         // 뷰를 세로로 배열
         VStack {
-            MapView()
+            MapView(coordinate: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868))
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
             
-            CircleImage()
-                .offset(y: -130)
-                .padding(.bottom, -130)
+//            CircleImage()
+//                .offset(y: -130)
+//                .padding(.bottom, -130)
             
             VStack(alignment: .leading) {
                 Text("Turtle Rock")
