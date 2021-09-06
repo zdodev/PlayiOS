@@ -18,6 +18,7 @@
 		41EE2FF226909C7E00B5FDA9 /* CreatingAndCombiningViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE2FF126909C7E00B5FDA9 /* CreatingAndCombiningViews.swift */; };
 		41EE2FF426909C7E00B5FDA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */; };
 		41EE2FF726909C7E00B5FDA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2FF626909C7E00B5FDA9 /* Preview Assets.xcassets */; };
+		41F3A6FC26E673270070E6FE /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F3A6FB26E673270070E6FE /* FavoriteButton.swift */; };
 		84B8698A26DF40D000E6A8B5 /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8698926DF40D000E6A8B5 /* LandmarkRow.swift */; };
 		84B8698C26DF4BDB00E6A8B5 /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8698B26DF4BDB00E6A8B5 /* LandmarkList.swift */; };
 		84CD49B926DE118A0054BB2E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 84CD49B826DE118A0054BB2E /* README.md */; };
@@ -42,6 +43,7 @@
 		41EE2FF326909C7E00B5FDA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41EE2FF626909C7E00B5FDA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		41EE2FF826909C7E00B5FDA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41F3A6FB26E673270070E6FE /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		84B8698926DF40D000E6A8B5 /* LandmarkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = "<group>"; };
 		84B8698B26DF4BDB00E6A8B5 /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
 		84CD49B826DE118A0054BB2E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				41BB868C26E3CC5400C25A39 /* LandmarkDetail.swift */,
 				4101710526DE78DF00FF3E92 /* Landmark.swift */,
 				4101710926DE7B7900FF3E92 /* ModelData.swift */,
+				41F3A6FB26E673270070E6FE /* FavoriteButton.swift */,
 			);
 			name = "Building Lists and Navigation";
 			path = "Creating and Combining Views/Building Lists and Navigation";
@@ -237,6 +240,7 @@
 				41EE2FF026909C7E00B5FDA9 /* PlaySwiftUIApp.swift in Sources */,
 				84D03D3C26DCC02500C277C6 /* ViewState.swift in Sources */,
 				41BF0A3F26DBC4A300D79F33 /* MapView.swift in Sources */,
+				41F3A6FC26E673270070E6FE /* FavoriteButton.swift in Sources */,
 				84D03D3E26DCC17B00C277C6 /* MyModelData.swift in Sources */,
 				41BF0A3926DBB5C100D79F33 /* CircleImage.swift in Sources */,
 				41BB868D26E3CC5400C25A39 /* LandmarkDetail.swift in Sources */,
