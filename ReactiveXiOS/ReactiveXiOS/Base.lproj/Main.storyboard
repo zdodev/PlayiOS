@@ -119,24 +119,45 @@
                                     <action selector="exFilter:" destination="gbr-jG-hd0" eventType="touchUpInside" id="Avr-Kl-Pdh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g89-VQ-e1d">
+                                <rect key="frame" x="186" y="364" width="42" height="30"/>
+                                <state key="normal" title="image"/>
+                                <connections>
+                                    <action selector="exMap3:" destination="gbr-jG-hd0" eventType="touchUpInside" id="QfW-sX-CvG"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qzb-5R-CrC">
+                                <rect key="frame" x="20" y="414" width="374" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="Dfo-hi-rdA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="afb-7O-dhp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sID-K7-eRR" firstAttribute="top" secondItem="cdm-ji-1t5" secondAttribute="bottom" constant="20" id="2se-T8-Ayz"/>
                             <constraint firstItem="sID-K7-eRR" firstAttribute="centerX" secondItem="ytI-To-1Qf" secondAttribute="centerX" id="DFV-1c-unB"/>
+                            <constraint firstItem="afb-7O-dhp" firstAttribute="trailing" secondItem="qzb-5R-CrC" secondAttribute="trailing" constant="20" id="FMh-Kp-w6k"/>
                             <constraint firstItem="fCM-EO-qPy" firstAttribute="top" secondItem="afb-7O-dhp" secondAttribute="top" constant="20" id="Ggy-tf-uTG"/>
                             <constraint firstItem="cdm-ji-1t5" firstAttribute="centerX" secondItem="ytI-To-1Qf" secondAttribute="centerX" id="Kxm-1T-nou"/>
                             <constraint firstItem="dga-ra-29V" firstAttribute="top" secondItem="2ix-NV-T48" secondAttribute="bottom" constant="20" id="Lbu-dx-OuK"/>
                             <constraint firstItem="2ix-NV-T48" firstAttribute="top" secondItem="wEg-Q1-CFl" secondAttribute="bottom" constant="20" id="NvM-Jg-VSA"/>
+                            <constraint firstItem="g89-VQ-e1d" firstAttribute="top" secondItem="sID-K7-eRR" secondAttribute="bottom" constant="20" id="Qfp-Nf-uYX"/>
                             <constraint firstItem="cdm-ji-1t5" firstAttribute="top" secondItem="dga-ra-29V" secondAttribute="bottom" constant="20" id="Stv-5N-RB4"/>
+                            <constraint firstItem="g89-VQ-e1d" firstAttribute="centerX" secondItem="ytI-To-1Qf" secondAttribute="centerX" id="ZOA-T4-J1Z"/>
                             <constraint firstItem="dga-ra-29V" firstAttribute="centerX" secondItem="ytI-To-1Qf" secondAttribute="centerX" id="cKl-ZO-ejm"/>
                             <constraint firstItem="fCM-EO-qPy" firstAttribute="centerX" secondItem="ytI-To-1Qf" secondAttribute="centerX" id="cM7-dn-oeb"/>
                             <constraint firstItem="wEg-Q1-CFl" firstAttribute="centerX" secondItem="ytI-To-1Qf" secondAttribute="centerX" id="kRO-a3-qQD"/>
                             <constraint firstItem="wEg-Q1-CFl" firstAttribute="top" secondItem="fCM-EO-qPy" secondAttribute="bottom" constant="20" id="n0O-nY-dOs"/>
+                            <constraint firstItem="qzb-5R-CrC" firstAttribute="top" secondItem="g89-VQ-e1d" secondAttribute="bottom" constant="20" id="r8A-ik-nSf"/>
+                            <constraint firstItem="qzb-5R-CrC" firstAttribute="leading" secondItem="afb-7O-dhp" secondAttribute="leading" constant="20" id="tbs-VZ-gDL"/>
                             <constraint firstItem="2ix-NV-T48" firstAttribute="centerX" secondItem="ytI-To-1Qf" secondAttribute="centerX" id="zm1-LC-sC5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="qzb-5R-CrC" id="Hcl-Qh-6zK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3z-bC-d9v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
