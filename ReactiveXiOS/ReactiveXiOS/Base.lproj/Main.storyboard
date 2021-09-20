@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ReactiveXiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cpB-zU-U89">
+                                <rect key="frame" x="20" y="44" width="374" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="gKU-Fi-LlL"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ta-d5-wln">
+                                <rect key="frame" x="20" y="304" width="52" height="30"/>
+                                <state key="normal" title="불러오기"/>
+                                <connections>
+                                    <action selector="onLoad:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HGZ-AC-e9E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHk-uZ-WdF">
+                                <rect key="frame" x="92" y="304" width="30" height="30"/>
+                                <state key="normal" title="취소"/>
+                                <connections>
+                                    <action selector="onCancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W0w-QF-JD5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaH-oo-euX">
+                                <rect key="frame" x="346" y="304" width="48" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="x2d-Pg-OSG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cpB-zU-U89" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4cz-la-jd4"/>
+                            <constraint firstItem="mHk-uZ-WdF" firstAttribute="leading" secondItem="7Ta-d5-wln" secondAttribute="trailing" constant="20" id="GTe-pZ-uG4"/>
+                            <constraint firstItem="cpB-zU-U89" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GYf-J6-s6I"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YaH-oo-euX" secondAttribute="trailing" constant="20" id="cGT-Kw-xc9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cpB-zU-U89" secondAttribute="trailing" constant="20" id="cJ1-fU-aYj"/>
+                            <constraint firstItem="YaH-oo-euX" firstAttribute="top" secondItem="cpB-zU-U89" secondAttribute="bottom" constant="20" id="hz0-R0-ye1"/>
+                            <constraint firstItem="mHk-uZ-WdF" firstAttribute="top" secondItem="cpB-zU-U89" secondAttribute="bottom" constant="20" id="kOk-sl-Z0p"/>
+                            <constraint firstItem="7Ta-d5-wln" firstAttribute="top" secondItem="cpB-zU-U89" secondAttribute="bottom" constant="20" id="nHL-tf-3lu"/>
+                            <constraint firstItem="7Ta-d5-wln" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="q1U-c7-Cfg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countLabel" destination="YaH-oo-euX" id="I6g-Ph-4P5"/>
+                        <outlet property="imageView" destination="cpB-zU-U89" id="Vdm-lE-PKB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="116"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
