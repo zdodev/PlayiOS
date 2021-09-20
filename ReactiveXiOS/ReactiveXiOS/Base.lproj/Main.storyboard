@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gbr-jG-hd0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -68,6 +68,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="83" y="116"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="eUO-VO-GrA">
+            <objects>
+                <viewController id="gbr-jG-hd0" customClass="ViewController2" customModule="ReactiveXiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ytI-To-1Qf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCM-EO-qPy">
+                                <rect key="frame" x="159.5" y="64" width="95" height="30"/>
+                                <state key="normal" title="Just Operator"/>
+                                <connections>
+                                    <action selector="exJust1:" destination="gbr-jG-hd0" eventType="touchUpInside" id="T6T-VX-9al"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEg-Q1-CFl">
+                                <rect key="frame" x="159.5" y="114" width="95" height="30"/>
+                                <state key="normal" title="Just Operator"/>
+                                <connections>
+                                    <action selector="exJust2:" destination="gbr-jG-hd0" eventType="touchUpInside" id="WAd-Jm-Q3S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ix-NV-T48">
+                                <rect key="frame" x="156.5" y="164" width="101" height="30"/>
+                                <state key="normal" title="From Operator"/>
+                                <connections>
+                                    <action selector="exFrom1:" destination="gbr-jG-hd0" eventType="touchUpInside" id="Pwt-4B-cET"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dga-ra-29V">
+                                <rect key="frame" x="159" y="214" width="96" height="30"/>
+                                <state key="normal" title="Map Operator"/>
+                                <connections>
+                                    <action selector="exMap1:" destination="gbr-jG-hd0" eventType="touchUpInside" id="PPt-ds-nLI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdm-ji-1t5">
+                                <rect key="frame" x="159" y="264" width="96" height="30"/>
+                                <state key="normal" title="Map Operator"/>
+                                <connections>
+                                    <action selector="exMap2:" destination="gbr-jG-hd0" eventType="touchUpInside" id="kx9-ZG-Ejp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sID-K7-eRR">
+                                <rect key="frame" x="157" y="314" width="100" height="30"/>
+                                <state key="normal" title="Filter Operator"/>
+                                <connections>
+                                    <action selector="exFilter:" destination="gbr-jG-hd0" eventType="touchUpInside" id="Avr-Kl-Pdh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="afb-7O-dhp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sID-K7-eRR" firstAttribute="top" secondItem="cdm-ji-1t5" secondAttribute="bottom" constant="20" id="2se-T8-Ayz"/>
+                            <constraint firstItem="sID-K7-eRR" firstAttribute="centerX" secondItem="ytI-To-1Qf" secondAttribute="centerX" id="DFV-1c-unB"/>
+                            <constraint firstItem="fCM-EO-qPy" firstAttribute="top" secondItem="afb-7O-dhp" secondAttribute="top" constant="20" id="Ggy-tf-uTG"/>
+                            <constraint firstItem="cdm-ji-1t5" firstAttribute="centerX" secondItem="ytI-To-1Qf" secondAttribute="centerX" id="Kxm-1T-nou"/>
+                            <constraint firstItem="dga-ra-29V" firstAttribute="top" secondItem="2ix-NV-T48" secondAttribute="bottom" constant="20" id="Lbu-dx-OuK"/>
+                            <constraint firstItem="2ix-NV-T48" firstAttribute="top" secondItem="wEg-Q1-CFl" secondAttribute="bottom" constant="20" id="NvM-Jg-VSA"/>
+                            <constraint firstItem="cdm-ji-1t5" firstAttribute="top" secondItem="dga-ra-29V" secondAttribute="bottom" constant="20" id="Stv-5N-RB4"/>
+                            <constraint firstItem="dga-ra-29V" firstAttribute="centerX" secondItem="ytI-To-1Qf" secondAttribute="centerX" id="cKl-ZO-ejm"/>
+                            <constraint firstItem="fCM-EO-qPy" firstAttribute="centerX" secondItem="ytI-To-1Qf" secondAttribute="centerX" id="cM7-dn-oeb"/>
+                            <constraint firstItem="wEg-Q1-CFl" firstAttribute="centerX" secondItem="ytI-To-1Qf" secondAttribute="centerX" id="kRO-a3-qQD"/>
+                            <constraint firstItem="wEg-Q1-CFl" firstAttribute="top" secondItem="fCM-EO-qPy" secondAttribute="bottom" constant="20" id="n0O-nY-dOs"/>
+                            <constraint firstItem="2ix-NV-T48" firstAttribute="centerX" secondItem="ytI-To-1Qf" secondAttribute="centerX" id="zm1-LC-sC5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w3z-bC-d9v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="912" y="116"/>
         </scene>
     </scenes>
     <resources>
