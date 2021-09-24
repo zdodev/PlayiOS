@@ -10,12 +10,12 @@ class ViewController2: UIViewController {
         Observable.just("Hello world")
             .subscribe { event in
                 switch event {
-                case .next(let str):
-                    print(str)
-                case .error(let error):
-                    print(error.localizedDescription)
-                case .completed:
-                    print("completed")
+                    case .next(let str):
+                        print(str)
+                    case .error(let error):
+                        print(error.localizedDescription)
+                    case .completed:
+                        print("completed")
                 }
             }
             .disposed(by: disposeBag)
@@ -51,7 +51,7 @@ class ViewController2: UIViewController {
     @IBAction func exMap2(_ sender: UIButton) {
         Observable.from(["blue", "white"])
             .map { str in
-                 str.count
+                str.count
             }
             .subscribe(onNext: { element in
                 print(element)
@@ -74,13 +74,27 @@ class ViewController2: UIViewController {
         Observable.just("800x600")
             .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .default))
             .observe(on: ConcurrentDispatchQueueScheduler(qos: .default))
-            .map { $0.replacingOccurrences(of: "x", with: "/") }
-            .map { "https://picsum.photos/\($0)/?random" }
-            .map { URL(string: $0) }
-            .filter { $0 != nil }
-            .map { $0! }
-            .map { try Data(contentsOf: $0) }
-            .map { UIImage(data:  $0) }
+            .map {
+                $0.replacingOccurrences(of: "x", with: "/")
+            }
+            .map {
+                "https://picsum.photos/\($0)/?random"
+            }
+            .map {
+                URL(string: $0)
+            }
+            .filter {
+                $0 != nil
+            }
+            .map {
+                $0!
+            }
+            .map {
+                try Data(contentsOf: $0)
+            }
+            .map {
+                UIImage(data:  $0)
+            }
             .do(onNext: { image in
                 print(image?.size)
             })
