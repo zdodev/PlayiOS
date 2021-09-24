@@ -45,6 +45,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iil-WM-kUk">
+                                <rect key="frame" x="20" y="354" width="53" height="30"/>
+                                <state key="normal" title="Subject"/>
+                                <connections>
+                                    <action selector="tappedSubject:" destination="BYZ-38-t0r" eventType="touchUpInside" id="soP-Qh-zpV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWl-4k-EZP">
+                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -52,9 +65,13 @@
                             <constraint firstItem="cpB-zU-U89" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4cz-la-jd4"/>
                             <constraint firstItem="mHk-uZ-WdF" firstAttribute="leading" secondItem="7Ta-d5-wln" secondAttribute="trailing" constant="20" id="GTe-pZ-uG4"/>
                             <constraint firstItem="cpB-zU-U89" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GYf-J6-s6I"/>
+                            <constraint firstItem="Iil-WM-kUk" firstAttribute="top" secondItem="7Ta-d5-wln" secondAttribute="bottom" constant="20" id="I9R-GD-5WX"/>
+                            <constraint firstItem="Iil-WM-kUk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="STP-XB-TaD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YaH-oo-euX" secondAttribute="trailing" constant="20" id="cGT-Kw-xc9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cpB-zU-U89" secondAttribute="trailing" constant="20" id="cJ1-fU-aYj"/>
                             <constraint firstItem="YaH-oo-euX" firstAttribute="top" secondItem="cpB-zU-U89" secondAttribute="bottom" constant="20" id="hz0-R0-ye1"/>
+                            <constraint firstItem="AWl-4k-EZP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="i6i-mm-VlQ"/>
+                            <constraint firstItem="AWl-4k-EZP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ihu-HX-nja"/>
                             <constraint firstItem="mHk-uZ-WdF" firstAttribute="top" secondItem="cpB-zU-U89" secondAttribute="bottom" constant="20" id="kOk-sl-Z0p"/>
                             <constraint firstItem="7Ta-d5-wln" firstAttribute="top" secondItem="cpB-zU-U89" secondAttribute="bottom" constant="20" id="nHL-tf-3lu"/>
                             <constraint firstItem="7Ta-d5-wln" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="q1U-c7-Cfg"/>
@@ -63,6 +80,7 @@
                     <connections>
                         <outlet property="countLabel" destination="YaH-oo-euX" id="I6g-Ph-4P5"/>
                         <outlet property="imageView" destination="cpB-zU-U89" id="Vdm-lE-PKB"/>
+                        <outlet property="myLabel" destination="AWl-4k-EZP" id="dHz-nz-IoR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
