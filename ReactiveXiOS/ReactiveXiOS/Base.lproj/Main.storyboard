@@ -224,15 +224,25 @@
                                     <action selector="tappedOnNext:" destination="FAC-R1-byg" eventType="touchUpInside" id="emx-W7-AiB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9J-FP-6pO">
+                                <rect key="frame" x="342" y="64" width="52" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Just"/>
+                                <connections>
+                                    <action selector="tappedJust:" destination="FAC-R1-byg" eventType="touchUpInside" id="e5c-oA-xS8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BQe-Xn-2oB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="BQe-Xn-2oB" firstAttribute="trailing" secondItem="Z9J-FP-6pO" secondAttribute="trailing" constant="20" id="6FD-BY-bYK"/>
                             <constraint firstItem="Ubw-4k-K2o" firstAttribute="leading" secondItem="BQe-Xn-2oB" secondAttribute="leading" constant="20" id="GAu-NE-pv3"/>
                             <constraint firstItem="OXB-SF-qAx" firstAttribute="leading" secondItem="BQe-Xn-2oB" secondAttribute="leading" constant="20" id="PtC-0M-HBC"/>
                             <constraint firstItem="DEn-be-poU" firstAttribute="top" secondItem="OXB-SF-qAx" secondAttribute="bottom" constant="20" id="UL6-jp-IXO"/>
                             <constraint firstItem="DEn-be-poU" firstAttribute="leading" secondItem="BQe-Xn-2oB" secondAttribute="leading" constant="20" id="VmI-dk-9ya"/>
                             <constraint firstItem="Ubw-4k-K2o" firstAttribute="top" secondItem="DEn-be-poU" secondAttribute="bottom" constant="20" id="YET-v8-5RQ"/>
+                            <constraint firstItem="Z9J-FP-6pO" firstAttribute="top" secondItem="BQe-Xn-2oB" secondAttribute="top" constant="20" id="peM-eh-kz1"/>
                             <constraint firstItem="OXB-SF-qAx" firstAttribute="top" secondItem="BQe-Xn-2oB" secondAttribute="top" constant="20" id="zFA-V4-Tfy"/>
                         </constraints>
                     </view>
