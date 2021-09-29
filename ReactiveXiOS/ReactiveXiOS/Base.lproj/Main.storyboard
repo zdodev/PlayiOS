@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FAC-R1-byg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -190,7 +190,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3z-bC-d9v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="116"/>
+            <point key="canvasLocation" x="845" y="116"/>
+        </scene>
+        <!--View Controller3-->
+        <scene sceneID="1dv-Zs-Ofs">
+            <objects>
+                <viewController id="FAC-R1-byg" customClass="ViewController3" customModule="ReactiveXiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bml-5E-nPh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXB-SF-qAx">
+                                <rect key="frame" x="20" y="64" width="98" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Observable"/>
+                                <connections>
+                                    <action selector="tappedObservable:" destination="FAC-R1-byg" eventType="touchUpInside" id="P56-vh-Dax"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BQe-Xn-2oB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OXB-SF-qAx" firstAttribute="leading" secondItem="BQe-Xn-2oB" secondAttribute="leading" constant="20" id="PtC-0M-HBC"/>
+                            <constraint firstItem="OXB-SF-qAx" firstAttribute="top" secondItem="BQe-Xn-2oB" secondAttribute="top" constant="20" id="zFA-V4-Tfy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="exu-xN-6NK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1609" y="116"/>
         </scene>
     </scenes>
     <resources>
