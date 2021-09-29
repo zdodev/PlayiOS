@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gbr-jG-hd0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -58,15 +59,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4d5-O7-81K">
+                                <rect key="frame" x="158" y="478.5" width="98" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Observable"/>
+                                <connections>
+                                    <action selector="tappedObservable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oo3-Sg-kZ3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cpB-zU-U89" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4cz-la-jd4"/>
+                            <constraint firstItem="4d5-O7-81K" firstAttribute="top" secondItem="AWl-4k-EZP" secondAttribute="bottom" constant="20" id="8Z6-M7-OyN"/>
                             <constraint firstItem="mHk-uZ-WdF" firstAttribute="leading" secondItem="7Ta-d5-wln" secondAttribute="trailing" constant="20" id="GTe-pZ-uG4"/>
                             <constraint firstItem="cpB-zU-U89" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GYf-J6-s6I"/>
                             <constraint firstItem="Iil-WM-kUk" firstAttribute="top" secondItem="7Ta-d5-wln" secondAttribute="bottom" constant="20" id="I9R-GD-5WX"/>
                             <constraint firstItem="Iil-WM-kUk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="STP-XB-TaD"/>
+                            <constraint firstItem="4d5-O7-81K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TFZ-Fp-cie"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YaH-oo-euX" secondAttribute="trailing" constant="20" id="cGT-Kw-xc9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cpB-zU-U89" secondAttribute="trailing" constant="20" id="cJ1-fU-aYj"/>
                             <constraint firstItem="YaH-oo-euX" firstAttribute="top" secondItem="cpB-zU-U89" secondAttribute="bottom" constant="20" id="hz0-R0-ye1"/>
