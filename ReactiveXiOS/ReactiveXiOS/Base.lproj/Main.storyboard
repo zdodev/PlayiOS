@@ -208,11 +208,31 @@
                                     <action selector="tappedObservable:" destination="FAC-R1-byg" eventType="touchUpInside" id="P56-vh-Dax"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEn-be-poU">
+                                <rect key="frame" x="20" y="115" width="89" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Subscribe"/>
+                                <connections>
+                                    <action selector="tappedSubscribe:" destination="FAC-R1-byg" eventType="touchUpInside" id="m4K-1u-ugK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubw-4k-K2o">
+                                <rect key="frame" x="20" y="166" width="70.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="onNext"/>
+                                <connections>
+                                    <action selector="tappedOnNext:" destination="FAC-R1-byg" eventType="touchUpInside" id="emx-W7-AiB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BQe-Xn-2oB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ubw-4k-K2o" firstAttribute="leading" secondItem="BQe-Xn-2oB" secondAttribute="leading" constant="20" id="GAu-NE-pv3"/>
                             <constraint firstItem="OXB-SF-qAx" firstAttribute="leading" secondItem="BQe-Xn-2oB" secondAttribute="leading" constant="20" id="PtC-0M-HBC"/>
+                            <constraint firstItem="DEn-be-poU" firstAttribute="top" secondItem="OXB-SF-qAx" secondAttribute="bottom" constant="20" id="UL6-jp-IXO"/>
+                            <constraint firstItem="DEn-be-poU" firstAttribute="leading" secondItem="BQe-Xn-2oB" secondAttribute="leading" constant="20" id="VmI-dk-9ya"/>
+                            <constraint firstItem="Ubw-4k-K2o" firstAttribute="top" secondItem="DEn-be-poU" secondAttribute="bottom" constant="20" id="YET-v8-5RQ"/>
                             <constraint firstItem="OXB-SF-qAx" firstAttribute="top" secondItem="BQe-Xn-2oB" secondAttribute="top" constant="20" id="zFA-V4-Tfy"/>
                         </constraints>
                     </view>

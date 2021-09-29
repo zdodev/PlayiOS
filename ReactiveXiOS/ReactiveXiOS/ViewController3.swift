@@ -5,6 +5,7 @@ class ViewController3:
     UIViewController {
     var observable = Observable<Int>.create { observer in
         observer.onNext(Int.random(in: 1...100))
+        observer.onCompleted()
         return Disposables.create()
     }
     var subject = PublishSubject<Int>()
@@ -19,6 +20,8 @@ class ViewController3:
         observable
             .subscribe(onNext: { element in
                 print(element)
+            }, onCompleted: {
+                print("completed")
             })
             .disposed(by: disposeBag)
         
@@ -27,5 +30,18 @@ class ViewController3:
                 print(element)
             })
             .disposed(by: disposeBag)
+    }
+    
+    @IBAction func tappedSubscribe(_ sender: UIButton) {
+        subject
+            .subscribe(onNext: { element in
+                print(element)
+            })
+            .disposed(by: disposeBag)
+        print("subject.subscribe")
+    }
+    
+    @IBAction func tappedOnNext(_ sender: UIButton) {
+        subject.onNext(1)
     }
 }
