@@ -12,9 +12,40 @@ class ViewController3:
     var subject = PublishSubject<Int>()
     var disposeBag = DisposeBag()
     
+    let passthroughSubject = PassthroughSubject<String, Error>()
+    let currentValueSubject = CurrentValueSubject<Bool, Error>(true)
+    
+    var anyCancellable = Set<AnyCancellable>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        passthroughSubject
+            .sink { completion in
+                switch completion {
+                case .failure:
+                    print("error")
+                case .finished:
+                    print("finished")
+                }
+            } receiveValue: { value in
+                print(value)
+            }
+            .store(in: &anyCancellable)
+        
+        currentValueSubject
+            .sink { completion in
+                switch completion {
+                case .failure:
+                    print("error")
+                case .finished:
+                    print("finished")
+                }
+            } receiveValue: { value in
+                print(value)
+            }
+            .store(in: &anyCancellable)
+
     }
     
     @IBAction func tappedObservable(_ sender: UIButton) {
@@ -46,31 +77,47 @@ class ViewController3:
         subject.onNext(1)
     }
     
-    var anyCancellable = Set<AnyCancellable>()
-    
     @IBAction func tappedJust(_ sender: UIButton) {
-//        let publisher = Just(1)
-//        publisher
-//            .sink { element in
-//                print(element)
-//            }
-//            .store(in: &anyCancellable)
-        
-//        let publisher = (1...10).publisher
-//        publisher.sink { _ in
-//            print("complete")
-//        } receiveValue: { element in
-//            print(element)
-//        }
-//        .store(in: &anyCancellable)
-        
+        let publisher = Just(1)
+        publisher
+            .sink { element in
+                print(element)
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    @IBAction func tappedPublisher(_ sender: UIButton) {
+        let publisher = (1...10).publisher
+        publisher.sink { _ in
+            print("complete")
+        } receiveValue: { element in
+            print(element)
+        }
+        .store(in: &anyCancellable)
+    }
+    
+    @IBAction func CustomPublisher(_ sender: UIButton) {
         let publisher = ["A", "B", "C"].publisher
         let subscriber1 = CustomSubscriber()
         publisher
             .subscribe(subscriber1)
     }
     
+    @IBAction func tappedPassthroughSubject(_ sender: UIButton) {
+        passthroughSubject
+            .send("pass.")
+        
+        passthroughSubject
+            .send(completion: .finished)
+    }
     
+    @IBAction func tappedCurrentValueSubject(_ sender: UIButton) {
+        currentValueSubject
+            .send(false)
+        
+        currentValueSubject
+            .send(completion: .finished)
+    }
 }
 
 class CustomSubscriber: Subscriber {
