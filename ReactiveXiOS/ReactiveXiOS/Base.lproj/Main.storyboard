@@ -264,6 +264,14 @@
                                     <action selector="tappedCurrentValueSubject:" destination="FAC-R1-byg" eventType="touchUpInside" id="w6J-f1-lw0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ox-xv-BdJ">
+                                <rect key="frame" x="315" y="319" width="79" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Network"/>
+                                <connections>
+                                    <action selector="tappedNetwork:" destination="FAC-R1-byg" eventType="touchUpInside" id="z86-Mf-yMU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BQe-Xn-2oB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -273,6 +281,7 @@
                             <constraint firstItem="Ubw-4k-K2o" firstAttribute="leading" secondItem="BQe-Xn-2oB" secondAttribute="leading" constant="20" id="GAu-NE-pv3"/>
                             <constraint firstItem="Fs0-3G-FDU" firstAttribute="top" secondItem="BZk-il-Lum" secondAttribute="bottom" constant="20" id="HZy-7s-aqa"/>
                             <constraint firstItem="OXB-SF-qAx" firstAttribute="leading" secondItem="BQe-Xn-2oB" secondAttribute="leading" constant="20" id="PtC-0M-HBC"/>
+                            <constraint firstItem="1Ox-xv-BdJ" firstAttribute="top" secondItem="MGP-uW-8ex" secondAttribute="bottom" constant="20" id="RDd-9l-N0P"/>
                             <constraint firstItem="MGP-uW-8ex" firstAttribute="top" secondItem="XG7-2V-zPa" secondAttribute="bottom" constant="20" id="TSN-AE-p3a"/>
                             <constraint firstItem="DEn-be-poU" firstAttribute="top" secondItem="OXB-SF-qAx" secondAttribute="bottom" constant="20" id="UL6-jp-IXO"/>
                             <constraint firstItem="DEn-be-poU" firstAttribute="leading" secondItem="BQe-Xn-2oB" secondAttribute="leading" constant="20" id="VmI-dk-9ya"/>
@@ -282,6 +291,7 @@
                             <constraint firstItem="Z9J-FP-6pO" firstAttribute="top" secondItem="BQe-Xn-2oB" secondAttribute="top" constant="20" id="peM-eh-kz1"/>
                             <constraint firstItem="BQe-Xn-2oB" firstAttribute="trailing" secondItem="Fs0-3G-FDU" secondAttribute="trailing" constant="20" id="rOC-Hz-jrd"/>
                             <constraint firstItem="BZk-il-Lum" firstAttribute="top" secondItem="Z9J-FP-6pO" secondAttribute="bottom" constant="20" id="sKu-A0-aC2"/>
+                            <constraint firstItem="BQe-Xn-2oB" firstAttribute="trailing" secondItem="1Ox-xv-BdJ" secondAttribute="trailing" constant="20" id="spX-ag-hvG"/>
                             <constraint firstItem="BQe-Xn-2oB" firstAttribute="trailing" secondItem="BZk-il-Lum" secondAttribute="trailing" constant="20" id="u7i-xQ-PUt"/>
                             <constraint firstItem="OXB-SF-qAx" firstAttribute="top" secondItem="BQe-Xn-2oB" secondAttribute="top" constant="20" id="zFA-V4-Tfy"/>
                         </constraints>

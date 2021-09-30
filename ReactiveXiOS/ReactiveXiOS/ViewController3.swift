@@ -118,6 +118,33 @@ class ViewController3:
         currentValueSubject
             .send(completion: .finished)
     }
+    
+    @IBAction func tappedNetwork(_ sender: UIButton) {
+        struct Post: Decodable {
+            let id: Int
+            let title: String
+            let body: String
+            let userId: Int
+        }
+        
+        let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
+        
+        URLSession.shared.dataTaskPublisher(for: url)
+            .map {
+                print($0.data)
+                return $0.data
+            }
+            .decode(type: [Post].self, decoder: JSONDecoder())
+            .replaceError(with: [])
+            .eraseToAnyPublisher()
+            .sink { _ in
+                print("종료")
+            } receiveValue: { values in
+                print(values.count)
+            }
+            .store(in: &anyCancellable)
+
+    }
 }
 
 class CustomSubscriber: Subscriber {
