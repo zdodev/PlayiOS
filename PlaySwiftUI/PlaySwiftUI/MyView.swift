@@ -17,15 +17,22 @@ struct MyView: View {
     
     var body: some View {
         NavigationView {
-            List(items.indices, id:\.self) { index in
-                NavigationLink(destination: DetailView(content: $items[index])) {
-                    Text(items[index].name)
+            List {
+                ForEach(items, id: \.self) { item in
+                    Text(item.name)
+                }
+                .onDelete { indexSet in
+                    items.remove(atOffsets: indexSet)
+                }
+                .onMove { source, destination in
+                    items.move(fromOffsets: source, toOffset: destination)
                 }
             }
             .listStyle(.insetGrouped)
             .navigationTitle(Text("Title"))
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    EditButton()
                     Button {
                         items.append(Item(name: specialStrings.randomElement()!))
                     } label: {
@@ -37,7 +44,6 @@ struct MyView: View {
                         }
                     } label: {
                         Image(systemName: "minus")
-                            .fixedSize()
                     }
                 }
             }
@@ -66,7 +72,7 @@ struct DetailView: View {
     }
 }
 
-struct Item: Identifiable {
+struct Item: Identifiable, Hashable {
     let id = UUID()
     var name: String
 }
