@@ -89,8 +89,8 @@ class ViewController3:
     @IBAction func tappedPublisher(_ sender: UIButton) {
         let publisher = (1...3).publisher
         publisher
-            .receive(on: DispatchQueue.global())
-//            .subscribe(on: DispatchQueue.global())
+//            .receive(on: DispatchQueue.global())
+            .subscribe(on: DispatchQueue.global())
             .map {
                 $0 * 5
             }
