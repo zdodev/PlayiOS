@@ -45,7 +45,7 @@ class ViewController3:
                 print(value)
             }
             .store(in: &anyCancellable)
-
+        
     }
     
     @IBAction func tappedObservable(_ sender: UIButton) {
@@ -88,12 +88,17 @@ class ViewController3:
     
     @IBAction func tappedPublisher(_ sender: UIButton) {
         let publisher = (1...10).publisher
-        publisher.sink { _ in
-            print("complete")
-        } receiveValue: { element in
-            print(element)
-        }
-        .store(in: &anyCancellable)
+        publisher
+            .subscribe(on: DispatchQueue.global())
+            .map {
+                $0 * 5
+            }
+            .sink { _ in
+                print("complete")
+            } receiveValue: { element in
+                print(element)
+            }
+            .store(in: &anyCancellable)
     }
     
     @IBAction func CustomPublisher(_ sender: UIButton) {
@@ -130,6 +135,7 @@ class ViewController3:
         let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
         
         URLSession.shared.dataTaskPublisher(for: url)
+        //            .subscribe(on: DispatchQueue.global())
             .map {
                 print($0.data)
                 return $0.data
@@ -143,7 +149,7 @@ class ViewController3:
                 print(values.count)
             }
             .store(in: &anyCancellable)
-
+        
     }
 }
 
