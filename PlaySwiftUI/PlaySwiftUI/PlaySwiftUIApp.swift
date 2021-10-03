@@ -9,8 +9,7 @@ struct PlaySwiftUIApp: App {
     // body 프로퍼티 구현
     var body: some Scene {
         WindowGroup {
-            BadgeBackground()
-                .environmentObject(modelData)
+            MyView()
         }
     }
 }

@@ -4,10 +4,12 @@ import RxSwift
 class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var myLabel: UILabel!
     
     private var count = 0
     private let largestImageURL = "https://picsum.photos/2560/1440/?random"
     private var disposeBag = DisposeBag()
+    private var publishSubject = PublishSubject<[String]>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,19 @@ class ViewController: UIViewController {
                     print("Completed")
                 }
             }
+            .disposed(by: disposeBag)
+        
+        publishSubject
+            .observe(on: ConcurrentDispatchQueueScheduler(qos: .default))
+            .subscribe(onNext: { element in
+                print(element)
+            }, onError: { error in
+                print("error: \(error)")
+            }, onCompleted: {
+                print("onCompleted")
+            }, onDisposed: {
+                print("onDisposed")
+            })
             .disposed(by: disposeBag)
     }
     
@@ -57,7 +72,7 @@ class ViewController: UIViewController {
     }
     
     private func loadImageWithRxSwift(from imageURL: String) -> Observable<UIImage?> {
-        return Observable.create { observer in
+        Observable.create { observer in
             self.loadImageAsynchronously(from: imageURL) { image in
                 observer.onNext(image)
                 observer.onCompleted()
@@ -82,5 +97,18 @@ class ViewController: UIViewController {
             completionHandler(image)
         }
     }
+    
+    @IBAction func tappedSubject(_ sender: UIButton) {
+        publishSubject
+            .onNext(["abc", "def", "ghi"])
+    }
+    
+    @IBAction func tappedObservable(_ sender: UIButton) {
+        Observable.from([1, 2, 3])
+            .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .default))
+            .subscribe(onNext: {
+                print($0)
+            })
+            .disposed(by: disposeBag)
+    }
 }
-

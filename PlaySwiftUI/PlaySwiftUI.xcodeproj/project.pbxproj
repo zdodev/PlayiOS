@@ -402,7 +402,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PlaySwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = XZH8K7PDP5;
+				DEVELOPMENT_TEAM = 6S9487HV37;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PlaySwiftUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -410,7 +410,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = zdodev.PlaySwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = zdodev.PlaySwiftUI1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,7 +424,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PlaySwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = XZH8K7PDP5;
+				DEVELOPMENT_TEAM = 6S9487HV37;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PlaySwiftUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -432,7 +432,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = zdodev.PlaySwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = zdodev.PlaySwiftUI1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

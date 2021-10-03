@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gbr-jG-hd0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FAC-R1-byg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,16 +46,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iil-WM-kUk">
+                                <rect key="frame" x="20" y="354" width="53" height="30"/>
+                                <state key="normal" title="Subject"/>
+                                <connections>
+                                    <action selector="tappedSubject:" destination="BYZ-38-t0r" eventType="touchUpInside" id="soP-Qh-zpV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWl-4k-EZP">
+                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4d5-O7-81K">
+                                <rect key="frame" x="158" y="478.5" width="98" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Observable"/>
+                                <connections>
+                                    <action selector="tappedObservable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oo3-Sg-kZ3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cpB-zU-U89" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4cz-la-jd4"/>
+                            <constraint firstItem="4d5-O7-81K" firstAttribute="top" secondItem="AWl-4k-EZP" secondAttribute="bottom" constant="20" id="8Z6-M7-OyN"/>
                             <constraint firstItem="mHk-uZ-WdF" firstAttribute="leading" secondItem="7Ta-d5-wln" secondAttribute="trailing" constant="20" id="GTe-pZ-uG4"/>
                             <constraint firstItem="cpB-zU-U89" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GYf-J6-s6I"/>
+                            <constraint firstItem="Iil-WM-kUk" firstAttribute="top" secondItem="7Ta-d5-wln" secondAttribute="bottom" constant="20" id="I9R-GD-5WX"/>
+                            <constraint firstItem="Iil-WM-kUk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="STP-XB-TaD"/>
+                            <constraint firstItem="4d5-O7-81K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TFZ-Fp-cie"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YaH-oo-euX" secondAttribute="trailing" constant="20" id="cGT-Kw-xc9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cpB-zU-U89" secondAttribute="trailing" constant="20" id="cJ1-fU-aYj"/>
                             <constraint firstItem="YaH-oo-euX" firstAttribute="top" secondItem="cpB-zU-U89" secondAttribute="bottom" constant="20" id="hz0-R0-ye1"/>
+                            <constraint firstItem="AWl-4k-EZP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="i6i-mm-VlQ"/>
+                            <constraint firstItem="AWl-4k-EZP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ihu-HX-nja"/>
                             <constraint firstItem="mHk-uZ-WdF" firstAttribute="top" secondItem="cpB-zU-U89" secondAttribute="bottom" constant="20" id="kOk-sl-Z0p"/>
                             <constraint firstItem="7Ta-d5-wln" firstAttribute="top" secondItem="cpB-zU-U89" secondAttribute="bottom" constant="20" id="nHL-tf-3lu"/>
                             <constraint firstItem="7Ta-d5-wln" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="q1U-c7-Cfg"/>
@@ -63,6 +91,7 @@
                     <connections>
                         <outlet property="countLabel" destination="YaH-oo-euX" id="I6g-Ph-4P5"/>
                         <outlet property="imageView" destination="cpB-zU-U89" id="Vdm-lE-PKB"/>
+                        <outlet property="myLabel" destination="AWl-4k-EZP" id="dHz-nz-IoR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -161,7 +190,116 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3z-bC-d9v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="116"/>
+            <point key="canvasLocation" x="845" y="116"/>
+        </scene>
+        <!--View Controller3-->
+        <scene sceneID="1dv-Zs-Ofs">
+            <objects>
+                <viewController id="FAC-R1-byg" customClass="ViewController3" customModule="ReactiveXiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bml-5E-nPh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXB-SF-qAx">
+                                <rect key="frame" x="20" y="64" width="98" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Observable"/>
+                                <connections>
+                                    <action selector="tappedObservable:" destination="FAC-R1-byg" eventType="touchUpInside" id="P56-vh-Dax"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEn-be-poU">
+                                <rect key="frame" x="20" y="115" width="89" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Subscribe"/>
+                                <connections>
+                                    <action selector="tappedSubscribe:" destination="FAC-R1-byg" eventType="touchUpInside" id="m4K-1u-ugK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubw-4k-K2o">
+                                <rect key="frame" x="20" y="166" width="70.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="onNext"/>
+                                <connections>
+                                    <action selector="tappedOnNext:" destination="FAC-R1-byg" eventType="touchUpInside" id="emx-W7-AiB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9J-FP-6pO">
+                                <rect key="frame" x="342" y="64" width="52" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Just"/>
+                                <connections>
+                                    <action selector="tappedJust:" destination="FAC-R1-byg" eventType="touchUpInside" id="e5c-oA-xS8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZk-il-Lum">
+                                <rect key="frame" x="309.5" y="115" width="84.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Publisher"/>
+                                <connections>
+                                    <action selector="tappedPublisher:" destination="FAC-R1-byg" eventType="touchUpInside" id="Gha-Em-hLZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fs0-3G-FDU">
+                                <rect key="frame" x="259.5" y="166" width="134.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="CustomPublisher"/>
+                                <connections>
+                                    <action selector="CustomPublisher:" destination="FAC-R1-byg" eventType="touchUpInside" id="JgK-yu-dPV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XG7-2V-zPa">
+                                <rect key="frame" x="240" y="217" width="154" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="PassthroughSubject"/>
+                                <connections>
+                                    <action selector="tappedPassthroughSubject:" destination="FAC-R1-byg" eventType="touchUpInside" id="MQa-rJ-UMF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGP-uW-8ex">
+                                <rect key="frame" x="236.5" y="268" width="157.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="CurrentValueSubject"/>
+                                <connections>
+                                    <action selector="tappedCurrentValueSubject:" destination="FAC-R1-byg" eventType="touchUpInside" id="w6J-f1-lw0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ox-xv-BdJ">
+                                <rect key="frame" x="315" y="319" width="79" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Network"/>
+                                <connections>
+                                    <action selector="tappedNetwork:" destination="FAC-R1-byg" eventType="touchUpInside" id="z86-Mf-yMU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BQe-Xn-2oB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BQe-Xn-2oB" firstAttribute="trailing" secondItem="Z9J-FP-6pO" secondAttribute="trailing" constant="20" id="6FD-BY-bYK"/>
+                            <constraint firstItem="XG7-2V-zPa" firstAttribute="top" secondItem="Fs0-3G-FDU" secondAttribute="bottom" constant="20" id="8rL-3R-HC1"/>
+                            <constraint firstItem="Ubw-4k-K2o" firstAttribute="leading" secondItem="BQe-Xn-2oB" secondAttribute="leading" constant="20" id="GAu-NE-pv3"/>
+                            <constraint firstItem="Fs0-3G-FDU" firstAttribute="top" secondItem="BZk-il-Lum" secondAttribute="bottom" constant="20" id="HZy-7s-aqa"/>
+                            <constraint firstItem="OXB-SF-qAx" firstAttribute="leading" secondItem="BQe-Xn-2oB" secondAttribute="leading" constant="20" id="PtC-0M-HBC"/>
+                            <constraint firstItem="1Ox-xv-BdJ" firstAttribute="top" secondItem="MGP-uW-8ex" secondAttribute="bottom" constant="20" id="RDd-9l-N0P"/>
+                            <constraint firstItem="MGP-uW-8ex" firstAttribute="top" secondItem="XG7-2V-zPa" secondAttribute="bottom" constant="20" id="TSN-AE-p3a"/>
+                            <constraint firstItem="DEn-be-poU" firstAttribute="top" secondItem="OXB-SF-qAx" secondAttribute="bottom" constant="20" id="UL6-jp-IXO"/>
+                            <constraint firstItem="DEn-be-poU" firstAttribute="leading" secondItem="BQe-Xn-2oB" secondAttribute="leading" constant="20" id="VmI-dk-9ya"/>
+                            <constraint firstItem="BQe-Xn-2oB" firstAttribute="trailing" secondItem="MGP-uW-8ex" secondAttribute="trailing" constant="20" id="Xk5-t7-Bda"/>
+                            <constraint firstItem="Ubw-4k-K2o" firstAttribute="top" secondItem="DEn-be-poU" secondAttribute="bottom" constant="20" id="YET-v8-5RQ"/>
+                            <constraint firstItem="BQe-Xn-2oB" firstAttribute="trailing" secondItem="XG7-2V-zPa" secondAttribute="trailing" constant="20" id="gxp-g6-Qfd"/>
+                            <constraint firstItem="Z9J-FP-6pO" firstAttribute="top" secondItem="BQe-Xn-2oB" secondAttribute="top" constant="20" id="peM-eh-kz1"/>
+                            <constraint firstItem="BQe-Xn-2oB" firstAttribute="trailing" secondItem="Fs0-3G-FDU" secondAttribute="trailing" constant="20" id="rOC-Hz-jrd"/>
+                            <constraint firstItem="BZk-il-Lum" firstAttribute="top" secondItem="Z9J-FP-6pO" secondAttribute="bottom" constant="20" id="sKu-A0-aC2"/>
+                            <constraint firstItem="BQe-Xn-2oB" firstAttribute="trailing" secondItem="1Ox-xv-BdJ" secondAttribute="trailing" constant="20" id="spX-ag-hvG"/>
+                            <constraint firstItem="BQe-Xn-2oB" firstAttribute="trailing" secondItem="BZk-il-Lum" secondAttribute="trailing" constant="20" id="u7i-xQ-PUt"/>
+                            <constraint firstItem="OXB-SF-qAx" firstAttribute="top" secondItem="BQe-Xn-2oB" secondAttribute="top" constant="20" id="zFA-V4-Tfy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="exu-xN-6NK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1608.6956521739132" y="115.84821428571428"/>
         </scene>
     </scenes>
     <resources>
