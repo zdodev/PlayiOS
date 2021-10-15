@@ -18,19 +18,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zum-FR-e5w">
-                                <rect key="frame" x="20" y="64" width="67" height="31"/>
+                                <rect key="frame" x="20" y="64" width="148.5" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="scanForPeripherals"/>
                                 <connections>
                                     <action selector="tappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="td9-jW-hed"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhn-mC-Lq6">
+                                <rect key="frame" x="20" y="115" width="96.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="addServive"/>
+                                <connections>
+                                    <action selector="tappedButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qVA-SM-J66"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATQ-qq-i0T">
+                                <rect key="frame" x="20" y="166" width="127.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="startAdvertising"/>
+                                <connections>
+                                    <action selector="tappedButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LfI-vQ-3Co"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ATQ-qq-i0T" firstAttribute="top" secondItem="bhn-mC-Lq6" secondAttribute="bottom" constant="20" id="0dx-uB-lgW"/>
+                            <constraint firstItem="bhn-mC-Lq6" firstAttribute="top" secondItem="zum-FR-e5w" secondAttribute="bottom" constant="20" id="4Gq-OW-jhe"/>
+                            <constraint firstItem="bhn-mC-Lq6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pSf-SO-AVU"/>
                             <constraint firstItem="zum-FR-e5w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="sO2-Ng-p5C"/>
                             <constraint firstItem="zum-FR-e5w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sfD-yA-kpZ"/>
+                            <constraint firstItem="ATQ-qq-i0T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uG0-bV-NFQ"/>
                         </constraints>
                     </view>
                 </viewController>
