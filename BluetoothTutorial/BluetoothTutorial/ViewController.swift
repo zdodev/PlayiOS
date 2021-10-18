@@ -25,8 +25,12 @@ final class ViewController: UIViewController {
         mutableService.characteristics = [mutableCharacteristic]
     }
     
-    @IBAction func tappedButton(_ sender: UIButton) {
-        centralManager.scanForPeripherals(withServices: [serviceUUID], options: [CBCentralManagerScanOptionAllowDuplicatesKey: true])
+    @IBAction func tappedScanForPeripheralsButton(_ sender: UIButton) {
+        centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey: false])
+    }
+    
+    @IBAction func tappedStopScanButton(_ sender: UIButton) {
+        centralManager.stopScan()
     }
     
     @IBAction func tappedButton1(_ sender: UIButton) {
@@ -35,5 +39,13 @@ final class ViewController: UIViewController {
     
     @IBAction func tappedButton2(_ sender: UIButton) {
         peripheralManager.startAdvertising([CBAdvertisementDataLocalNameKey: serviceUUID.uuidString, CBAdvertisementDataServiceUUIDsKey: [serviceUUID]])
+    }
+    
+    @IBAction func tappedScanSGA(_ sender: UIButton) {
+        centralManager.scanForPeripherals(withServices: [serviceUUID], options: [CBCentralManagerScanOptionAllowDuplicatesKey: true])
+    }
+    
+    @IBAction func tappedStopAdvertising(_ sender: UIButton) {
+        peripheralManager.stopAdvertising()
     }
 }
