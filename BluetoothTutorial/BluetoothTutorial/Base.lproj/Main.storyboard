@@ -65,6 +65,22 @@
                                     <action selector="tappedStopAdvertising:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uEI-sb-C8R"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUy-aJ-12V">
+                                <rect key="frame" x="20" y="217" width="134" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="discoverServices"/>
+                                <connections>
+                                    <action selector="tappedDiscoverServices:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S5z-Xj-SjO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwW-Ib-g9C">
+                                <rect key="frame" x="20" y="268" width="176.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="discoverCharacteristics"/>
+                                <connections>
+                                    <action selector="tappedDiscoverCharacteristics:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0SQ-DZ-DjT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -75,9 +91,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bhn-mC-Lq6" secondAttribute="trailing" constant="20" id="OFy-2l-kIH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5V5-Ne-vtC" secondAttribute="trailing" constant="20" id="UAU-B3-AgX"/>
                             <constraint firstItem="IWt-sJ-YXE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aGY-fj-V5E"/>
+                            <constraint firstItem="PUy-aJ-12V" firstAttribute="top" secondItem="IWt-sJ-YXE" secondAttribute="bottom" constant="20" id="alU-zY-p4I"/>
                             <constraint firstItem="IWt-sJ-YXE" firstAttribute="top" secondItem="9ly-aS-Gv8" secondAttribute="bottom" constant="20" id="cAA-yT-ShU"/>
                             <constraint firstItem="9ly-aS-Gv8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ewX-UJ-Yu9"/>
+                            <constraint firstItem="PUy-aJ-12V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kX6-V7-Md7"/>
+                            <constraint firstItem="QwW-Ib-g9C" firstAttribute="top" secondItem="PUy-aJ-12V" secondAttribute="bottom" constant="20" id="koF-Wz-9W1"/>
                             <constraint firstItem="ATQ-qq-i0T" firstAttribute="top" secondItem="bhn-mC-Lq6" secondAttribute="bottom" constant="20" id="kqa-9Y-nu4"/>
+                            <constraint firstItem="QwW-Ib-g9C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oib-p2-6yD"/>
                             <constraint firstItem="zum-FR-e5w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="sO2-Ng-p5C"/>
                             <constraint firstItem="zum-FR-e5w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sfD-yA-kpZ"/>
                             <constraint firstItem="bhn-mC-Lq6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="t1b-Lg-gi3"/>

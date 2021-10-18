@@ -42,10 +42,18 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func tappedScanSGA(_ sender: UIButton) {
-        centralManager.scanForPeripherals(withServices: [serviceUUID], options: [CBCentralManagerScanOptionAllowDuplicatesKey: true])
+        centralManager.scanForPeripherals(withServices: [serviceUUID], options: [CBCentralManagerScanOptionAllowDuplicatesKey: false])
     }
     
     @IBAction func tappedStopAdvertising(_ sender: UIButton) {
         peripheralManager.stopAdvertising()
+    }
+    
+    @IBAction func tappedDiscoverServices(_ sender: UIButton) {
+        centralManagerDelegate.discoverServices()
+    }
+    
+    @IBAction func tappedDiscoverCharacteristics(_ sender: UIButton) {
+        centralManagerDelegate.discoverCharacteristics(centralManagerDelegate.peripheralDelegate.services[0])
     }
 }

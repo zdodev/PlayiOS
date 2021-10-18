@@ -16,6 +16,7 @@
 		84CAB5DF2716649C009A9F01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CAB5DE2716649C009A9F01 /* Assets.xcassets */; };
 		84CAB5E22716649C009A9F01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CAB5E02716649C009A9F01 /* LaunchScreen.storyboard */; };
 		84CAB5EA27167539009A9F01 /* CentralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CAB5E927167539009A9F01 /* CentralManagerDelegate.swift */; };
+		84D7F98D271D3C6100F6BAB1 /* PeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7F98C271D3C6100F6BAB1 /* PeripheralDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		84CAB5E12716649C009A9F01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84CAB5E32716649C009A9F01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84CAB5E927167539009A9F01 /* CentralManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralManagerDelegate.swift; sourceTree = "<group>"; };
+		84D7F98C271D3C6100F6BAB1 /* PeripheralDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				84CAB5D92716649B009A9F01 /* ViewController.swift */,
 				84CAB5E927167539009A9F01 /* CentralManagerDelegate.swift */,
 				84C9A22C27192552008A8604 /* PeripheralManagerDelegate.swift */,
+				84D7F98C271D3C6100F6BAB1 /* PeripheralDelegate.swift */,
 				84CAB5DB2716649B009A9F01 /* Main.storyboard */,
 				84CAB5DE2716649C009A9F01 /* Assets.xcassets */,
 				84CAB5E02716649C009A9F01 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D7F98D271D3C6100F6BAB1 /* PeripheralDelegate.swift in Sources */,
 				84CAB5DA2716649B009A9F01 /* ViewController.swift in Sources */,
 				84CAB5D62716649B009A9F01 /* AppDelegate.swift in Sources */,
 				84C9A22D27192552008A8604 /* PeripheralManagerDelegate.swift in Sources */,
