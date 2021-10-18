@@ -2,7 +2,7 @@ import CoreBluetooth
 
 class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
     let peripheralDelegate = PeripheralDelegate()
-    var peripherals = [CBPeripheral]()
+    var cbPeripheral: CBPeripheral?
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
@@ -12,7 +12,7 @@ class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         print("disDiscover: \(peripheral)")
-        peripherals.append(peripheral)
+        cbPeripheral = peripheral
         
         peripheral.delegate = peripheralDelegate
         
@@ -35,11 +35,19 @@ class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
         print("connectionEventDidOccur")
     }
     
-    func discoverServices() {
-        peripherals[0].discoverServices(nil)
+    func discoverServices(_ cbUUID: CBUUID) {
+        cbPeripheral?.discoverServices([cbUUID])
     }
     
-    func discoverCharacteristics(_ service: CBService) {
-        peripherals[0].discoverCharacteristics(nil, for: service)
+    func discoverCharacteristics() {
+        if let service = peripheralDelegate.cbService {
+            cbPeripheral?.discoverCharacteristics(nil, for: service)
+        }
+    }
+    
+    func readValue() {
+        if let characteristic = peripheralDelegate.cbCharacteristic {
+            cbPeripheral?.readValue(for: characteristic)
+        }
     }
 }

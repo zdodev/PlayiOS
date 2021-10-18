@@ -1,7 +1,8 @@
 import CoreBluetooth
 
 class PeripheralDelegate: NSObject, CBPeripheralDelegate {
-    var services = [CBService]()
+    var cbService: CBService?
+    var cbCharacteristic: CBCharacteristic?
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         print("didDiscoverServices")
@@ -14,7 +15,7 @@ class PeripheralDelegate: NSObject, CBPeripheralDelegate {
         }
         
         print(discoveredServices)
-        services = discoveredServices
+        cbService = discoveredServices[0]
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
@@ -28,5 +29,22 @@ class PeripheralDelegate: NSObject, CBPeripheralDelegate {
         }
         
         print(discoveredCharacteristics)
+        cbCharacteristic = discoveredCharacteristics[0]
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        print("didUpdateValueFor")
+        if let error = error {
+            print(error)
+        }
+        guard let value = characteristic.value else {
+            print("nil")
+            return
+        }
+        
+        let data = value.withUnsafeBytes {
+            $0.map { $0 }
+        }
+        print(data)
     }
 }

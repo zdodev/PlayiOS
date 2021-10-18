@@ -50,10 +50,14 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func tappedDiscoverServices(_ sender: UIButton) {
-        centralManagerDelegate.discoverServices()
+        centralManagerDelegate.discoverServices(serviceUUID)
     }
     
     @IBAction func tappedDiscoverCharacteristics(_ sender: UIButton) {
-        centralManagerDelegate.discoverCharacteristics(centralManagerDelegate.peripheralDelegate.services[0])
+        centralManagerDelegate.discoverCharacteristics()
+    }
+    
+    @IBAction func tappedReadValue(_ sender: UIButton) {
+        centralManagerDelegate.readValue()
     }
 }

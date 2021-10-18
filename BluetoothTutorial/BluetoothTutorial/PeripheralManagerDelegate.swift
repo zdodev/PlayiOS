@@ -26,4 +26,8 @@ class PeripheralManagerDelegate: NSObject, CBPeripheralManagerDelegate {
         
         print("didStartAdvertising")
     }
+    
+    func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
+        print("didReceiveRead")
+    }
 }
