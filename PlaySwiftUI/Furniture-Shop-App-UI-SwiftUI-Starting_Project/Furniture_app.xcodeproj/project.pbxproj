@@ -17,6 +17,7 @@
 		880473C825D8C1D200F9A279 /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 880473C625D8C1D200F9A279 /* PlayfairDisplay-Bold.ttf */; };
 		888C4EAA25DCF46B00F9B6ED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 888C4EA925DCF46B00F9B6ED /* README.md */; };
 		888C4EAF25DD03E100F9B6ED /* ui.png in Resources */ = {isa = PBXBuildFile; fileRef = 888C4EAE25DD03E100F9B6ED /* ui.png */; };
+		CF156CA4274906A300FD863B /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF156CA3274906A300FD863B /* DetailScreen.swift */; };
 		CF977FBE2746ABDF00C4F161 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF977FBD2746ABDF00C4F161 /* HomeScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		880473C625D8C1D200F9A279 /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		888C4EA925DCF46B00F9B6ED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		888C4EAE25DD03E100F9B6ED /* ui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ui.png; sourceTree = "<group>"; };
+		CF156CA3274906A300FD863B /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
 		CF977FBD2746ABDF00C4F161 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				CF977FBD2746ABDF00C4F161 /* HomeScreen.swift */,
+				CF156CA3274906A300FD863B /* DetailScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF156CA4274906A300FD863B /* DetailScreen.swift in Sources */,
 				8804739925D8C14200F9A279 /* ContentView.swift in Sources */,
 				8804739725D8C14200F9A279 /* Furniture_appApp.swift in Sources */,
 				CF977FBE2746ABDF00C4F161 /* HomeScreen.swift in Sources */,

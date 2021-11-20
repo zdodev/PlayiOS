@@ -12,75 +12,84 @@ struct HomeScreen: View {
     private let categories = ["All", "Chair", "Sofa", "Lamp", "Kitchen", "Table"]
     
     var body: some View {
-        ZStack {
-            Color("Bg")
-                .edgesIgnoringSafeArea(.all)
-            
-            ScrollView {
-                VStack(alignment: .leading) {
-                    AppBarView()
-                    
-                    TagLineView()
-                        .padding()
-                    
-                    SearchAndScanView()
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            // 👀👀 신기하네
-                            ForEach(0 ..< categories.count) { index in
-                                CategoryView(isActive: index == selectedIndex, text: categories[index])
-                                    .onTapGesture {
-                                        selectedIndex = index
+        NavigationView {
+            ZStack {
+                Color("Bg")
+                    .edgesIgnoringSafeArea(.all)
+                
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        AppBarView()
+                        
+                        TagLineView()
+                            .padding()
+                        
+                        SearchAndScanView()
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                // 👀👀 신기하네
+                                ForEach(0 ..< categories.count) { index in
+                                    CategoryView(isActive: index == selectedIndex, text: categories[index])
+                                        .onTapGesture {
+                                            selectedIndex = index
+                                        }
+                                }
+                            }
+                            .padding()
+                        }
+                        
+                        Text("Popular")
+                            .font(.custom("PlayfairDisplay-Bold", size: 24))
+                            .padding(.horizontal)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                ForEach(0 ..< 4) { index in
+//                                    ProductCardView(image: Image("chair_\(index)"), size: 210)
+                                    NavigationLink {
+                                        DetailScreen()
+                                    } label: {
+                                        ProductCardView(image: Image("chair_\(index + 1)"), size: 210)
                                     }
+                                    .navigationBarHidden(true)
+                                    .foregroundColor(.black)
+                                }
+                                .padding(.trailing)
                             }
+                            .padding(.leading)
                         }
-                        .padding()
-                    }
-                    
-                    Text("Popular")
-                        .font(.custom("PlayfairDisplay-Bold", size: 24))
-                        .padding(.horizontal)
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(1 ..< 5) { index in
-                                ProductCardView(image: Image("chair_\(index)"), size: 210)
+                        
+                        Text("Best")
+                            .font(.custom("PlayfairDisplay-Bold", size: 24))
+                            .padding(.horizontal)
+                            .padding(.top)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                ForEach(1 ..< 5) { index in
+                                    ProductCardView(image: Image("chair_\(index)"), size: 180)
+                                }
+                                .padding(.trailing)
                             }
-                            .padding(.trailing)
+                            .padding(.leading)
                         }
-                        .padding(.leading)
-                    }
-                    
-                    Text("Best")
-                        .font(.custom("PlayfairDisplay-Bold", size: 24))
-                        .padding(.horizontal)
-                        .padding(.top)
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(1 ..< 5) { index in
-                                ProductCardView(image: Image("chair_\(index)"), size: 180)
-                            }
-                            .padding(.trailing)
-                        }
-                        .padding(.leading)
                     }
                 }
+                
+                HStack {
+                    BottomNavBarItem(image: Image(systemName: "house")) {}
+                    BottomNavBarItem(image: Image(systemName: "heart")) {}
+                    BottomNavBarItem(image: Image(systemName: "cart")) {}
+                    BottomNavBarItem(image: Image(systemName: "person")) {}
+                }
+                .padding()
+                .background(Color.white)
+                .clipShape(Capsule())
+                .padding(.horizontal)
+                .shadow(color: .black.opacity(0.15), radius: 8, x: 2, y: 6)
+                .frame(maxHeight: .infinity, alignment: .bottom)
             }
-            
-            HStack {
-                BottomNavBarItem(image: Image(systemName: "house")) {}
-                BottomNavBarItem(image: Image(systemName: "heart")) {}
-                BottomNavBarItem(image: Image(systemName: "cart")) {}
-                BottomNavBarItem(image: Image(systemName: "person")) {}
-            }
-            .padding()
-            .background(Color.white)
-            .clipShape(Capsule())
-            .padding(.horizontal)
-            .shadow(color: .black.opacity(0.15), radius: 8, x: 2, y: 6)
-            .frame(maxHeight: .infinity, alignment: .bottom)
         }
     }
 }
