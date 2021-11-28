@@ -67,20 +67,51 @@ class ViewController: UIViewController {
     // 나중에 오면은 > .subscribe() { ... }
     
     // 데이터를 요청하고 오는 과정을 정의한(클로저) 로직 순서를 반환
+    
+    // Observable의 생명주기
+    // 1. Create
+    // 2. Subscribe
+    // 3. onNext
+    // 4. onCompleted, onError
+    // 5. Disposed
+    
     func downloadJSON(_ url: String) -> Observable<String?> {
-        return Observable.create() { f in
-            DispatchQueue.global().async {
-                let url = URL(string: url)!
-                let data = try! Data(contentsOf: url)
-                let json = String(data: data, encoding: .utf8)
-                
-                DispatchQueue.main.async {
-                    f.onNext(json)
+        // 1. 비동기로 생기는 데이터를 Observable로 감싸서 리턴하는 방법
+        Observable.create { observer in
+            let url = URL(string: url)!
+            let task = URLSession.shared.dataTask(with: url) { data, _, error in
+                guard error == nil else {
+                    observer.onError(error!)
+                    return
                 }
+                
+                if let data = data, let json = String(data: data, encoding: .utf8) {
+                    observer.onNext(json)
+                }
+                
+                observer.onCompleted()
             }
             
-            return Disposables.create()
+            task.resume()
+            
+            return Disposables.create {
+                task.cancel()
+            }
         }
+        
+//        return Observable.create() { f in
+//            DispatchQueue.global().async {
+//                let url = URL(string: url)!
+//                let data = try! Data(contentsOf: url)
+//                let json = String(data: data, encoding: .utf8)
+//
+//                DispatchQueue.main.async {
+//                    f.onNext(json)
+//                }
+//            }
+//
+//            return Disposables.create()
+//        }
     }
     
     // MARK: SYNC
@@ -91,18 +122,21 @@ class ViewController: UIViewController {
         editView.text = ""
         setVisibleWithAnimation(activityIndicator, true)
         
-        //        let json: lateData<String?> = downloadJSON(MEMBER_LIST_URL)
-        downloadJSON(MEMBER_LIST_URL)
+        // 2. Observable로 오는 데이터를 받아서 처리하는 방법
+        let ob = downloadJSON(MEMBER_LIST_URL)
+        ob.debug()
             .subscribe { event in
-                switch event {
-                case .next(let json):
+            switch event {
+            case .next(let json):
+                DispatchQueue.main.async {
                     self.editView.text = json
                     self.setVisibleWithAnimation(self.activityIndicator, false)
-                case .completed:
-                    break
-                case .error(_):
-                    break
                 }
+            case .completed:
+                break
+            case .error(_):
+                break
             }
+        }
     }
 }
