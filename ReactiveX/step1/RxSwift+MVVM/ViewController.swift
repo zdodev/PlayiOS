@@ -75,7 +75,7 @@ class ViewController: UIViewController {
     // 4. onCompleted, onError
     // 5. Disposed
     
-    func downloadJSON(_ url: String) -> Observable<String?> {
+    func downloadJSON(_ url: String) -> Observable<String> {
         // 1. 비동기로 생기는 데이터를 Observable로 감싸서 리턴하는 방법
         // 2. Observable을 생성(create)
         Observable.create { observer in
@@ -125,19 +125,13 @@ class ViewController: UIViewController {
         setVisibleWithAnimation(activityIndicator, true)
         
         // 2. Observable로 오는 데이터를 받아서 처리하는 방법
-        downloadJSON(MEMBER_LIST_URL)
-            .subscribe { event in
-            switch event {
-            case .next(let json):
-                DispatchQueue.main.async {
-                    self.editView.text = json
-                    self.setVisibleWithAnimation(self.activityIndicator, false)
-                }
-            case .completed:
-                break
-            case .error(_):
-                break
-            }
-        }
+        _ = downloadJSON(MEMBER_LIST_URL)
+            // Operator의 존재
+            .map { json in json.count }
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { value in
+                self.editView.text = value.description
+                self.setVisibleWithAnimation(self.activityIndicator, false)
+            })
     }
 }
