@@ -77,6 +77,7 @@ class ViewController: UIViewController {
     
     func downloadJSON(_ url: String) -> Observable<String?> {
         // 1. 비동기로 생기는 데이터를 Observable로 감싸서 리턴하는 방법
+        // 2. Observable을 생성(create)
         Observable.create { observer in
             let url = URL(string: url)!
             let task = URLSession.shared.dataTask(with: url) { data, _, error in
@@ -94,6 +95,7 @@ class ViewController: UIViewController {
             
             task.resume()
             
+            // dispose 시 취소 작업 정의
             return Disposables.create {
                 task.cancel()
             }
@@ -123,8 +125,7 @@ class ViewController: UIViewController {
         setVisibleWithAnimation(activityIndicator, true)
         
         // 2. Observable로 오는 데이터를 받아서 처리하는 방법
-        let ob = downloadJSON(MEMBER_LIST_URL)
-        ob.debug()
+        downloadJSON(MEMBER_LIST_URL)
             .subscribe { event in
             switch event {
             case .next(let json):
