@@ -125,10 +125,11 @@ class ViewController: UIViewController {
         setVisibleWithAnimation(activityIndicator, true)
         
         // 2. Observable로 오는 데이터를 받아서 처리하는 방법
-        _ = downloadJSON(MEMBER_LIST_URL)
+        let jsonObservable = downloadJSON(MEMBER_LIST_URL)
+        let helloObservable = Observable.just("Hello World")
+        Observable.zip(jsonObservable, helloObservable) { $1 + "\n" + $0 }
             // Operator의 존재
-            .map { json in json.count }
-            .observeOn(MainScheduler.instance)
+            .observeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { value in
                 self.editView.text = value.description
                 self.setVisibleWithAnimation(self.activityIndicator, false)
