@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         application.registerForRemoteNotifications()
         
+        // 메시지 델리게이트 설정
+        Messaging.messaging().delegate = self
+        
         return true
     }
 
@@ -44,4 +47,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
+}
+
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        <#code#>
+    }
 }
