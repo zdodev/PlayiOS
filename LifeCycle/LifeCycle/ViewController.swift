@@ -2,6 +2,7 @@ import UIKit
 
 final class ViewController: UIViewController {
     @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var layoutView: UIView!
     
     // MARK: - Managing the View
     
@@ -9,6 +10,7 @@ final class ViewController: UIViewController {
         super.loadView()
         
         print("ViewController::loadView()")
+        print(layoutView.frame)
     }
     
     override func viewDidLoad() {
@@ -16,6 +18,7 @@ final class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         print("ViewController::viewDidLoad()")
+        print(layoutView.frame)
     }
     
     // MARK: - Responding to View Related Events
@@ -24,6 +27,7 @@ final class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         print("ViewController::viewWillAppear(_:)")
+        print(layoutView.frame)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,6 +54,7 @@ final class ViewController: UIViewController {
         super.viewSafeAreaInsetsDidChange()
         
         print("ViewController::viewSafeAreaInsetsDidChange()")
+        print(layoutView.frame)
     }
     
     // MARK: - Managing the View's Margins
@@ -58,6 +63,7 @@ final class ViewController: UIViewController {
         super.viewLayoutMarginsDidChange()
         
         print("ViewController::viewLayoutMarginsDidChange()")
+        print(layoutView.frame)
     }
     
     // MARK: - Configuring the View's Layout Behavior
@@ -66,18 +72,21 @@ final class ViewController: UIViewController {
         super.viewWillLayoutSubviews()
         
         print("ViewController::viewWillLayoutSubviews()")
+        print(layoutView.frame)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         print("ViewController::viewDidLayoutSubviews()")
+        print(layoutView.frame)
     }
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
         
         print("ViewController::updateViewConstraints()")
+        print(layoutView.frame)
     }
     
     // MARK: - Managing Child View Controllers in a Custom Container
@@ -86,6 +95,7 @@ final class ViewController: UIViewController {
         super.beginAppearanceTransition(isAppearing, animated: animated)
         
         print("ViewController::beginAppearanceTransition(_:animated:)")
+        print(layoutView.frame)
     }
     
     override func endAppearanceTransition() {
@@ -100,12 +110,14 @@ final class ViewController: UIViewController {
         super.willMove(toParent: parent)
         
         print("ViewController::willMove()")
+        print(layoutView.frame)
     }
     
     override func didMove(toParent parent: UIViewController?) {
         super.didMove(toParent: parent)
         
         print("ViewController::didMove()")
+        print(layoutView.frame)
     }
     
     // MARK: - Handling Memory Warnings
@@ -146,6 +158,5 @@ final class ViewController: UIViewController {
         
         present(secondViewController, animated: true)
     }
-    
 }
 

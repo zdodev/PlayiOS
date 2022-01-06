@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MJP-YC-Nh1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MJP-YC-Nh1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -55,15 +56,23 @@
                                     <constraint firstAttribute="width" constant="100" id="lbz-p2-aR8"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZo-w2-fTW">
+                                <rect key="frame" x="41.5" y="689" width="331" height="153"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="wZo-w2-fTW" firstAttribute="top" secondItem="DOC-FS-Cg7" secondAttribute="bottom" constant="20" id="2VS-0H-VvT"/>
                             <constraint firstItem="5Mr-41-oql" firstAttribute="top" secondItem="Mck-jT-9bE" secondAttribute="bottom" constant="100" id="5zz-YQ-4F0"/>
                             <constraint firstItem="DOC-FS-Cg7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8GS-q4-hvZ"/>
                             <constraint firstItem="Mck-jT-9bE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="H9B-Qy-Xbp"/>
+                            <constraint firstItem="wZo-w2-fTW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O1Q-jo-xAz"/>
                             <constraint firstItem="5Mr-41-oql" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pnw-HO-bQx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wZo-w2-fTW" secondAttribute="bottom" constant="20" id="TB8-e1-ulG"/>
                             <constraint firstItem="Rc9-Uk-Rhb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f6B-72-tZN"/>
+                            <constraint firstItem="wZo-w2-fTW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="fXu-Ea-GrF"/>
                             <constraint firstItem="Mck-jT-9bE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fXv-eS-vnf"/>
                             <constraint firstItem="Rc9-Uk-Rhb" firstAttribute="top" secondItem="5Mr-41-oql" secondAttribute="bottom" constant="100" id="fve-EZ-QsM"/>
                             <constraint firstItem="DOC-FS-Cg7" firstAttribute="top" secondItem="Rc9-Uk-Rhb" secondAttribute="bottom" constant="100" id="pLp-rR-HKu"/>
@@ -77,6 +86,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="layoutView" destination="wZo-w2-fTW" id="WfB-Cc-nGi"/>
                         <outlet property="mainLabel" destination="Mck-jT-9bE" id="BEG-Mg-uvq"/>
                     </connections>
                 </viewController>
@@ -125,6 +135,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
