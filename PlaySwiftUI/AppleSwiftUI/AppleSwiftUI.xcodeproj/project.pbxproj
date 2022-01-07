@@ -11,6 +11,8 @@
 		846F3B1E278803AB00D75B70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F3B1D278803AB00D75B70 /* ContentView.swift */; };
 		846F3B20278803AD00D75B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846F3B1F278803AD00D75B70 /* Assets.xcassets */; };
 		846F3B23278803AD00D75B70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846F3B22278803AD00D75B70 /* Preview Assets.xcassets */; };
+		846F3B2A278807B000D75B70 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F3B29278807B000D75B70 /* CircleImage.swift */; };
+		846F3B2C27880B0F00D75B70 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F3B2B27880B0F00D75B70 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		846F3B1D278803AB00D75B70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		846F3B1F278803AD00D75B70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		846F3B22278803AD00D75B70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		846F3B29278807B000D75B70 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		846F3B2B27880B0F00D75B70 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				846F3B1B278803AB00D75B70 /* AppleSwiftUIApp.swift */,
 				846F3B1D278803AB00D75B70 /* ContentView.swift */,
+				846F3B29278807B000D75B70 /* CircleImage.swift */,
+				846F3B2B27880B0F00D75B70 /* MapView.swift */,
 				846F3B1F278803AD00D75B70 /* Assets.xcassets */,
 				846F3B21278803AD00D75B70 /* Preview Content */,
 			);
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				846F3B1E278803AB00D75B70 /* ContentView.swift in Sources */,
+				846F3B2C27880B0F00D75B70 /* MapView.swift in Sources */,
 				846F3B1C278803AB00D75B70 /* AppleSwiftUIApp.swift in Sources */,
+				846F3B2A278807B000D75B70 /* CircleImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
