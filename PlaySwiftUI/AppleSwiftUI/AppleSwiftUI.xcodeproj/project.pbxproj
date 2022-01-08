@@ -13,6 +13,7 @@
 		846F3B23278803AD00D75B70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846F3B22278803AD00D75B70 /* Preview Assets.xcassets */; };
 		846F3B2A278807B000D75B70 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F3B29278807B000D75B70 /* CircleImage.swift */; };
 		846F3B2C27880B0F00D75B70 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F3B2B27880B0F00D75B70 /* MapView.swift */; };
+		CF9673E42789800500BD710A /* CreatingAndCombiningViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9673E32789800500BD710A /* CreatingAndCombiningViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		846F3B22278803AD00D75B70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		846F3B29278807B000D75B70 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		846F3B2B27880B0F00D75B70 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		CF9673E32789800500BD710A /* CreatingAndCombiningViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingAndCombiningViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +57,9 @@
 		846F3B1A278803AB00D75B70 /* AppleSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				CF9673E127897FC100BD710A /* SwiftUIEssentials */,
 				846F3B1B278803AB00D75B70 /* AppleSwiftUIApp.swift */,
 				846F3B1D278803AB00D75B70 /* ContentView.swift */,
-				846F3B29278807B000D75B70 /* CircleImage.swift */,
-				846F3B2B27880B0F00D75B70 /* MapView.swift */,
 				846F3B1F278803AD00D75B70 /* Assets.xcassets */,
 				846F3B21278803AD00D75B70 /* Preview Content */,
 			);
@@ -71,6 +72,24 @@
 				846F3B22278803AD00D75B70 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CF9673E127897FC100BD710A /* SwiftUIEssentials */ = {
+			isa = PBXGroup;
+			children = (
+				CF9673E227897FD800BD710A /* CreatingAndCombiningViews */,
+			);
+			path = SwiftUIEssentials;
+			sourceTree = "<group>";
+		};
+		CF9673E227897FD800BD710A /* CreatingAndCombiningViews */ = {
+			isa = PBXGroup;
+			children = (
+				CF9673E32789800500BD710A /* CreatingAndCombiningViews.swift */,
+				846F3B29278807B000D75B70 /* CircleImage.swift */,
+				846F3B2B27880B0F00D75B70 /* MapView.swift */,
+			);
+			path = CreatingAndCombiningViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				846F3B1E278803AB00D75B70 /* ContentView.swift in Sources */,
+				CF9673E42789800500BD710A /* CreatingAndCombiningViews.swift in Sources */,
 				846F3B2C27880B0F00D75B70 /* MapView.swift in Sources */,
 				846F3B1C278803AB00D75B70 /* AppleSwiftUIApp.swift in Sources */,
 				846F3B2A278807B000D75B70 /* CircleImage.swift in Sources */,
