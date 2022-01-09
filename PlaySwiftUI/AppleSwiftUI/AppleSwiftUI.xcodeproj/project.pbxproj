@@ -13,7 +13,12 @@
 		846F3B23278803AD00D75B70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846F3B22278803AD00D75B70 /* Preview Assets.xcassets */; };
 		846F3B2A278807B000D75B70 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F3B29278807B000D75B70 /* CircleImage.swift */; };
 		846F3B2C27880B0F00D75B70 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F3B2B27880B0F00D75B70 /* MapView.swift */; };
-		CF9673E42789800500BD710A /* CreatingAndCombiningViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9673E32789800500BD710A /* CreatingAndCombiningViews.swift */; };
+		CF3293B4278A8B75002B4640 /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3293B3278A8B75002B4640 /* LandmarkList.swift */; };
+		CF9673E72789810400BD710A /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = CF9673E62789810400BD710A /* landmarkData.json */; };
+		CF9673E92789812B00BD710A /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9673E82789812B00BD710A /* Landmark.swift */; };
+		CF9673EB278982AB00BD710A /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9673EA278982AB00BD710A /* ModelData.swift */; };
+		CF9673ED2789846000BD710A /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9673EC2789846000BD710A /* LandmarkRow.swift */; };
+		CFCDE4A2278B2136005CADB6 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCDE4A1278B2136005CADB6 /* LandmarkDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +29,12 @@
 		846F3B22278803AD00D75B70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		846F3B29278807B000D75B70 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		846F3B2B27880B0F00D75B70 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		CF9673E32789800500BD710A /* CreatingAndCombiningViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingAndCombiningViews.swift; sourceTree = "<group>"; };
+		CF3293B3278A8B75002B4640 /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
+		CF9673E62789810400BD710A /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
+		CF9673E82789812B00BD710A /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		CF9673EA278982AB00BD710A /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		CF9673EC2789846000BD710A /* LandmarkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = "<group>"; };
+		CFCDE4A1278B2136005CADB6 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +67,17 @@
 		846F3B1A278803AB00D75B70 /* AppleSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				CF9673E127897FC100BD710A /* SwiftUIEssentials */,
 				846F3B1B278803AB00D75B70 /* AppleSwiftUIApp.swift */,
 				846F3B1D278803AB00D75B70 /* ContentView.swift */,
+				846F3B29278807B000D75B70 /* CircleImage.swift */,
+				846F3B2B27880B0F00D75B70 /* MapView.swift */,
+				CF9673EA278982AB00BD710A /* ModelData.swift */,
+				CF9673E82789812B00BD710A /* Landmark.swift */,
+				CF9673EC2789846000BD710A /* LandmarkRow.swift */,
+				CF3293B3278A8B75002B4640 /* LandmarkList.swift */,
+				CFCDE4A1278B2136005CADB6 /* LandmarkDetail.swift */,
 				846F3B1F278803AD00D75B70 /* Assets.xcassets */,
+				CF9673E62789810400BD710A /* landmarkData.json */,
 				846F3B21278803AD00D75B70 /* Preview Content */,
 			);
 			path = AppleSwiftUI;
@@ -72,24 +89,6 @@
 				846F3B22278803AD00D75B70 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		CF9673E127897FC100BD710A /* SwiftUIEssentials */ = {
-			isa = PBXGroup;
-			children = (
-				CF9673E227897FD800BD710A /* CreatingAndCombiningViews */,
-			);
-			path = SwiftUIEssentials;
-			sourceTree = "<group>";
-		};
-		CF9673E227897FD800BD710A /* CreatingAndCombiningViews */ = {
-			isa = PBXGroup;
-			children = (
-				CF9673E32789800500BD710A /* CreatingAndCombiningViews.swift */,
-				846F3B29278807B000D75B70 /* CircleImage.swift */,
-				846F3B2B27880B0F00D75B70 /* MapView.swift */,
-			);
-			path = CreatingAndCombiningViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +151,7 @@
 			files = (
 				846F3B23278803AD00D75B70 /* Preview Assets.xcassets in Resources */,
 				846F3B20278803AD00D75B70 /* Assets.xcassets in Resources */,
+				CF9673E72789810400BD710A /* landmarkData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,10 +163,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				846F3B1E278803AB00D75B70 /* ContentView.swift in Sources */,
-				CF9673E42789800500BD710A /* CreatingAndCombiningViews.swift in Sources */,
 				846F3B2C27880B0F00D75B70 /* MapView.swift in Sources */,
 				846F3B1C278803AB00D75B70 /* AppleSwiftUIApp.swift in Sources */,
+				CF3293B4278A8B75002B4640 /* LandmarkList.swift in Sources */,
 				846F3B2A278807B000D75B70 /* CircleImage.swift in Sources */,
+				CF9673E92789812B00BD710A /* Landmark.swift in Sources */,
+				CF9673ED2789846000BD710A /* LandmarkRow.swift in Sources */,
+				CFCDE4A2278B2136005CADB6 /* LandmarkDetail.swift in Sources */,
+				CF9673EB278982AB00BD710A /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
