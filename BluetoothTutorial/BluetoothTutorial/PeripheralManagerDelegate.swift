@@ -34,7 +34,8 @@ final class PeripheralManagerDelegate: NSObject, CBPeripheralManagerDelegate {
             return
         }
         
-        print("didAdd \(service)")
+        print("didAdd:")
+        debugPrint(service)
     }
     
     // MARK: - Advertising Peripheral Data

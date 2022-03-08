@@ -43,7 +43,7 @@ extension ViewController {
     @IBAction func tappedScanSGA(_ sender: UIButton) {
         centralManager.scanForPeripherals(
             withServices: [serviceUUID],
-            options: [CBCentralManagerScanOptionAllowDuplicatesKey: false]
+            options: [CBCentralManagerScanOptionAllowDuplicatesKey: true]
         )
     }
     

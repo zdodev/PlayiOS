@@ -2,6 +2,14 @@
 
 iOS 블루투스 프레임워크, Core Bluetooth
 
+GATT(Generic Attribute Profile): 두 장치간에 Service, Characteristic 을 이용해서 데이터를 주고 받는 방법을 정의한 것.
+
+ATT(Attribute Protocol): 서버와 클라이언트 사이의 데이터 교환에 대한 규칙을 정의한 것.
+
+L2CAP(Logical Link Control and Adaption Protocol): 상위 레이어(GATT/GAP)와 하위레이어 사이의 상호작용을 담당한다.
+
+
+
 데이터를 브로드캐스팅하는 것 -> Advertising
 
 Advertising 하는 주체는 Peripheral이다.
@@ -15,6 +23,13 @@ advertise: 광고하다.
 peripheral: 주변 장치
 
 central: 중심의
+
+
+
+통신방법
+
+-   Advertise 모드
+-   Connection 모드
 
 
 

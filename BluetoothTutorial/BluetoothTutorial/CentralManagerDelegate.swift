@@ -8,6 +8,7 @@ final class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("didConnect")
+        central.stopScan()
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
@@ -28,11 +29,10 @@ final class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
         print("disDiscover:")
         debugPrint(peripheral)
         
-//        cbPeripheral = peripheral
-//
-//        peripheral.delegate = peripheralDelegate
-//
-//        central.connect(peripheral, options: nil)
+        cbPeripheral = peripheral
+        peripheral.delegate = peripheralDelegate
+        central.connect(peripheral, options: nil)
+        debugPrint(cbPeripheral?.services)
     }
     
     // MARK: - Monitoring the Central Manager's State
