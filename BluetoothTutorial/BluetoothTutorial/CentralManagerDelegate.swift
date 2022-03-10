@@ -1,8 +1,8 @@
 import CoreBluetooth
 
 final class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
-    let peripheralDelegate = PeripheralDelegate()
-    var cbPeripheral: CBPeripheral?
+    private let peripheralDelegate = PeripheralDelegate()
+    private var cbPeripheral: CBPeripheral?
     
     // MARK: - Monitoring Connections with Peripherals
     
@@ -26,13 +26,19 @@ final class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
     // MARK: - Discovering and Retrieving Peripherals
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        guard let deviceName = advertisementData[CBAdvertisementDataLocalNameKey] as? String else {
+            return
+        }
+        guard deviceName == Identifier.peripheralAdvertisingName else {
+            return
+        }
+        
         print("disDiscover:")
-        debugPrint(peripheral)
+        print(deviceName)
         
         cbPeripheral = peripheral
-        peripheral.delegate = peripheralDelegate
-        central.connect(peripheral, options: nil)
-        debugPrint(cbPeripheral?.services)
+//        peripheral.delegate = peripheralDelegate
+//        central.connect(peripheral, options: nil)
     }
     
     // MARK: - Monitoring the Central Manager's State
@@ -63,22 +69,22 @@ final class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didUpdateANCSAuthorizationFor peripheral: CBPeripheral) {
         debugPrint("didUpdateANCSAuthorizationFor")
     }
+}
 
-    ///
-    
+extension CentralManagerDelegate {
     func discoverServices(_ cbUUID: CBUUID) {
         cbPeripheral?.discoverServices([cbUUID])
     }
     
     func discoverCharacteristics() {
-        if let service = peripheralDelegate.cbService {
-            cbPeripheral?.discoverCharacteristics(nil, for: service)
-        }
+//        if let service = peripheralDelegate.cbService {
+//            cbPeripheral?.discoverCharacteristics(nil, for: service)
+//        }
     }
     
     func readValue() {
-        if let characteristic = peripheralDelegate.cbCharacteristic {
-            cbPeripheral?.readValue(for: characteristic)
-        }
+//        if let characteristic = peripheralDelegate.cbCharacteristic {
+//            cbPeripheral?.readValue(for: characteristic)
+//        }
     }
 }

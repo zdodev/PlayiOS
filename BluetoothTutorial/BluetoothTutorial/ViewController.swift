@@ -10,8 +10,8 @@ final class ViewController: UIViewController {
     private let peripheralManager = CBPeripheralManager()
     private let peripheralManagerDelegate = PeripheralManagerDelegate()
     
-    private let serviceUUID = CBUUID(string: "AAAA4F43-5605-4C64-928C-D7F09530E558")
-    private let characteristicUUID = CBUUID(string: "BBBB4F43-5605-4C64-928C-D7F09530E558")
+//    private let serviceUUID = CBUUID(string: "AAAA4F43-5605-4C64-928C-D7F09530E558")
+//    private let characteristicUUID = CBUUID(string: "BBBB4F43-5605-4C64-928C-D7F09530E558")
     
     private var mutableCharacteristic: CBMutableCharacteristic!
     private var mutableService: CBMutableService!
@@ -22,8 +22,14 @@ final class ViewController: UIViewController {
         centralManager.delegate = centralManagerDelegate
         peripheralManager.delegate = peripheralManagerDelegate
         
-        mutableCharacteristic = CBMutableCharacteristic(type: characteristicUUID, properties: CBCharacteristicProperties.read, value: Data([1, 2, 3]), permissions: CBAttributePermissions.readable)
-        mutableService = CBMutableService(type: serviceUUID, primary: true)
+        mutableCharacteristic = CBMutableCharacteristic(
+            type: Identifier.characteristicUUID,
+            properties: CBCharacteristicProperties.read,
+            value: Data([1, 2, 3]),
+            permissions: CBAttributePermissions.readable)
+        mutableService = CBMutableService(
+            type: Identifier.serviceUUID,
+            primary: true)
         mutableService.characteristics = [mutableCharacteristic]
     }
 }
@@ -42,13 +48,13 @@ extension ViewController {
     
     @IBAction func tappedScanSGA(_ sender: UIButton) {
         centralManager.scanForPeripherals(
-            withServices: [serviceUUID],
+            withServices: [Identifier.serviceUUID],
             options: [CBCentralManagerScanOptionAllowDuplicatesKey: true]
         )
     }
     
     @IBAction func tappedDiscoverServices(_ sender: UIButton) {
-        centralManagerDelegate.discoverServices(serviceUUID)
+        centralManagerDelegate.discoverServices(Identifier.serviceUUID)
     }
     
     @IBAction func tappedDiscoverCharacteristics(_ sender: UIButton) {
@@ -66,7 +72,10 @@ extension ViewController {
     }
     
     @IBAction func tappedButton2(_ sender: UIButton) {
-        peripheralManager.startAdvertising([CBAdvertisementDataLocalNameKey: serviceUUID.uuidString, CBAdvertisementDataServiceUUIDsKey: [serviceUUID]])
+        peripheralManager.startAdvertising([
+            CBAdvertisementDataLocalNameKey: Identifier.peripheralAdvertisingName,
+            CBAdvertisementDataServiceUUIDsKey: [Identifier.serviceUUID]
+        ])
     }
     
     @IBAction func tappedStopAdvertising(_ sender: UIButton) {
