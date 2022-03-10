@@ -1,5 +1,29 @@
 import CoreBluetooth
 
+struct CentralService {
+    private let centralManager: CBCentralManager
+    private let centralManagerDelegate = CentralManagerDelegate()
+    
+    init() {
+        centralManager = CBCentralManager(delegate: centralManagerDelegate, queue: .global())
+    }
+    
+    func startScan() {
+        centralManager.scanForPeripherals(
+            withServices: [Identifier.serviceUUID],
+            options: [CBCentralManagerScanOptionAllowDuplicatesKey: true]
+        )
+    }
+    
+    func stopScan() {
+        centralManager.stopScan()
+    }
+    
+    func connect() {
+//        centralManager
+    }
+}
+
 final class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
     private let peripheralDelegate = PeripheralDelegate()
     private var cbPeripheral: CBPeripheral?
@@ -37,8 +61,8 @@ final class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
         print(deviceName)
         
         cbPeripheral = peripheral
-//        peripheral.delegate = peripheralDelegate
-//        central.connect(peripheral, options: nil)
+        peripheral.delegate = peripheralDelegate
+        central.connect(peripheral, options: nil)
     }
     
     // MARK: - Monitoring the Central Manager's State
@@ -83,8 +107,8 @@ extension CentralManagerDelegate {
     }
     
     func readValue() {
-//        if let characteristic = peripheralDelegate.cbCharacteristic {
-//            cbPeripheral?.readValue(for: characteristic)
-//        }
+        if let characteristic = peripheralDelegate.cbCharacteristic {
+            cbPeripheral?.readValue(for: characteristic)
+        }
     }
 }
