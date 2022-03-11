@@ -10,7 +10,9 @@ struct PeripheralService {
 }
 
 final class PeripheralManagerDelegate: NSObject, CBPeripheralManagerDelegate {
+    
     // MARK: - Monitoring Changes to the Peripheral Manager's State
+    
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         switch peripheral.state {
         case .unknown:
@@ -37,14 +39,13 @@ final class PeripheralManagerDelegate: NSObject, CBPeripheralManagerDelegate {
     // MARK: - Adding Services
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
+        print("didAdd")
         if let error = error {
-            print("peripheral didAdd service fail.")
             print(error)
             return
         }
         
-        print("didAdd:")
-        debugPrint(service)
+        print(service)
     }
     
     // MARK: - Advertising Peripheral Data
@@ -77,10 +78,21 @@ final class PeripheralManagerDelegate: NSObject, CBPeripheralManagerDelegate {
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
         print("didReceiveRead")
+        print(request)
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
         print("didReceiveWrite")
+        guard let request = requests.first else {
+            return
+        }
+        guard let value = request.value else {
+            return
+        }
+        
+        value.forEach { element in
+            print(element)
+        }
     }
     
     // MARK: - Using L2CAP Channels

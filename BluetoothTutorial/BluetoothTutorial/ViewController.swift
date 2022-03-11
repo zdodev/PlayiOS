@@ -24,9 +24,10 @@ final class ViewController: UIViewController {
         
         mutableCharacteristic = CBMutableCharacteristic(
             type: Identifier.characteristicUUID,
-            properties: CBCharacteristicProperties.writeWithoutResponse,
+            properties: [.read, .writeWithoutResponse],
             value: nil,
-            permissions: CBAttributePermissions.readable)
+            permissions: [.readable, .writeable]
+        )
         mutableService = CBMutableService(
             type: Identifier.serviceUUID,
             primary: true)
