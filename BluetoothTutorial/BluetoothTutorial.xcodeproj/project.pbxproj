@@ -67,8 +67,7 @@
 		84CAB5D42716649B009A9F01 /* BluetoothTutorial */ = {
 			isa = PBXGroup;
 			children = (
-				84CAB5D52716649B009A9F01 /* AppDelegate.swift */,
-				84CAB5D72716649B009A9F01 /* SceneDelegate.swift */,
+				84DB04BC27DAF112006A26B6 /* Supporting Files */,
 				84CAB5D92716649B009A9F01 /* ViewController.swift */,
 				84CAB5E927167539009A9F01 /* CentralManagerDelegate.swift */,
 				84C9A22C27192552008A8604 /* PeripheralManagerDelegate.swift */,
@@ -80,6 +79,15 @@
 				84CAB5E32716649C009A9F01 /* Info.plist */,
 			);
 			path = BluetoothTutorial;
+			sourceTree = "<group>";
+		};
+		84DB04BC27DAF112006A26B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84CAB5D52716649B009A9F01 /* AppDelegate.swift */,
+				84CAB5D72716649B009A9F01 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
