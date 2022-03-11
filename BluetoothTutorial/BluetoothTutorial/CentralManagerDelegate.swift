@@ -58,7 +58,7 @@ final class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
         }
         
         print("disDiscover:")
-        print(deviceName)
+        print(peripheral)
         
         cbPeripheral = peripheral
         peripheral.delegate = peripheralDelegate
@@ -101,14 +101,20 @@ extension CentralManagerDelegate {
     }
     
     func discoverCharacteristics() {
-//        if let service = peripheralDelegate.cbService {
-//            cbPeripheral?.discoverCharacteristics(nil, for: service)
-//        }
+        if let service = peripheralDelegate.cbService {
+            cbPeripheral?.discoverCharacteristics(nil, for: service)
+        }
     }
     
     func readValue() {
         if let characteristic = peripheralDelegate.cbCharacteristic {
             cbPeripheral?.readValue(for: characteristic)
+        }
+    }
+    
+    func writeValue() {
+        if let characteristic = peripheralDelegate.cbCharacteristic {
+            cbPeripheral?.writeValue(Data([1, 2, 3]), for: characteristic, type: .withoutResponse)
         }
     }
 }

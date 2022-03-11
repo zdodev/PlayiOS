@@ -12,15 +12,16 @@ final class PeripheralDelegate: NSObject, CBPeripheralDelegate {
             print(error)
             return
         }
-        
         print(peripheral)
-//        guard let discoveredServices = peripheral.services else {
-//            print("nil")
-//            return
-//        }
-//
-//        print(discoveredServices)
-//        cbService = discoveredServices[0]
+        
+        guard let discoveredServices = peripheral.services else {
+            print("nil")
+            return
+        }
+        discoveredServices.forEach { cbService in
+            print(cbService)
+            self.cbService = cbService
+        }
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: Error?) {
@@ -41,14 +42,16 @@ final class PeripheralDelegate: NSObject, CBPeripheralDelegate {
             print(error)
             return
         }
-        print(service)
-//        guard let discoveredCharacteristics = service.characteristics else {
-//            print("nil")
-//            return
-//        }
         
-//        print(discoveredCharacteristics)
-//        cbCharacteristic = discoveredCharacteristics[0]
+        guard let discoveredCharacteristics = service.characteristics else {
+            print("nil")
+            return
+        }
+        
+        discoveredCharacteristics.forEach { cbCharacteristic in
+            print(cbCharacteristic)
+            self.cbCharacteristic = cbCharacteristic
+        }
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverDescriptorsFor characteristic: CBCharacteristic, error: Error?) {
@@ -68,16 +71,15 @@ final class PeripheralDelegate: NSObject, CBPeripheralDelegate {
         if let error = error {
             print(error)
         }
-        print(characteristic)
-//        guard let value = characteristic.value else {
-//            print("nil")
-//            return
-//        }
-//
-//        let data = value.withUnsafeBytes {
-//            $0.map { $0 }
-//        }
-//        print(data)
+
+        guard let data = characteristic.value else {
+            print("nil")
+            return
+        }
+        
+        data.forEach { element in
+            print(element)
+        }
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor descriptor: CBDescriptor, error: Error?) {

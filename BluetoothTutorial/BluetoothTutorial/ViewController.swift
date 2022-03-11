@@ -3,7 +3,7 @@ import CoreBluetooth
 
 final class ViewController: UIViewController {
     // Central 매니저 객체
-    private let centralManager = CBCentralManager()
+    private let centralManager = CBCentralManager(delegate: nil, queue: .global())
     private let centralManagerDelegate = CentralManagerDelegate()
     
     // Peripheral 매니저 객체
@@ -24,8 +24,8 @@ final class ViewController: UIViewController {
         
         mutableCharacteristic = CBMutableCharacteristic(
             type: Identifier.characteristicUUID,
-            properties: CBCharacteristicProperties.read,
-            value: Data([1, 2, 3]),
+            properties: CBCharacteristicProperties.writeWithoutResponse,
+            value: nil,
             permissions: CBAttributePermissions.readable)
         mutableService = CBMutableService(
             type: Identifier.serviceUUID,
@@ -63,6 +63,10 @@ extension ViewController {
     
     @IBAction func tappedReadValue(_ sender: UIButton) {
         centralManagerDelegate.readValue()
+    }
+    
+    @IBAction func tappedWriteValue(_ sender: UIButton) {
+        centralManagerDelegate.writeValue()
     }
 }
 
