@@ -2,36 +2,37 @@ import UIKit
 import CoreBluetooth
 
 final class ViewController: UIViewController {
-    // Central 매니저 객체
-    private let centralManager = CBCentralManager(delegate: nil, queue: .global())
+    // Central 매니저
+    private let centralManager: CBCentralManager
     private let centralManagerDelegate = CentralManagerDelegate()
     
-    // Peripheral 매니저 객체
-    private let peripheralManager = CBPeripheralManager()
+    // Peripheral 매니저
+    private var peripheralManager: CBPeripheralManager
     private let peripheralManagerDelegate = PeripheralManagerDelegate()
     
-//    private let serviceUUID = CBUUID(string: "AAAA4F43-5605-4C64-928C-D7F09530E558")
-//    private let characteristicUUID = CBUUID(string: "BBBB4F43-5605-4C64-928C-D7F09530E558")
+    private var mutableCharacteristic: CBMutableCharacteristic
+    private var mutableService: CBMutableService
     
-    private var mutableCharacteristic: CBMutableCharacteristic!
-    private var mutableService: CBMutableService!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    required init?(coder: NSCoder) {
+        centralManager = CBCentralManager(delegate: nil, queue: .global())
         centralManager.delegate = centralManagerDelegate
+        
+        peripheralManager = CBPeripheralManager(delegate: nil, queue: .global())
         peripheralManager.delegate = peripheralManagerDelegate
         
         mutableCharacteristic = CBMutableCharacteristic(
             type: Identifier.characteristicUUID,
-            properties: [.read, .writeWithoutResponse],
+            properties: [.notify, .read, .writeWithoutResponse],
             value: nil,
             permissions: [.readable, .writeable]
         )
         mutableService = CBMutableService(
             type: Identifier.serviceUUID,
-            primary: true)
+            primary: true
+        )
         mutableService.characteristics = [mutableCharacteristic]
+        
+        super.init(coder: coder)
     }
 }
 
@@ -85,5 +86,14 @@ extension ViewController {
     
     @IBAction func tappedStopAdvertising(_ sender: UIButton) {
         peripheralManager.stopAdvertising()
+    }
+    
+    @IBAction func tappedWriteValueButton(_ sender: UIButton) {
+        let result = peripheralManager.updateValue(
+            Data([1, 2, 3]),
+            for: mutableCharacteristic,
+            onSubscribedCentrals: nil
+        )
+        print(result)
     }
 }

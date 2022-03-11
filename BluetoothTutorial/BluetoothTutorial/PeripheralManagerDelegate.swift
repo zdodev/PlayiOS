@@ -52,7 +52,6 @@ final class PeripheralManagerDelegate: NSObject, CBPeripheralManagerDelegate {
     
     func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: Error?) {
         if let error = error {
-            print("peripheral startAdvertising fail.")
             print(error)
             return
         }
