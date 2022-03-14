@@ -68,6 +68,22 @@ CBPeripheral: 원격 peripheral 장치입니다.
 - Working with Apple Notification Center Service(ANCS)
 
 
+
+Central 에서 Peripheral 데이터 읽기
+
+-   cbPeripheral.readValue(), 데이터 읽기 요청
+-   CBPeripheralManagerDelegate, 읽기 요청 시 호출되는 델리게이트 메서드
+    -   peripheralManager(_:didReceiveRead:)
+
+Central 에서 Peripheral 로 데이터 쓰기
+
+-   cbPeripheral.writeValue(), 데이터 쓰기 요청
+-   CBPeripheralManagerDelegate, 쓰기 요청 시 호출되는 델리게이트 메서드
+    -   peripheralManager(_:didReceiveWrite:)
+
+Peripheral 에서 Central 데이터 읽기
+
+
 ### 참고 링크
 
 ---

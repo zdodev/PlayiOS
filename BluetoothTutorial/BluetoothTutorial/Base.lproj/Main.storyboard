@@ -118,6 +118,14 @@
                                     <action selector="tappedReadValue:" destination="R0l-aQ-ja2" eventType="touchUpInside" id="fgw-Qf-oQL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogl-TN-jaV">
+                                <rect key="frame" x="158.5" y="363" width="97.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Write Value"/>
+                                <connections>
+                                    <action selector="tappedWriteValue:" destination="R0l-aQ-ja2" eventType="touchUpInside" id="Inq-4p-6y1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="B35-y9-LwM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -129,6 +137,8 @@
                             <constraint firstItem="oun-5C-vht" firstAttribute="top" secondItem="OyY-ek-3Is" secondAttribute="bottom" constant="20" id="YJB-6b-52W"/>
                             <constraint firstItem="Iqj-fl-O2A" firstAttribute="centerX" secondItem="pwu-od-Vjz" secondAttribute="centerX" id="hb7-Bh-WZ2"/>
                             <constraint firstItem="oun-5C-vht" firstAttribute="centerX" secondItem="pwu-od-Vjz" secondAttribute="centerX" id="kQD-7U-TFF"/>
+                            <constraint firstItem="ogl-TN-jaV" firstAttribute="centerX" secondItem="pwu-od-Vjz" secondAttribute="centerX" id="l3S-tb-lX7"/>
+                            <constraint firstItem="ogl-TN-jaV" firstAttribute="top" secondItem="Iqj-fl-O2A" secondAttribute="bottom" constant="20" id="lGW-19-Ab5"/>
                             <constraint firstItem="OyY-ek-3Is" firstAttribute="centerX" secondItem="pwu-od-Vjz" secondAttribute="centerX" id="yMM-Fc-CNT"/>
                             <constraint firstItem="MiI-5G-7eH" firstAttribute="top" secondItem="PBE-at-TId" secondAttribute="bottom" constant="20" id="zZh-gc-GP8"/>
                             <constraint firstItem="MiI-5G-7eH" firstAttribute="centerX" secondItem="pwu-od-Vjz" secondAttribute="centerX" id="zqV-BV-4fn"/>
