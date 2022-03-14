@@ -50,6 +50,7 @@ final class PeripheralDelegate: NSObject, CBPeripheralDelegate {
         
         discoveredCharacteristics.forEach { cbCharacteristic in
             print(cbCharacteristic)
+            peripheral.setNotifyValue(true, for: cbCharacteristic)
             self.cbCharacteristic = cbCharacteristic
         }
     }

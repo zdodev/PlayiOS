@@ -5,7 +5,7 @@ struct PeripheralService {
     private let peripheralManagerDelegate = PeripheralManagerDelegate()
     
     init() {
-        peripheralManager = CBPeripheralManager(delegate: peripheralManagerDelegate, queue: .global())
+        peripheralManager = CBPeripheralManager(delegate: peripheralManagerDelegate, queue: .main)
     }
 }
 
@@ -77,7 +77,8 @@ final class PeripheralManagerDelegate: NSObject, CBPeripheralManagerDelegate {
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
         print("didReceiveRead")
-        print(request)
+        request.value = Data([2, 3, 4])
+        peripheral.respond(to: request, withResult: .success)
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {

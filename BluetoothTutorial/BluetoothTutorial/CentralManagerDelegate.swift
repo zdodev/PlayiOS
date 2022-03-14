@@ -5,7 +5,7 @@ struct CentralService {
     private let centralManagerDelegate = CentralManagerDelegate()
     
     init() {
-        centralManager = CBCentralManager(delegate: centralManagerDelegate, queue: .global())
+        centralManager = CBCentralManager(delegate: centralManagerDelegate, queue: .main)
     }
     
     func startScan() {
@@ -33,6 +33,7 @@ final class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("didConnect")
         central.stopScan()
+        print("stop scan")
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {

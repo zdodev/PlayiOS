@@ -11,7 +11,6 @@
 		84C9A22F27197136008A8604 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 84C9A22E27197136008A8604 /* README.md */; };
 		84CAB5D62716649B009A9F01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CAB5D52716649B009A9F01 /* AppDelegate.swift */; };
 		84CAB5D82716649B009A9F01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CAB5D72716649B009A9F01 /* SceneDelegate.swift */; };
-		84CAB5DA2716649B009A9F01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CAB5D92716649B009A9F01 /* ViewController.swift */; };
 		84CAB5DD2716649B009A9F01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CAB5DB2716649B009A9F01 /* Main.storyboard */; };
 		84CAB5DF2716649C009A9F01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CAB5DE2716649C009A9F01 /* Assets.xcassets */; };
 		84CAB5E22716649C009A9F01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CAB5E02716649C009A9F01 /* LaunchScreen.storyboard */; };
@@ -19,6 +18,7 @@
 		84D7F98D271D3C6100F6BAB1 /* PeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7F98C271D3C6100F6BAB1 /* PeripheralDelegate.swift */; };
 		84DAFEBB27D992FB004332A3 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAFEBA27D992FB004332A3 /* Identifier.swift */; };
 		84E357E427DED88A00A37B28 /* CentralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E357E327DED88A00A37B28 /* CentralViewController.swift */; };
+		84E357E627DEDBC400A37B28 /* PeripheralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E357E527DEDBC400A37B28 /* PeripheralViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,6 @@
 		84CAB5D22716649B009A9F01 /* BluetoothTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CAB5D52716649B009A9F01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84CAB5D72716649B009A9F01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84CAB5D92716649B009A9F01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84CAB5DC2716649B009A9F01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84CAB5DE2716649C009A9F01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84CAB5E12716649C009A9F01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		84D7F98C271D3C6100F6BAB1 /* PeripheralDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralDelegate.swift; sourceTree = "<group>"; };
 		84DAFEBA27D992FB004332A3 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		84E357E327DED88A00A37B28 /* CentralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralViewController.swift; sourceTree = "<group>"; };
+		84E357E527DEDBC400A37B28 /* PeripheralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +70,11 @@
 			isa = PBXGroup;
 			children = (
 				84DB04BC27DAF112006A26B6 /* Supporting Files */,
-				84CAB5D92716649B009A9F01 /* ViewController.swift */,
 				84E357E327DED88A00A37B28 /* CentralViewController.swift */,
 				84CAB5E927167539009A9F01 /* CentralManagerDelegate.swift */,
-				84C9A22C27192552008A8604 /* PeripheralManagerDelegate.swift */,
 				84D7F98C271D3C6100F6BAB1 /* PeripheralDelegate.swift */,
+				84E357E527DEDBC400A37B28 /* PeripheralViewController.swift */,
+				84C9A22C27192552008A8604 /* PeripheralManagerDelegate.swift */,
 				84DAFEBA27D992FB004332A3 /* Identifier.swift */,
 				84CAB5DB2716649B009A9F01 /* Main.storyboard */,
 				84CAB5DE2716649C009A9F01 /* Assets.xcassets */,
@@ -170,12 +170,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D7F98D271D3C6100F6BAB1 /* PeripheralDelegate.swift in Sources */,
-				84CAB5DA2716649B009A9F01 /* ViewController.swift in Sources */,
 				84CAB5D62716649B009A9F01 /* AppDelegate.swift in Sources */,
 				84DAFEBB27D992FB004332A3 /* Identifier.swift in Sources */,
 				84C9A22D27192552008A8604 /* PeripheralManagerDelegate.swift in Sources */,
 				84CAB5D82716649B009A9F01 /* SceneDelegate.swift in Sources */,
 				84E357E427DED88A00A37B28 /* CentralViewController.swift in Sources */,
+				84E357E627DEDBC400A37B28 /* PeripheralViewController.swift in Sources */,
 				84CAB5EA27167539009A9F01 /* CentralManagerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,7 +325,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LXCT2BPL62;
+				DEVELOPMENT_TEAM = 6S9487HV37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BluetoothTutorial/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = Bluetooth;
@@ -340,7 +340,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hello.BluetoothTutorial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hello.BluetoothTutorial2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -355,7 +355,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LXCT2BPL62;
+				DEVELOPMENT_TEAM = 6S9487HV37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BluetoothTutorial/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = Bluetooth;
@@ -370,7 +370,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hello.BluetoothTutorial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hello.BluetoothTutorial2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
