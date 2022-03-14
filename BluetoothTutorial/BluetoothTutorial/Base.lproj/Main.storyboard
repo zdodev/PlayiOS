@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f4d-IW-f61">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BluetoothTutorial" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,126 +17,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zum-FR-e5w">
-                                <rect key="frame" x="20" y="64" width="143.5" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="scanAllPeripherals"/>
-                                <connections>
-                                    <action selector="tappedScanAllPeripheralsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="unK-IF-Qm7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhn-mC-Lq6">
-                                <rect key="frame" x="297.5" y="64" width="96.5" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="addServive"/>
-                                <connections>
-                                    <action selector="tappedButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qVA-SM-J66"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATQ-qq-i0T">
-                                <rect key="frame" x="267" y="115" width="127" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="startAdvertising"/>
-                                <connections>
-                                    <action selector="tappedButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LfI-vQ-3Co"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ly-aS-Gv8">
-                                <rect key="frame" x="20" y="115" width="85" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="stopScan"/>
-                                <connections>
-                                    <action selector="tappedStopScanButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="79q-N6-Nmt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWt-sJ-YXE">
-                                <rect key="frame" x="20" y="166" width="83" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="scanSGA"/>
-                                <connections>
-                                    <action selector="tappedScanSGA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ob-9U-n4V"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5V5-Ne-vtC">
-                                <rect key="frame" x="269" y="166" width="125" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="stopAdvertising"/>
-                                <connections>
-                                    <action selector="tappedStopAdvertising:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uEI-sb-C8R"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUy-aJ-12V">
-                                <rect key="frame" x="20" y="217" width="134" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="discoverServices"/>
-                                <connections>
-                                    <action selector="tappedDiscoverServices:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S5z-Xj-SjO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwW-Ib-g9C">
-                                <rect key="frame" x="20" y="268" width="176.5" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="discoverCharacteristics"/>
-                                <connections>
-                                    <action selector="tappedDiscoverCharacteristics:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0SQ-DZ-DjT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uxh-jQ-ycJ">
-                                <rect key="frame" x="20" y="319" width="88.5" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="readValue"/>
-                                <connections>
-                                    <action selector="tappedReadValue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8nL-aE-mhm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D58-Ay-kcr">
-                                <rect key="frame" x="20" y="370" width="91" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="writeValue"/>
-                                <connections>
-                                    <action selector="tappedWriteValue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YnN-bs-QZx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erc-zy-SiN">
-                                <rect key="frame" x="303" y="217" width="91" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="writeValue"/>
-                                <connections>
-                                    <action selector="tappedWriteValueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p63-Fg-fce"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="ZQD-2s-Sxm">
+                                <rect key="frame" x="162.5" y="367" width="89.5" height="162"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4j7-td-HQE">
+                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Central"/>
+                                        <connections>
+                                            <segue destination="R0l-aQ-ja2" kind="show" id="Pd5-0O-hL9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZr-Cq-0Ol">
+                                        <rect key="frame" x="0.0" y="131" width="89.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Peripheral"/>
+                                        <connections>
+                                            <segue destination="VuH-j3-eqg" kind="show" id="LpA-wm-dEk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Erc-zy-SiN" firstAttribute="top" secondItem="5V5-Ne-vtC" secondAttribute="bottom" constant="20" id="09C-vj-BbI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Erc-zy-SiN" secondAttribute="trailing" constant="20" id="2u9-Hx-BYC"/>
-                            <constraint firstItem="9ly-aS-Gv8" firstAttribute="top" secondItem="zum-FR-e5w" secondAttribute="bottom" constant="20" id="6De-qn-4YD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ATQ-qq-i0T" secondAttribute="trailing" constant="20" id="DLI-jb-5qh"/>
-                            <constraint firstItem="D58-Ay-kcr" firstAttribute="top" secondItem="Uxh-jQ-ycJ" secondAttribute="bottom" constant="20" id="EOW-E3-asd"/>
-                            <constraint firstItem="5V5-Ne-vtC" firstAttribute="top" secondItem="ATQ-qq-i0T" secondAttribute="bottom" constant="20" id="G5e-Nm-E4W"/>
-                            <constraint firstItem="D58-Ay-kcr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NLv-TI-uNl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bhn-mC-Lq6" secondAttribute="trailing" constant="20" id="OFy-2l-kIH"/>
-                            <constraint firstItem="Uxh-jQ-ycJ" firstAttribute="top" secondItem="QwW-Ib-g9C" secondAttribute="bottom" constant="20" id="PmH-1V-edQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5V5-Ne-vtC" secondAttribute="trailing" constant="20" id="UAU-B3-AgX"/>
-                            <constraint firstItem="IWt-sJ-YXE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aGY-fj-V5E"/>
-                            <constraint firstItem="PUy-aJ-12V" firstAttribute="top" secondItem="IWt-sJ-YXE" secondAttribute="bottom" constant="20" id="alU-zY-p4I"/>
-                            <constraint firstItem="IWt-sJ-YXE" firstAttribute="top" secondItem="9ly-aS-Gv8" secondAttribute="bottom" constant="20" id="cAA-yT-ShU"/>
-                            <constraint firstItem="Uxh-jQ-ycJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cZ5-GW-NgD"/>
-                            <constraint firstItem="9ly-aS-Gv8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ewX-UJ-Yu9"/>
-                            <constraint firstItem="PUy-aJ-12V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kX6-V7-Md7"/>
-                            <constraint firstItem="QwW-Ib-g9C" firstAttribute="top" secondItem="PUy-aJ-12V" secondAttribute="bottom" constant="20" id="koF-Wz-9W1"/>
-                            <constraint firstItem="ATQ-qq-i0T" firstAttribute="top" secondItem="bhn-mC-Lq6" secondAttribute="bottom" constant="20" id="kqa-9Y-nu4"/>
-                            <constraint firstItem="QwW-Ib-g9C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oib-p2-6yD"/>
-                            <constraint firstItem="zum-FR-e5w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="sO2-Ng-p5C"/>
-                            <constraint firstItem="zum-FR-e5w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sfD-yA-kpZ"/>
-                            <constraint firstItem="bhn-mC-Lq6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="t1b-Lg-gi3"/>
+                            <constraint firstItem="ZQD-2s-Sxm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JMA-hT-lIZ"/>
+                            <constraint firstItem="ZQD-2s-Sxm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mSs-Oe-9z4"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Main" id="Pau-Pi-jYy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="64"/>
+            <point key="canvasLocation" x="1042.0289855072465" y="63.616071428571423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Chx-rf-jnA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f4d-IW-f61" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UVr-hq-hxz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Lem-Zl-vgB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KXM-gf-Ddf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="63.616071428571423"/>
+        </scene>
+        <!--Central-->
+        <scene sceneID="WE4-6H-SgW">
+            <objects>
+                <viewController id="R0l-aQ-ja2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pwu-od-Vjz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="B35-y9-LwM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Central" id="BpP-3H-76e"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hlu-lR-GRK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2230" y="-339"/>
+        </scene>
+        <!--Peripheral-->
+        <scene sceneID="bVj-lp-wTt">
+            <objects>
+                <viewController id="VuH-j3-eqg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Yg-oi-Zvq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hGU-gi-a0W"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Peripheral" id="kBX-dH-fIE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRy-YV-EOD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2229" y="414"/>
         </scene>
     </scenes>
     <resources>
