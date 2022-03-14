@@ -81,7 +81,9 @@ Central 에서 Peripheral 로 데이터 쓰기
 -   CBPeripheralManagerDelegate, 쓰기 요청 시 호출되는 델리게이트 메서드
     -   peripheralManager(_:didReceiveWrite:)
 
-Peripheral 에서 Central 데이터 읽기
+Peripheral 에서 Characteric 데이터 업데이트
+
+-   peripheralManager.updateValue(), Character 데이터 업데이트
 
 
 ### 참고 링크
