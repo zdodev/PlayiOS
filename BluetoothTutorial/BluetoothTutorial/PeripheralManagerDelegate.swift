@@ -1,14 +1,5 @@
 import CoreBluetooth
 
-struct PeripheralService {
-    private let peripheralManager: CBPeripheralManager
-    private let peripheralManagerDelegate = PeripheralManagerDelegate()
-    
-    init() {
-        peripheralManager = CBPeripheralManager(delegate: peripheralManagerDelegate, queue: .main)
-    }
-}
-
 final class PeripheralManagerDelegate: NSObject, CBPeripheralManagerDelegate {
     
     // MARK: - Monitoring Changes to the Peripheral Manager's State

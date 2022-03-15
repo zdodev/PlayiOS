@@ -1,29 +1,5 @@
 import CoreBluetooth
 
-struct CentralService {
-    private let centralManager: CBCentralManager
-    private let centralManagerDelegate = CentralManagerDelegate()
-    
-    init() {
-        centralManager = CBCentralManager(delegate: centralManagerDelegate, queue: .main)
-    }
-    
-    func startScan() {
-        centralManager.scanForPeripherals(
-            withServices: [Identifier.serviceUUID],
-            options: [CBCentralManagerScanOptionAllowDuplicatesKey: true]
-        )
-    }
-    
-    func stopScan() {
-        centralManager.stopScan()
-    }
-    
-    func connect() {
-//        centralManager
-    }
-}
-
 final class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
     private let peripheralDelegate = PeripheralDelegate()
     private var cbPeripheral: CBPeripheral?
@@ -51,14 +27,6 @@ final class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
     // MARK: - Discovering and Retrieving Peripherals
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        guard let deviceName = advertisementData[CBAdvertisementDataLocalNameKey] as? String else {
-            return
-        }
-        guard deviceName == Identifier.peripheralAdvertisingName else {
-            return
-        }
-        
-        print("disDiscover:")
         print(peripheral)
         
         cbPeripheral = peripheral
