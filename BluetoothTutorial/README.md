@@ -97,3 +97,5 @@ Peripheral 에서 Characteristic 데이터 업데이트
 > [Estimator: BLE를 사용한 Planning Poker 애플리케이션](https://www.theteams.kr/teams/866/post/64575)
 >
 > [Core Bluetooth 가이드](https://leejigun.github.io/CoreBlutooth)
+>
+> [[iOS]Core Bluetooth 활용하기#01](https://staktree.github.io/ios/iOS-Bluetooth-01-about-CoreBluetooth/)
