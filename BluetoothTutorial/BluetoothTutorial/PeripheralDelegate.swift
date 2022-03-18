@@ -78,9 +78,12 @@ final class PeripheralDelegate: NSObject, CBPeripheralDelegate {
             return
         }
         
-        data.forEach { element in
-            print(element)
-        }
+        let receivedData = String(data: data, encoding: .utf8)
+        print(receivedData)
+        
+//        data.forEach { element in
+//            print(element)
+//        }
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor descriptor: CBDescriptor, error: Error?) {

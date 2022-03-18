@@ -68,7 +68,7 @@ final class PeripheralManagerDelegate: NSObject, CBPeripheralManagerDelegate {
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
         print("didReceiveRead")
-        request.value = Data([2, 3, 4])
+        request.value = Data("test".data(using: .utf8)!)
         peripheral.respond(to: request, withResult: .success)
     }
     
@@ -81,9 +81,8 @@ final class PeripheralManagerDelegate: NSObject, CBPeripheralManagerDelegate {
             return
         }
         
-        value.forEach { element in
-            print(element)
-        }
+        let receivedData = String(data: value, encoding: .utf8)!
+        print(receivedData)
     }
     
     // MARK: - Using L2CAP Channels

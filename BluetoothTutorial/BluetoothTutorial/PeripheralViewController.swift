@@ -47,7 +47,7 @@ extension PeripheralViewController {
     
     @IBAction func tappedWriteValueButton(_ sender: UIButton) {
         let result = peripheralManager.updateValue(
-            Data([1, 2, 3]),
+            Data("test".data(using: .utf8)!),
             for: mutableCharacteristic,
             onSubscribedCentrals: nil
         )

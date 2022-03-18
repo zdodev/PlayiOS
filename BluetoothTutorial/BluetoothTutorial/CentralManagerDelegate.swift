@@ -83,7 +83,7 @@ extension CentralManagerDelegate {
     
     func writeValue() {
         if let characteristic = peripheralDelegate.cbCharacteristic {
-            cbPeripheral?.writeValue(Data([1, 2, 3]), for: characteristic, type: .withoutResponse)
+            cbPeripheral?.writeValue(Data("test".data(using: .utf8)!), for: characteristic, type: .withoutResponse)
         }
     }
 }
