@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RTI-F8-mXi">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QRCodeTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKC-39-1Er">
+                                <rect key="frame" x="152" y="351.5" width="110" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="QR Code 생성"/>
+                                <connections>
+                                    <segue destination="8ib-Bo-Sec" kind="show" id="qws-nd-nmD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqt-ME-IRq">
+                                <rect key="frame" x="152" y="432.5" width="110" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="QR Code 리더"/>
+                                <connections>
+                                    <segue destination="2FE-zC-yXe" kind="show" id="rjn-n9-s8w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eqt-ME-IRq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Vuy-2c-Zu3"/>
+                            <constraint firstItem="LKC-39-1Er" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y3M-gc-Ghh"/>
+                            <constraint firstItem="eqt-ME-IRq" firstAttribute="top" secondItem="LKC-39-1Er" secondAttribute="bottom" constant="50" id="Z3s-BG-Iyo"/>
+                            <constraint firstItem="eqt-ME-IRq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kJH-C4-HsP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZeQ-ry-bRC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="109.82142857142857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8cu-U6-V0g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RTI-F8-mXi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lft-I1-zUU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="RPa-vk-GOW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQm-c0-IIK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
+        </scene>
+        <!--Code Generator View Controller-->
+        <scene sceneID="jKY-Fp-Nr2">
+            <objects>
+                <viewController id="8ib-Bo-Sec" customClass="QRCodeGeneratorViewController" customModule="QRCodeTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OVb-zh-XvI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xCI-kN-5EB" customClass="QRCodeView" customModule="QRCodeTest" customModuleProvider="target">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="800-xE-U1r"/>
+                                    <constraint firstAttribute="width" constant="240" id="TrB-yL-y4I"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoL-F6-RLz">
+                                <rect key="frame" x="188" y="257" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="j0V-nW-2EX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xCI-kN-5EB" firstAttribute="centerY" secondItem="OVb-zh-XvI" secondAttribute="centerY" id="InO-xy-CbW"/>
+                            <constraint firstItem="LoL-F6-RLz" firstAttribute="centerX" secondItem="OVb-zh-XvI" secondAttribute="centerX" id="QoQ-66-Nod"/>
+                            <constraint firstItem="xCI-kN-5EB" firstAttribute="top" secondItem="LoL-F6-RLz" secondAttribute="bottom" constant="50" id="bmZ-fU-Gcc"/>
+                            <constraint firstItem="xCI-kN-5EB" firstAttribute="centerX" secondItem="OVb-zh-XvI" secondAttribute="centerX" id="tyC-Y5-STm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="c1L-t7-sY1"/>
+                    <connections>
+                        <outlet property="qrCodeView" destination="xCI-kN-5EB" id="VOg-Sr-Kv4"/>
+                        <outlet property="timerLabel" destination="LoL-F6-RLz" id="w3L-UI-4bX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8zV-E4-HnI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980" y="-625"/>
+        </scene>
+        <!--Code Reader View Controller-->
+        <scene sceneID="JYN-9R-orJ">
+            <objects>
+                <viewController id="2FE-zC-yXe" customClass="QRCodeReaderViewController" customModule="QRCodeTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i2v-t2-o7A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCD-4a-rUH">
+                                <rect key="frame" x="162.5" y="781" width="89" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="카메라 전환"/>
+                                <connections>
+                                    <action selector="tappedCameraSwitchingButton:" destination="2FE-zC-yXe" eventType="touchUpInside" id="iiM-wA-Q2y"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8a-KS-F5S" customClass="CameraView" customModule="QRCodeTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="643"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ryi-G3-qc2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ryi-G3-qc2" firstAttribute="trailing" secondItem="u8a-KS-F5S" secondAttribute="trailing" id="41a-nT-JEU"/>
+                            <constraint firstItem="sCD-4a-rUH" firstAttribute="centerX" secondItem="i2v-t2-o7A" secondAttribute="centerX" id="Mmw-Fx-i9j"/>
+                            <constraint firstItem="u8a-KS-F5S" firstAttribute="leading" secondItem="Ryi-G3-qc2" secondAttribute="leading" id="YXW-KZ-zlw"/>
+                            <constraint firstItem="Ryi-G3-qc2" firstAttribute="bottom" secondItem="sCD-4a-rUH" secondAttribute="bottom" constant="50" id="cjm-ld-IbA"/>
+                            <constraint firstItem="u8a-KS-F5S" firstAttribute="top" secondItem="Ryi-G3-qc2" secondAttribute="top" id="quQ-cq-BdP"/>
+                            <constraint firstItem="sCD-4a-rUH" firstAttribute="top" secondItem="u8a-KS-F5S" secondAttribute="bottom" constant="50" id="vjO-86-cpA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eGW-hA-PyM"/>
+                    <connections>
+                        <outlet property="cameraView" destination="u8a-KS-F5S" id="Zfu-0t-hJs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qYb-W7-dRe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1979.7101449275365" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
