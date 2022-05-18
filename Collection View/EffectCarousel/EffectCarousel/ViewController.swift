@@ -50,7 +50,27 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
+    // paging 구현
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        print(targetContentOffset.pointee)
+        guard let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        
+        // 셀 너비 + 셀 간격
+        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+        
+        let estimatedIndex = scrollView.contentOffset.x / cellWidthIncludingSpacing
+        print(estimatedIndex)
+        
+        let index: Int
+        if velocity.x > 0 {
+            index = Int(ceil(estimatedIndex))
+        } else if velocity.x < 0 {
+            index = Int(floor(estimatedIndex))
+        } else {
+            index = Int(round(estimatedIndex))
+        }
+        
+        targetContentOffset.pointee = CGPoint(x: CGFloat(index) * cellWidthIncludingSpacing, y: 0)
     }
 }
