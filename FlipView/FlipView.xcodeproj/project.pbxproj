@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84A84140283F5B9D00B20273 /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8413F283F5B9D00B20273 /* FlipView.swift */; };
 		84A852622833602A0003E977 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A852612833602A0003E977 /* AppDelegate.swift */; };
 		84A852642833602A0003E977 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A852632833602A0003E977 /* SceneDelegate.swift */; };
 		84A852662833602A0003E977 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A852652833602A0003E977 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84A8413F283F5B9D00B20273 /* FlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipView.swift; sourceTree = "<group>"; };
 		84A8525E2833602A0003E977 /* FlipView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A852612833602A0003E977 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84A852632833602A0003E977 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				84A852612833602A0003E977 /* AppDelegate.swift */,
 				84A852632833602A0003E977 /* SceneDelegate.swift */,
 				84A852652833602A0003E977 /* ViewController.swift */,
+				84A8413F283F5B9D00B20273 /* FlipView.swift */,
 				84A852672833602A0003E977 /* Main.storyboard */,
 				84A8526A2833602B0003E977 /* Assets.xcassets */,
 				84A8526C2833602B0003E977 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				84A852662833602A0003E977 /* ViewController.swift in Sources */,
 				84A852622833602A0003E977 /* AppDelegate.swift in Sources */,
 				84A852642833602A0003E977 /* SceneDelegate.swift in Sources */,
+				84A84140283F5B9D00B20273 /* FlipView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

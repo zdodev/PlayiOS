@@ -1,19 +1,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var flipView: UIView!
-    @IBOutlet weak var rearView: UIView!
+    @IBOutlet weak var flipView: FlipView!
     
-    private var flipped = false
+    let frontView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemGray
+        return view
+    }()
+    let rearView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemRed
+        return view
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        flipView.setFlipViews(frontView: frontView, rearView: rearView)
+    }
     
     @IBAction func tappedFlipButton(_ sender: UIButton) {
-        if flipped {
-            UIView.transition(from: flipView, to: rearView, duration: 0.5, options: [.transitionFlipFromLeft, .showHideTransitionViews])
-            flipped = false
-        } else {
-            UIView.transition(from: rearView, to: flipView, duration: 0.5, options: [.transitionFlipFromLeft, .showHideTransitionViews])
-            flipped = true
-        }
+        flipView.flip()
     }
 }
 
