@@ -18,11 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ofQ-vd-ZoQ">
-                                <rect key="frame" x="49.5" y="274.5" width="315" height="347"/>
+                                <rect key="frame" x="0.0" y="274.5" width="414" height="347"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="347" id="0gl-lH-0zH"/>
-                                    <constraint firstAttribute="width" constant="315" id="eZe-qz-Al3"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sBH-aK-4wo">
                                     <size key="itemSize" width="128" height="128"/>
@@ -45,6 +44,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ofQ-vd-ZoQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3ey-SM-Vo7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ofQ-vd-ZoQ" secondAttribute="trailing" id="GcA-ET-yXv"/>
                             <constraint firstItem="ofQ-vd-ZoQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m23-TI-t2i"/>
                             <constraint firstItem="ofQ-vd-ZoQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yiG-bt-0YI"/>
                         </constraints>

@@ -4,9 +4,9 @@ class CarouselLayout: UICollectionViewFlowLayout {
     
     public var sideItemScale: CGFloat = 0.5
     public var sideItemAlpha: CGFloat = 0.5
-    public var spacing: CGFloat = 10
+//    public var spacing: CGFloat = 10
 
-    public var isPagingEnabled: Bool = false
+//    public var isPagingEnabled: Bool = false
     
     private var isSetup: Bool = false
     
@@ -28,9 +28,9 @@ class CarouselLayout: UICollectionViewFlowLayout {
         
         self.sectionInset = UIEdgeInsets(top: yInset, left: xInset, bottom: yInset, right: xInset)
         
-        let itemWidth = self.itemSize.width
+//        let itemWidth = self.itemSize.width
         
-        let scaledItemOffset = (itemWidth - (itemWidth*(self.sideItemScale + (1 - self.sideItemScale)/2))) / 2
+//        let scaledItemOffset = (itemWidth - (itemWidth*(self.sideItemScale + (1 - self.sideItemScale)/2))) / 2
         // 셀 간격
 //        self.minimumLineSpacing = spacing - scaledItemOffset
         self.minimumLineSpacing = 10
@@ -67,43 +67,46 @@ class CarouselLayout: UICollectionViewFlowLayout {
         let alpha = ratio * (1 - self.sideItemAlpha) + self.sideItemAlpha
         let scale = ratio * (1 - self.sideItemScale) + self.sideItemScale
         let sideItemSy: CGFloat = 30
-        let height = sideItemSy - ratio * 30
+        let height = sideItemSy - ratio * sideItemSy
         
-        attributes.alpha = alpha
+//        attributes.alpha = alpha
         
         if abs(collectionCenter - center) > maxDistance + 1 {
             attributes.alpha = 0
         }
         
-        let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
-        let dist = attributes.frame.midX - visibleRect.midX
-        var transform = CATransform3DMakeTranslation(0, height, 0)
-        attributes.transform3D = transform
+//        let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
+//        let dist = attributes.frame.midX - visibleRect.midX
+//        var transform = CATransform3DMakeTranslation(0, height, 0)
+//        attributes.transform3D = transform
+        
+        let transform = CGAffineTransform(translationX: 0, y: height)
+        attributes.transform = transform
         
         return attributes
     }
     
-    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
-        print("call##############3")
-
-        guard let collectionView = self.collectionView else {
-            let latestOffset = super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)
-            return latestOffset
-        }
-
-        let targetRect = CGRect(x: proposedContentOffset.x, y: 0, width: collectionView.frame.width, height: collectionView.frame.height)
-        guard let rectAttributes = super.layoutAttributesForElements(in: targetRect) else { return .zero }
-
-        var offsetAdjustment = CGFloat.greatestFiniteMagnitude
-        let horizontalCenter = proposedContentOffset.x + collectionView.frame.width / 2
-
-        for layoutAttributes in rectAttributes {
-            let itemHorizontalCenter = layoutAttributes.center.x
-            if (itemHorizontalCenter - horizontalCenter).magnitude < offsetAdjustment.magnitude {
-                offsetAdjustment = itemHorizontalCenter - horizontalCenter
-            }
-        }
-
-        return CGPoint(x: proposedContentOffset.x + offsetAdjustment, y: proposedContentOffset.y)
-    }
+//    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+//        print("call##############3")
+//
+//        guard let collectionView = self.collectionView else {
+//            let latestOffset = super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)
+//            return latestOffset
+//        }
+//
+//        let targetRect = CGRect(x: proposedContentOffset.x, y: 0, width: collectionView.frame.width, height: collectionView.frame.height)
+//        guard let rectAttributes = super.layoutAttributesForElements(in: targetRect) else { return .zero }
+//
+//        var offsetAdjustment = CGFloat.greatestFiniteMagnitude
+//        let horizontalCenter = proposedContentOffset.x + collectionView.frame.width / 2
+//
+//        for layoutAttributes in rectAttributes {
+//            let itemHorizontalCenter = layoutAttributes.center.x
+//            if (itemHorizontalCenter - horizontalCenter).magnitude < offsetAdjustment.magnitude {
+//                offsetAdjustment = itemHorizontalCenter - horizontalCenter
+//            }
+//        }
+//
+//        return CGPoint(x: proposedContentOffset.x + offsetAdjustment, y: proposedContentOffset.y)
+//    }
 }

@@ -11,15 +11,21 @@ class ViewController: UIViewController {
         self.view.backgroundColor = .brown
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        print(view.frame.width, collectionView.frame.width)
+    }
+    
     func addCollectionView(){
 
         let layout = CarouselLayout()
         
         layout.itemSize = CGSize(width: collectionView.frame.size.width*0.796, height: collectionView.frame.size.height - 50)
-        layout.sideItemScale = 175/251
-        layout.spacing = -197
-        layout.isPagingEnabled = true
-        layout.sideItemAlpha = 0.5
+//        layout.sideItemScale = 175/251
+//        layout.spacing = -197
+//        layout.isPagingEnabled = true
+//        layout.sideItemAlpha = 0.5
 
         collectionView.collectionViewLayout = layout
             
