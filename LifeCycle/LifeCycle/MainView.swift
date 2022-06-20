@@ -63,4 +63,13 @@ final class MainView: UIView {
         
         super.updateConstraints()
     }
+    
+    // MARK: - Laying Out Subviews
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        print("MainView::layoutSubviews()")
+    }
 }
+
