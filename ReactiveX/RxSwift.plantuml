@@ -1,0 +1,79 @@
+@startuml
+
+protocol ObservableConvertibleType
+protocol ObservableType
+protocol InfallibleType
+
+class Observable
+struct Infallible
+struct Single
+struct Maybe
+struct Completable
+
+protocol ObserverType
+struct AnyObserver
+
+protocol SubjectType
+class AsyncSubject
+class BehaviorSubject
+class PublishSubject
+class ReplaySubject
+
+class BehaviorRelay
+class PublishRelay
+class ReplayRelay
+
+protocol ControlEventType
+struct ControlEvent
+protocol ControlPropertyType
+struct ControlProperty
+
+struct Signal
+struct Driver
+
+ObservableConvertibleType <|.. ObservableType
+ObservableConvertibleType <|.. InfallibleType
+
+ObservableType <|.. Observable
+ObservableType <|.. SubjectType
+ObservableType <|.. ControlEventType
+ObservableType <|.. ControlPropertyType
+
+InfallibleType <|.. Infallible 
+
+Observable <-- Single
+Observable <-- Maybe
+Observable <-- Completable
+
+Observable <|-- AsyncSubject
+Observable <|-- BehaviorSubject
+Observable <|-- PublishSubject
+Observable <|-- ReplaySubject
+
+Observable <-- Signal
+Observable <-- Driver
+
+ObserverType <|.. AnyObserver
+ObserverType <|.. AsyncSubject
+ObserverType <|.. BehaviorSubject
+ObserverType <|.. PublishSubject
+ObserverType <|.. ReplaySubject
+ObserverType <|.. ControlPropertyType
+
+ObservableType <|.. BehaviorRelay
+ObservableType <|.. PublishRelay
+ObservableType <|.. ReplayRelay
+
+PublishSubject <-- PublishRelay
+BehaviorSubject <-- BehaviorRelay
+ReplaySubject <-- ReplayRelay
+
+SubjectType <|.. AsyncSubject
+SubjectType <|.. BehaviorSubject
+SubjectType <|.. PublishSubject
+SubjectType <|.. ReplaySubject
+
+ControlEventType <|..ControlEvent
+ControlPropertyType <|.. ControlProperty
+
+@enduml
