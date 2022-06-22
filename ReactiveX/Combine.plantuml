@@ -1,0 +1,33 @@
+@startuml
+
+protocol Publisher
+
+protocol ConnectablePublisher
+
+protocol CustomCombineIdentifierConvertible
+
+protocol Subscriber
+protocol Subscription
+
+protocol Subject
+
+protocol Scheduler
+
+struct AnyPublisher
+struct AnySubscriber
+
+class CurrentValueSubject
+class PassthroughSubject
+
+Publisher <|.. ConnectablePublisher
+Publisher <|.. Subject
+Publisher <|.. AnyPublisher
+
+CustomCombineIdentifierConvertible <|..Subscriber
+
+Subscriber <|.. AnySubscriber
+
+Subject <|.. CurrentValueSubject
+Subject <|.. PassthroughSubject
+
+@enduml
