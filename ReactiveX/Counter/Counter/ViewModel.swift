@@ -32,6 +32,11 @@ final class CounterViewModel: ViewModel {
         let countedValue = BehaviorSubject(value: 0)
         
         input.increaseButtonTap
+//            .observe(on: ConcurrentDispatchQueueScheduler(qos: .default))
+            .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .default))
+            .map({ a in
+                print(a)
+            })
             .subscribe(onNext: {
                 countedValue.onNext(try! countedValue.value() + 1)
             })

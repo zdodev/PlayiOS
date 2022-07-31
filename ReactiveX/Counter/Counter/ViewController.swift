@@ -45,11 +45,11 @@ final class ViewController: UIViewController {
             decreaseButtonTap: decreaseButton.rx.tap
         )
         
-        Observable.just(<#T##element: _##_#>)
-        
         let output = viewModel.transform(input: input)
         output.countNumber
-            .map { "\($0)" }
+            .map {
+                "\($0)"
+            }
             .drive(countLabel.rx.text)
             .disposed(by: disposeBag)
     }
