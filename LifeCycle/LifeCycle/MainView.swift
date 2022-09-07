@@ -71,5 +71,10 @@ final class MainView: UIView {
         
         print("MainView::layoutSubviews() \(frame)")
     }
+    
+    // MARK: - Drawing and Updating the View
+    
+    override func draw(_ rect: CGRect) {
+        print("MainView::draw(_:) \(frame)")
+    }
 }
-
