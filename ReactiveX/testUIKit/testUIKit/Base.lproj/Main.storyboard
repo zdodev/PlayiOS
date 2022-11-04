@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="testUIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzq-lY-iEu">
+                                <rect key="frame" x="74.666666666666671" y="409" width="47" height="34.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="och-Fy-HeG">
+                                <rect key="frame" x="271.33333333333331" y="409" width="47" height="34.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFX-3a-GgN">
+                                <rect key="frame" x="175.66666666666666" y="415.66666666666669" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="MAl-4R-cQC">
+                                <rect key="frame" x="186.66666666666666" y="629" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kFX-3a-GgN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QBU-sV-0Mi"/>
+                            <constraint firstItem="kFX-3a-GgN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rkf-c2-bnL"/>
+                            <constraint firstItem="bzq-lY-iEu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.5" id="V9K-hX-oFp"/>
+                            <constraint firstItem="och-Fy-HeG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dF6-up-jrf"/>
+                            <constraint firstItem="bzq-lY-iEu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lE5-Xa-6zY"/>
+                            <constraint firstItem="och-Fy-HeG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1.5" id="n5M-1E-NxC"/>
+                            <constraint firstItem="MAl-4R-cQC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pjb-ie-Wtr"/>
+                            <constraint firstItem="MAl-4R-cQC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="thd-5T-Vwq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZoD-KU-xLp"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="MAl-4R-cQC" id="IXD-E8-zHr"/>
+                        <outlet property="countLabel" destination="kFX-3a-GgN" id="IEu-qu-NwH"/>
+                        <outlet property="minusButton" destination="bzq-lY-iEu" id="Vlz-Ue-4xd"/>
+                        <outlet property="plusButton" destination="och-Fy-HeG" id="fR5-vJ-Fxq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="798" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="minus" catalog="system" width="128" height="26"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
