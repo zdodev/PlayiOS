@@ -13,7 +13,7 @@ struct Counter: ReducerProtocol {
         case incrementButtonTapped
         case decrementButtonTapped
         case factButtonTapped
-        case factResponse(String)
+        case factResponse(TaskResult<String>)
         case toggleTimerButtonTapped
         case timerTick
     }
@@ -35,14 +35,27 @@ struct Counter: ReducerProtocol {
                 state.fact = nil
                 state.isLoading = true
                 return .run { [count = state.count] send in
-                    let (data, _) = try await URLSession.shared.data(from: URL(string: "http://numbersapi.com/\(count)")!)
-                    let fact = String(decoding: data, as: UTF8.self)
-                    await send(.factResponse(fact))
+                    await send(.factResponse(
+                        TaskResult {
+                            let (data, _) = try await URLSession.shared.data(from: URL(string: "http://numbersapi.com/\(count)")!)
+                            let fact = String(decoding: data, as: UTF8.self)
+                            return fact
+                        }
+                    ))
                 }
-            case .factResponse(let fact):
-                state.fact = fact
-                state.isLoading = false
-                return .none
+            case .factResponse(let response):
+                switch response {
+                case .success(let fact):
+                    state.fact = fact
+                    state.isLoading = false
+                    return .none
+                case .failure(let error):
+                    state.fact = nil
+                    state.isLoading = false
+                    print(error)
+                    return .none
+                }
+                
             case .toggleTimerButtonTapped:
                 state.isTimerRunning.toggle()
                 if state.isTimerRunning {
