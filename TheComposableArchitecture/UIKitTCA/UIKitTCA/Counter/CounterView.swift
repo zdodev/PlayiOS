@@ -18,12 +18,37 @@ final class CounterView: UIView {
             for: .normal
         )
     }
-    private let label = UILabel().then {
+    private let timerButton = UIButton(type: .system).then {
+        $0.setTitleColor(
+            .systemBlue,
+            for: .normal
+        )
+    }
+    private let factButton = UIButton(type: .system).then {
+        $0.setTitle(
+            "Fact",
+            for: .normal
+        )
+        $0.setTitleColor(
+            .systemBlue,
+            for: .normal
+        )
+    }
+    private let countLabel = UILabel().then {
         $0.font = .systemFont(
             ofSize: 18,
             weight: .black
         )
     }
+    private let descriptionLabel = UILabel().then {
+        $0.font = .systemFont(
+            ofSize: 18,
+            weight: .black
+        )
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
+    }
+    private let activityIndicatorView = UIActivityIndicatorView()
     
     private let viewStore: ViewStoreOf<Counter>
     private var cancellables = Set<AnyCancellable>()
@@ -46,7 +71,11 @@ final class CounterView: UIView {
     private func setLayout() {
         addSubview(minusButton)
         addSubview(plusButton)
-        addSubview(label)
+        addSubview(timerButton)
+        addSubview(factButton)
+        addSubview(countLabel)
+        addSubview(descriptionLabel)
+        addSubview(activityIndicatorView)
     }
     
     private func setConstraint() {
@@ -60,8 +89,29 @@ final class CounterView: UIView {
             $0.centerY.equalToSuperview()
         }
         
-        label.snp.makeConstraints {
+        countLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
+        }
+        
+        timerButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(countLabel.snp.bottom).offset(20)
+        }
+        
+        factButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(timerButton.snp.bottom).offset(20)
+        }
+        
+        descriptionLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(factButton.snp.bottom).offset(20)
+            $0.directionalHorizontalEdges.equalToSuperview()
+        }
+        
+        activityIndicatorView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(factButton.snp.bottom).offset(20)
         }
     }
     
@@ -80,9 +130,40 @@ final class CounterView: UIView {
         }
         .store(in: &cancellables)
         
+        timerButton.tapPublisher.sink { [unowned self] in
+            viewStore.send(.toggleTimerButtonTapped)
+        }
+        .store(in: &cancellables)
+        
+        factButton.tapPublisher.sink { [unowned self] in
+            viewStore.send(.factButtonTapped)
+        }
+        .store(in: &cancellables)
+        
         viewStore.publisher
             .map { "\($0.count)" }
-            .assign(to: \.label.text, on: self)
+            .assign(to: \.countLabel.text, on: self)
+            .store(in: &cancellables)
+        
+        viewStore.publisher.fact
+            .assign(to: \.descriptionLabel.text, on: self)
+            .store(in: &cancellables)
+        
+        viewStore.publisher.isTimerRunning
+            .map { $0 ? "Stop timer" : "Start timer" }
+            .sink { [unowned self] in
+                timerButton.setTitle($0, for: .normal)
+            }
+            .store(in: &cancellables)
+        
+        viewStore.publisher.isLoading
+            .sink { [unowned self] in
+                if $0 {
+                    activityIndicatorView.startAnimating()
+                    return
+                }
+                activityIndicatorView.stopAnimating()
+            }
             .store(in: &cancellables)
     }
 }
