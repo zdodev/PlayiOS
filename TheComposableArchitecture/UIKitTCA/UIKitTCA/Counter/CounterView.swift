@@ -1,23 +1,18 @@
 import UIKit
 import Combine
+
 import SnapKit
 import Then
 import ComposableArchitecture
 
-/*
- CounterView
- PlusButton
- MinusButton
- CountLabel
- */
 final class CounterView: UIView {
-    let minusButton = UIButton(type: .system).then {
+    private let minusButton = UIButton(type: .system).then {
         $0.setImage(
             UIImage(systemName: "minus"),
             for: .normal
         )
     }
-    let plusButton = UIButton(type: .system).then {
+    private let plusButton = UIButton(type: .system).then {
         $0.setImage(
             UIImage(systemName: "plus"),
             for: .normal
@@ -31,7 +26,7 @@ final class CounterView: UIView {
     }
     
     private let viewStore: ViewStoreOf<Counter>
-    private var anyCancellables = Set<AnyCancellable>()
+    private var cancellables = Set<AnyCancellable>()
     
     init(viewStore: ViewStoreOf<Counter>) {
         self.viewStore = viewStore
@@ -76,18 +71,18 @@ final class CounterView: UIView {
     
     private func setBind() {
         plusButton.tapPublisher.sink { [unowned self] in
-            viewStore.send(.increaseCounter)
+            viewStore.send(.incrementButtonTapped)
         }
-        .store(in: &anyCancellables)
+        .store(in: &cancellables)
         
         minusButton.tapPublisher.sink { [unowned self] in
-            viewStore.send(.decreaseCounter)
+            viewStore.send(.decrementButtonTapped)
         }
-        .store(in: &anyCancellables)
+        .store(in: &cancellables)
         
         viewStore.publisher
             .map { "\($0.count)" }
             .assign(to: \.label.text, on: self)
-            .store(in: &anyCancellables)
+            .store(in: &cancellables)
     }
 }
