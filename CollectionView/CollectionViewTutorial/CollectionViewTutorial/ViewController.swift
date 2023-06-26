@@ -8,17 +8,34 @@ class ViewController: UIViewController {
     
     private var dataSource: UICollectionViewDiffableDataSource<Section, Int>!
     private var collectionView: UICollectionView!
+    
+    private let button = UIButton(type: .system)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        button.setTitle("tap", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
         
         configureHierarchy()
         configureDataSource()
     }
     
+    @objc func tapButton() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Int>()
+        snapshot.appendSections([.main])
+        
+        let randomNumber = Int.random(in: 10...100)
+        
+        snapshot.appendItems(Array(0...randomNumber))
+        dataSource.apply(snapshot)
+        print(collectionView.contentSize)
+    }
+    
     private func createLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.2),
+            widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0)
         )
         
@@ -48,8 +65,15 @@ class ViewController: UIViewController {
         )
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }        
+            $0.top.directionalHorizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(600)
+        }
+        
+        view.addSubview(button)
+        button.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-40)
+        }
     }
     
     private func configureDataSource() {
