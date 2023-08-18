@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4109821E2A5B04190037297B /* HTTPRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4109821D2A5B04190037297B /* HTTPRequestType.swift */; };
 		410982202A5B04780037297B /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4109821F2A5B04780037297B /* HTTPMethod.swift */; };
-		410982222A5B04F20037297B /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410982212A5B04F20037297B /* URLRequest+Extension.swift */; };
 		410982242A5B065F0037297B /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410982232A5B065F0037297B /* HTTPHeader.swift */; };
 		410982262A5B080E0037297B /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410982252A5B080E0037297B /* HTTPHeaders.swift */; };
 		410982282A5B0C470037297B /* WebRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410982272A5B0C470037297B /* WebRepositoryProtocol.swift */; };
@@ -37,7 +36,6 @@
 /* Begin PBXFileReference section */
 		4109821D2A5B04190037297B /* HTTPRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestType.swift; sourceTree = "<group>"; };
 		4109821F2A5B04780037297B /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		410982212A5B04F20037297B /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
 		410982232A5B065F0037297B /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
 		410982252A5B080E0037297B /* HTTPHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaders.swift; sourceTree = "<group>"; };
 		410982272A5B0C470037297B /* WebRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepositoryProtocol.swift; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 				4109821F2A5B04780037297B /* HTTPMethod.swift */,
 				410982252A5B080E0037297B /* HTTPHeaders.swift */,
 				410982232A5B065F0037297B /* HTTPHeader.swift */,
-				410982212A5B04F20037297B /* URLRequest+Extension.swift */,
 				410982272A5B0C470037297B /* WebRepositoryProtocol.swift */,
 				4109822B2A5B10CB0037297B /* WebRepository.swift */,
 			);
@@ -246,7 +243,6 @@
 				412041772A547B8E006BC634 /* Optional+Extension.swift in Sources */,
 				4109821E2A5B04190037297B /* HTTPRequestType.swift in Sources */,
 				4109822C2A5B10CB0037297B /* WebRepository.swift in Sources */,
-				410982222A5B04F20037297B /* URLRequest+Extension.swift in Sources */,
 				4109822A2A5B0EA50037297B /* PlaceholderRepository.swift in Sources */,
 				412041472A547692006BC634 /* SceneDelegate.swift in Sources */,
 			);
