@@ -28,4 +28,11 @@ extension WebRepositoryProtocol {
         }
         .resume()
     }
+    
+    func request<Value>(endpoint: HTTPRequestType) async throws -> Value where Value: Decodable {
+        let urlRequest = endpoint.urlRequest(baseURL: host)
+        let (data, response) = try await urlSession.data(for: urlRequest)
+        let decodeData = try JSONDecoder().decode(Value.self, from: data)
+        return decodeData
+    }
 }

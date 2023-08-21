@@ -21,14 +21,16 @@ final class ViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         
-        repository.requestPosts { result in
-            switch result {
-            case .success(let success):
-                print(success)
-            case .failure(let failure):
-                print(failure)
+        Task {
+            do {
+                try await fetch()
+            } catch {
+                print(error)
             }
         }
     }
+    
+    func fetch() async throws {
+        let post = try await repository.requestPosts()
+    }
 }
-
