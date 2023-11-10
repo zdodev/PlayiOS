@@ -1,16 +1,17 @@
 import UIKit
 
-@main
+//@main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Providing the Main Entry Point
-    
-    static func main() {
-        print("AppDelegate::main()")
         
-        print("AppDelegate::UIApplicationMain()")
-        UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(AppDelegate.self))
-    }
+//    @main 진입 시 실행
+//    static func main() {
+//        print("AppDelegate::main()")
+//        
+//        print("AppDelegate::UIApplicationMain()")
+//        UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(AppDelegate.self))
+//    }
     
     // MARK: - Initializing the App
     
@@ -82,4 +83,3 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Managing Interface Geometry
 }
-
