@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 public struct CombineReactive<Base> {
     let base: Base
@@ -20,4 +20,4 @@ public extension CombineCompatible {
     }
 }
 
-extension NSObject: CombineCompatible { }
+extension UIControl: CombineCompatible { }
