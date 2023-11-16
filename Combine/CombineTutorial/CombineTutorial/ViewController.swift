@@ -10,6 +10,14 @@ final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let a = [1, 2, 3].publisher
+        
+        control.combine.publisher(.touchUpInside)
+            .sink {
+                print("tap control")
+            }
+            .store(in: &cancellables)
  
         view.addSubview(control)
         
@@ -18,9 +26,5 @@ final class ViewController: UIViewController {
             $0.size.equalTo(50)
             $0.center.equalToSuperview()
         }
-        control.controlEventPublisher(for: .touchUpInside).sink {
-            print("tap control")
-        }
-        .store(in: &cancellables)
     }
 }
