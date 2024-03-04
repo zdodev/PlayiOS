@@ -16,6 +16,9 @@ final class ViewController: UIViewController {
                 print("tap control")
             }
             .store(in: &cancellables)
+        
+        let b = UIButton()
+        b.combine.publisher(.)
  
         view.addSubview(control)
         

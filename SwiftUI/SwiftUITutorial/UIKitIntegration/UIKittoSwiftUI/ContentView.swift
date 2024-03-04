@@ -1,5 +1,3 @@
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -9,8 +7,15 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
+            
+            // UIViewController -> SwiftUI View
+            NameUIViewController().toView
+            
+            // UIView -> SwiftUI View
+            NameUIView().toView
         }
         .padding()
+        
     }
 }
 
