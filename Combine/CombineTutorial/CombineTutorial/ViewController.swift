@@ -11,14 +11,17 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        control.combine.publisher(.touchUpInside)
+//        control.combine.publisher(.touchUpInside)
+//            .sink {
+//                print("tap control")
+//            }
+//            .store(in: &cancellables)
+        
+        control.combine.tap
             .sink {
-                print("tap control")
+                print("tap publisher")
             }
             .store(in: &cancellables)
-        
-        let b = UIButton()
-        b.combine.publisher(.)
  
         view.addSubview(control)
         

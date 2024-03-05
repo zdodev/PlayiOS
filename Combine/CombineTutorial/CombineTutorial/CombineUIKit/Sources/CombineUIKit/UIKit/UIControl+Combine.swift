@@ -6,4 +6,9 @@ public extension CombineReactive where Base: UIControl {
         Publishers.ControlEvent(control: base, event: event)
             .eraseToAnyPublisher()
     }
+    
+    var tap: AnyPublisher<Void, Never> {
+        Publishers.ControlEvent(control: base, event: .touchUpInside)
+            .eraseToAnyPublisher()
+    }
 }
