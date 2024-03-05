@@ -19,5 +19,3 @@ public extension CombineCompatible {
         }
     }
 }
-
-extension UIControl: CombineCompatible { }
