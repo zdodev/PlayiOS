@@ -13,7 +13,7 @@ public protocol CombineCompatible {
 }
 
 public extension CombineCompatible {
-    var combine: CombineReactive<Self> {
+    var publisher: CombineReactive<Self> {
         get {
             CombineReactive(self)
         }

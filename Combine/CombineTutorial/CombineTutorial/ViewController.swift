@@ -14,29 +14,28 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(control)
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
         contentView.backgroundColor = .systemRed
         
-//        control.backgroundColor = .systemBlue
-//        control.snp.makeConstraints {
-//            $0.size.equalTo(50)
-//            $0.center.equalToSuperview()
-//        }
-        
-        scrollView.snp.makeConstraints {
-            $0.directionalEdges.equalTo(view)
+        control.backgroundColor = .systemBlue
+        control.snp.makeConstraints {
+            $0.size.equalTo(50)
+            $0.center.equalToSuperview()
         }
-        contentView.snp.makeConstraints {
-            $0.directionalEdges.equalTo(scrollView.contentLayoutGuide)
-            $0.width.equalTo(scrollView.frameLayoutGuide)
-            $0.height.equalTo(1000)
-        }
-        
-        scrollView.combine.contentOffset
-            .sink { offset in
-                print(offset)
+        control.publisher.tap
+            .sink { [weak self] in
+                let viewController = SecondController()
+                self?.navigationController?.pushViewController(viewController, animated: true)
             }
             .store(in: &cancellables)
+        
+//        scrollView.snp.makeConstraints {
+//            $0.directionalEdges.equalTo(view)
+//        }
+//
+//        scrollView.combine.scrollViewDidScroll
+//            .sink { scrollView in
+//                print(scrollView.contentOffset)
+//            }
+//            .store(in: &cancellables)
     }
 }
