@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		482DD9622BA0950700B4467F /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 482DD9612BA0950700B4467F /* CombineCocoa */; };
 		7BD3A3372B04C2A20046E1A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD3A3362B04C2A20046E1A9 /* AppDelegate.swift */; };
 		7BD3A3392B04C2A20046E1A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD3A3382B04C2A20046E1A9 /* SceneDelegate.swift */; };
 		7BD3A33B2B04C2A20046E1A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD3A33A2B04C2A20046E1A9 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BD3A3512B04C7CA0046E1A9 /* CombineUIKit in Frameworks */,
+				482DD9622BA0950700B4467F /* CombineCocoa in Frameworks */,
 				7BD3A3572B04CA800046E1A9 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +105,7 @@
 			packageProductDependencies = (
 				7BD3A3502B04C7CA0046E1A9 /* CombineUIKit */,
 				7BD3A3562B04CA800046E1A9 /* SnapKit */,
+				482DD9612BA0950700B4467F /* CombineCocoa */,
 			);
 			productName = CombineTutorial;
 			productReference = 7BD3A3332B04C2A20046E1A9 /* CombineTutorial.app */;
@@ -134,6 +137,7 @@
 			mainGroup = 7BD3A32A2B04C2A20046E1A9;
 			packageReferences = (
 				7BD3A3552B04CA800046E1A9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				482DD9602BA0950700B4467F /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 			);
 			productRefGroup = 7BD3A3342B04C2A20046E1A9 /* Products */;
 			projectDirPath = "";
@@ -390,6 +394,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		482DD9602BA0950700B4467F /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.4.1;
+			};
+		};
 		7BD3A3552B04CA800046E1A9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -401,6 +413,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		482DD9612BA0950700B4467F /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 482DD9602BA0950700B4467F /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
 		7BD3A3502B04C7CA0046E1A9 /* CombineUIKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CombineUIKit;

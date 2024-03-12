@@ -19,3 +19,16 @@ public extension CombineCompatible {
         }
     }
 }
+
+
+final class ScrollViewDelegate: NSObject, UIScrollViewDelegate {
+    init(_ scrollView: UIScrollView) {
+        super.init()
+        
+        scrollView.delegate = self
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
+}
