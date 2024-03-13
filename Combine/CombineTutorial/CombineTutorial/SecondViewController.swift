@@ -25,6 +25,12 @@ final class SecondController: UIViewController {
             $0.height.equalTo(2000)
         }
         
+        scrollView.publisher.scrollViewDidScroll
+            .sink { scrollView in
+                print(scrollView.contentOffset)
+            }
+            .store(in: &cancellables)
+        
 //        scrollView.publisher.scrollViewDidScroll
 //            .sink { v in
 //                print(v.contentOffset)

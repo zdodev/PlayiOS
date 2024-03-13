@@ -8,9 +8,14 @@ public extension CombineReactive where Base: UIScrollView {
         base.publisher(for: \.contentOffset)
             .eraseToAnyPublisher()
     }
+    
+    var scrollViewDidScroll: AnyPublisher<UIScrollView, Never> {
+        delegateProxy.delegatePublisher(.scrollViewDidScroll)
+            .map { $0 as! UIScrollView }
+            .eraseToAnyPublisher()
+    }
 
-//    var scrollViewDidScroll: AnyPublisher<UIScrollView, Never> {
-//        base.scrollViewDidScrollPublisher
-//            .eraseToAnyPublisher()
-//    }
+    private var delegateProxy: UIScrollViewDelegateProxy {
+        UIScrollViewDelegateProxy.createDelegateProxy(for: base)
+    }
 }
