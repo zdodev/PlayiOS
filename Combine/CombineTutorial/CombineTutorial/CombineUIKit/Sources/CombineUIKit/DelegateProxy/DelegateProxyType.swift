@@ -6,11 +6,9 @@ protocol DelegateProxyType {
     func setDelegate(to object: Object)
 }
 
+fileprivate var associatedKey = Int()
+
 extension DelegateProxyType where Self: DelegateProxy {
-    static var associatedKey: String {
-        "delegateProxy"
-    }
-    
     static func createDelegateProxy(for object: Object) -> Self {
         objc_sync_enter(self)
         defer {
@@ -21,14 +19,14 @@ extension DelegateProxyType where Self: DelegateProxy {
         
         if let associatedObject = objc_getAssociatedObject(
             object,
-            associatedKey
+            &associatedKey
         ) as? Self {
             delegateProxy = associatedObject
         } else {
             delegateProxy = .init()
             objc_setAssociatedObject(
                 object,
-                associatedKey,
+                &associatedKey,
                 delegateProxy,
                 .OBJC_ASSOCIATION_RETAIN
             )

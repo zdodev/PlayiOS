@@ -31,15 +31,10 @@ final class SecondController: UIViewController {
             }
             .store(in: &cancellables)
         
-//        scrollView.publisher.scrollViewDidScroll
-//            .sink { v in
-//                print(v.contentOffset)
-//            }
-//            .store(in: &cancellables)
-//        scrollView.willBeginDraggingPublisher
-//            .sink {
-//                print("drag")
-//            }
-//            .store(in: &cancellables)
+        scrollView.publisher.scrollViewWillBeginDragging
+            .sink { s in
+                print("scrollViewWillBeginDragging")
+            }
+            .store(in: &cancellables)
     }
 }
