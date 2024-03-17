@@ -5,9 +5,10 @@ final class UIScrollViewDelegateProxy: DelegateProxy {
     enum DelegateMethod {
         case scrollViewDidScroll
         case scrollViewWillBeginDragging
+        case textViewDidBeginEditing
     }
     
-    private var subscribers = [DelegateMethod: AnySubscriber<[Any], Never>]()
+    var subscribers = [DelegateMethod: AnySubscriber<[Any], Never>]()
 
     func delegatePublisher(_ delegateMethod: DelegateMethod) -> AnyPublisher<[Any], Never> {
         DelegateProxyPublisher<[Any]> { subscriber in
