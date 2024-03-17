@@ -13,4 +13,19 @@ public extension CombineReactive where Base: UIControl {
         Publishers.ControlEvent(control: base, event: .touchUpInside)
             .eraseToAnyPublisher()
     }
+    
+    var isEnabled: AnyPublisher<Bool, Never> {
+        base.publisher(for: \.isEnabled)
+            .eraseToAnyPublisher()
+    }
+    
+    var isSelected: AnyPublisher<Bool, Never> {
+        base.publisher(for: \.isSelected)
+            .eraseToAnyPublisher()
+    }
+    
+    var isHighlighted: AnyPublisher<Bool, Never> {
+        base.publisher(for: \.isHighlighted)
+            .eraseToAnyPublisher()
+    }
 }

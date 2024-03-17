@@ -5,6 +5,7 @@ import CombineUIKit
 
 final class ViewController: UIViewController {
     private let control = UIControl()
+    private let testButton = UIButton(configuration: .filled())
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     
