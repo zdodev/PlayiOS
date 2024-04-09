@@ -8,3 +8,6 @@ final class MainViewController: UIViewController {
     }
 }
 
+#Preview {
+    MainViewController()
+}
