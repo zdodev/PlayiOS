@@ -395,7 +395,7 @@
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk.git";
 			requirement = {
 				kind = exactVersion;
-				version = 17.0.0;
+				version = 17.0.1;
 			};
 		};
 		7B6047C72BC8E124000C15F2 /* XCRemoteSwiftPackageReference "Then" */ = {
