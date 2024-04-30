@@ -115,17 +115,29 @@ final class MainViewController: UIViewController {
     }
     
     @objc func tappedSubButton() {
+        print(AccessToken.current?.dataAccessExpirationDate)
+        print(AccessToken.current?.expirationDate)
+        print(AccessToken.current?.refreshDate)
+        print(AccessToken.current?.isExpired)
+        print(AccessToken.current?.isDataAccessExpired)
+        
+//        GraphRequest(graphPath: "me").start { connection, result, error in
+//            if let result {
+//                print("Fetched Result: \(result)")
+//            }
+//        }
+        
 //        Task {
 //            let result = await ATTrackingManager.requestTrackingAuthorization()
 //            print(result.rawValue)
 //        }
-        if let accessToken = AccessToken.current {
-            print("accessToken: \(accessToken.tokenString)\n")
-        }
-        
-        if let authenticationToken = AuthenticationToken.current {
-            print("authenticationToken: \(authenticationToken.tokenString)")
-        }
+//        if let accessToken = AccessToken.current {
+//            print("accessToken: \(accessToken.tokenString)\n")
+//        }
+//        
+//        if let authenticationToken = AuthenticationToken.current {
+//            print("authenticationToken: \(authenticationToken.tokenString)")
+//        }
     }
     
     @objc func tappedSubButton2() {
