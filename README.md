@@ -1,6 +1,8 @@
 # PlayiOS
 iOS 놀이공간입니다.
 
+local account
+
 ## UIView에 테두리 추가하기
 ```swift
 extension CALayer {
