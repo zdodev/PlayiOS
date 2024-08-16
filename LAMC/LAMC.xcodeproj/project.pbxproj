@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8E356B502C6EFE5C00C204AC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E356B4F2C6EFE5C00C204AC /* main.swift */; };
+		8E356B6A2C6F404200C204AC /* UltraSrtNcst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E356B692C6F404200C204AC /* UltraSrtNcst.swift */; };
+		8E356B6C2C6F409F00C204AC /* LambertConformalConic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E356B6B2C6F409F00C204AC /* LambertConformalConic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		8E356B4C2C6EFE5C00C204AC /* LAMC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LAMC; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E356B4F2C6EFE5C00C204AC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		8E356B692C6F404200C204AC /* UltraSrtNcst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltraSrtNcst.swift; sourceTree = "<group>"; };
+		8E356B6B2C6F409F00C204AC /* LambertConformalConic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LambertConformalConic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				8E356B4F2C6EFE5C00C204AC /* main.swift */,
+				8E356B6B2C6F409F00C204AC /* LambertConformalConic.swift */,
+				8E356B692C6F404200C204AC /* UltraSrtNcst.swift */,
 			);
 			path = LAMC;
 			sourceTree = "<group>";
@@ -121,6 +127,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E356B502C6EFE5C00C204AC /* main.swift in Sources */,
+				8E356B6A2C6F404200C204AC /* UltraSrtNcst.swift in Sources */,
+				8E356B6C2C6F409F00C204AC /* LambertConformalConic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
